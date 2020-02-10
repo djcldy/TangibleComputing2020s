@@ -1,3 +1,4 @@
+.dstore
 # labs
 # students
 # template
@@ -197,7 +198,7 @@
 # labs/2_Functions/2_4_Text/sketch.js
 # labs/2_Functions/Class_Exercises/index.html
 # labs/2_Functions/Class_Exercises/sketch.js
-# labs/2_Functions/Inspiration/26681762-black-polka-dots-pattern-background.jpg
+labs/2_Functions/Inspiration/26681762-black-polka-dots-pattern-background.jpg
 labs/2_Functions/Inspiration/3e2c158f902792df727804668c870950.jpg
 labs/2_Functions/Inspiration/afec02fd8a11a70f46e08fc6ce3808cd.jpg
 labs/2_Functions/Inspiration/dots_01.jpg
@@ -207,11 +208,11 @@ labs/2_Functions/Inspiration/images (2).jpg
 labs/2_Functions/Inspiration/images (3).jpg
 labs/2_Functions/Inspiration/images.jpg
 labs/2_Functions/Inspiration/images.png
-labs/2_Functions/Inspiration/unnamed.jpg
+# labs/2_Functions/Inspiration/unnamed.jpg
 students/.DS_Store
-students/ABDEL/.DS_Store
+# students/ABDEL/.DS_Store
 students/ABDEL/index.html
-students/ABDEL/mysteriousdestiny.mp3
+# students/ABDEL/mysteriousdestiny.mp3
 students/ABDEL/style.css
 students/ABDEL/week_01.html
 students/ABDEL/week_02.html
@@ -308,17 +309,17 @@ students/shahzaadee/weeks/01/1_1/index.html
 students/shahzaadee/weeks/01/1_1/sketch.js
 students/shahzaadee/weeks/01/index.html
 students/shahzaadee/weeks/01/reflection.html
-template/p5 template/index.html
-template/p5 template/sketch.js
-template/student website template/index.html
-template/student website template/style.css
-template/student website template/week_01.html
-template/student website template/weeks/01/1_1/index.html
-template/student website template/weeks/01/1_1/sketch.js
-template/student website template/weeks/01/index.html
-template/student website template/weeks/01/reflection.html
-template/three dot js template/app.js
-template/three dot js template/index.html
+# template/p5 template/index.html
+# template/p5 template/sketch.js
+# template/student website template/index.html
+# template/student website template/style.css
+# template/student website template/week_01.html
+# template/student website template/weeks/01/1_1/index.html
+# template/student website template/weeks/01/1_1/sketch.js
+# template/student website template/weeks/01/index.html
+# template/student website template/weeks/01/reflection.html
+# template/three dot js template/app.js
+# template/three dot js template/index.html
 www/.DS_Store
 www/assets/clocks.jpg
 www/assets/didi-logo.png
@@ -336,3 +337,6 @@ www/examples/1_Text/1_2 Introduction/index.html
 www/examples/1_Text/1_2 Introduction/popup.css
 www/examples/1_Text/1_2 Introduction/sketch.js
 www/examples/1_Text/1_2 Introduction/style.css
+students/ABDEL/.DS_Store
+students/ABDEL/mysteriousdestiny.mp3
+labs/2_Functions/Inspiration/unnamed.jpg
