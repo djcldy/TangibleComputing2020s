@@ -1,38 +1,48 @@
-/*
+// TenThousandX Assignment: 
+          // Add to this code to create a drawing 
+          // Note: do not delete anything
 
-    Example Code: Interactive Gradient Array
+          function setup(){
 
-*/
+             // do not change anything in setup 
+
+              createCanvas(2000,600)
+              TenThousandX()
+
+          }
+
+          function TenThousandX(){
+
+             //add code here 
+             //background(34,122,200)
+
+             //fill(255,0,0)
+             //stroke(10)
+             //strokeWeight(5)
+
+             //ellipse(100,80,100,100)
+
+             //fill(255)
+
+             //ellipse(200,200,100,100)
+             //noStroke()
+             //stroke(40,255,8)
+             //noFill()
+             //stroke(0,100)
+             fill(255,255,255)
+             noStroke()
 
 
-function setup(){
+              for ( var x = 0; x < 10000; x++){
 
-  createCanvas(800,800);
-  stroke(239)
+                  // add code here 
+                  //console.log(x);
+                  let a = random(0,1000)
+                  let b = random(1,2000)
+                  ellipse(a,b,10,10)
+                  //ellipse(width-a,b,a/10,a/10)
+                  //line(a,b,0,0)
 
-}
+              }
 
-function draw(){
-  background(239)
-
-  let numCol = 60
-  let numRow = 60
-  let stepX = width / numCol // height of box 
-  let stepY = height / numRow // width of box  
-
-  for (var col = 0; col < numRow; col++){
-
-    for (var row = 0; row < numCol; row++){
-    
-      fill(col/numCol*255,row/numRow*255,mouseX/width*255)   
-      push()
-      translate(row*stepX,col*stepY)
-      /*rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/800*TWO_PI)*/ 
-      ellipse(0,0,stepX,stepY) 
-      pop()
-
-    }
-
-  }
-
-}
+            }
