@@ -30,6 +30,8 @@
              //noFill()
              //stroke(0,100)
              stroke(255,255,255)
+             fill(0)
+
              //noStroke()
 
              //for (var random = 0;  random++)
@@ -48,6 +50,7 @@
                   //ellipse(width-a,b,a/10,a/10)
                   //line(a,b,0,0)
                   triangle(a,b,10,10)//*r++
+                  rect(a,b,10,10)
                 
 
               }
