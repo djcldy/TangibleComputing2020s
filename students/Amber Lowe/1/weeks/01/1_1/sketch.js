@@ -33,16 +33,18 @@
              noStroke()
 
 
+
               for ( var x = 0; x < 10000; x++){
 
                   // add code here 
                   //console.log(x);
-                  let a = random(0,1000)
+                  let a = random(0,10000)
                   let b = random(1,2000)
                   //ellipse(a,b,10,10)
                   //ellipse(width-a,b,a/10,a/10)
                   //line(a,b,0,0)
-                  rect(a,b,10,10)
+                  rect(a,b,10,10)//*r++
+                
 
               }
 
