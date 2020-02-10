@@ -38,54 +38,50 @@ letter-spacing: 1px;
 
 }
 
+.card {
 
+    position: absolute;
+    top:30vh;
+    left:20vh;
+    background: white;
+    padding:2%;
 
-<style>
-body {
-  background-image: <img_Landing/> ('img_Landing page Offical.jpg');
+    /*
+  transform: rotate(39.68deg);
+   transform: rotate(39.68deg);
+
+     width: 801.9px;
+  height: 577.83px;
+  left: 644.43px;
+  top: 38.59px;
+    width: 652.01px;
+  height: 469.82px;
+  left: 667.63px;
+  top: 128.01px;
+    position: absolute;
+    */
+      box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
+
 }
-</style>
+
 
 body{
 
-	/* Style for "Ellipse 13"
-const ellipse = {
-  width: 93,
-  height: 94,
-  color: #ffffff;
-  boxShadow: '4 4 75 rgba(0, 0, 0, 0.45)',
-  backgroundColor: '#ffcbcb',
-}
-}*/
-
-body{
-	/* Vector 1 */
+  background-image: url('Images/Landing Page Offical.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  	/*<img src= "Images/Landing Page Offical.jpg">*/
 
 
-position: absolute;
-width: 801.9px;
-height: 577.83px;
-left: 644.43px;
-top: 38.59px;
-
-background: #FFCBCB;
-box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.45);
-transform: rotate(39.68deg);
-}
-
-body{
-	/* Vector 5 */
+  /*background: #FFCBCB;
 
 
-position: absolute;
-width: 652.01px;
-height: 469.82px;
-left: 667.63px;
-top: 128.01px;
+  */
 
-background: #FFCBCB;
-box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
-transform: rotate(39.68deg);
+ 
+
 }
 
 
