@@ -1,0 +1,98 @@
+/* div class based on id */
+h1{
+	/* Style for "Organic La" */
+position: 803px, 507px;
+width: 804px;
+height: 80px;
+text-shadow: 0 2px 2px #8d6a6a;
+color: #FFCBCB;
+font-family: "consolas";
+font-size: 20px;
+font-weight: 600;
+letter-spacing: 6px;
+}
+
+h2{
+	/* Style for "Amber_Lowe" */
+width: 804px;
+height: 80px;
+text-shadow: 0 2px 2px #8d6a6a;
+color: #FFCBCB;
+font-family: "consolas";
+font-size: 10px;
+font-weight: 400;
+letter-spacing: 5px;
+}
+
+p{
+	/* Style for "paragraph" */
+width: 804px;
+height: 80px;
+text-shadow: 0 2px 2px #8d6a6a;
+color: #FFCBCB;
+font-family: "consolas";
+font-size: 10px;
+font-weight: 200;
+letter-spacing: 1px;
+
+
+}
+
+
+
+<style>
+body {
+  background-image: <img_Landing/> ('img_Landing page Offical.jpg');
+}
+</style>
+
+body{
+
+	/* Style for "Ellipse 13"
+const ellipse = {
+  width: 93,
+  height: 94,
+  color: #ffffff;
+  boxShadow: '4 4 75 rgba(0, 0, 0, 0.45)',
+  backgroundColor: '#ffcbcb',
+}
+}*/
+
+body{
+	/* Vector 1 */
+
+
+position: absolute;
+width: 801.9px;
+height: 577.83px;
+left: 644.43px;
+top: 38.59px;
+
+background: #FFCBCB;
+box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.45);
+transform: rotate(39.68deg);
+}
+
+body{
+	/* Vector 5 */
+
+
+position: absolute;
+width: 652.01px;
+height: 469.82px;
+left: 667.63px;
+top: 128.01px;
+
+background: #FFCBCB;
+box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
+transform: rotate(39.68deg);
+}
+
+
+/*  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+  padding-right: 5;
+  overflow-x:hidden;*/
