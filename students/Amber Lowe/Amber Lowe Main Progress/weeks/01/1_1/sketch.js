@@ -32,6 +32,9 @@
              stroke(255,255,255)
              fill(0)
 
+             //strokeWeight(7,4,3)
+            
+
              //noStroke()
 
              //for (var random = 0;  random++)
@@ -49,8 +52,14 @@
                   ellipse(a,b,10,10)
                   //ellipse(width-a,b,a/10,a/10)
                   //line(a,b,0,0)
-                  triangle(a,b,10,10)//*r++
-                  rect(a,b,10,10)
+                  //triangle(a,b,10,10)
+                  rect(a,b,10,10)//r++
+                  //point(a,b,10,10)
+                  //quadrilateral(a,b,10,10,)
+
+                  arc(a, b, 80, 80, 0, PI + QUARTER_PI)
+                  
+
                 
 
               }
