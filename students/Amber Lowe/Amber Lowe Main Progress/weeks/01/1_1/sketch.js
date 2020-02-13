@@ -30,7 +30,7 @@
              //noFill()
              //stroke(0,100)
              stroke(255,255,255)
-             noFill()
+             fill(0)
 
              //strokeWeight(7,4,3)
             
@@ -47,7 +47,7 @@
 
                   // add code here 
                   //console.log(x);
-                  let a = random(0,1000)
+                  let a = random(0,1000)*width
                   let b = random(1,2000)
                   //ellipse(a,b,10,10)
                   //ellipse(width-a,b,a/10,a/10)
@@ -56,12 +56,7 @@
                   //rect(a,b,10,10)//r++
                   //point(a,b,10,10)
                   //quadrilateral(a,b,10,10,)
-                  var img = document.createElement("img");
- 
-                  img.src = "LandingPageOffical.jpg";
-                  var src = document.getElementById("a");
- 
-                  src.appendChild(img);
+               
 
                   arc(a, b, 80, 80, 0, PI + QUARTER_PI)
                   
