@@ -56,6 +56,12 @@
                   //rect(a,b,10,10)//r++
                   //point(a,b,10,10)
                   //quadrilateral(a,b,10,10,)
+                  var img = document.createElement("img");
+ 
+                  img.src = "LandingPageOffical.jpg";
+                  var src = document.getElementById("a");
+ 
+                  src.appendChild(img);
 
                   arc(a, b, 80, 80, 0, PI + QUARTER_PI)
                   
