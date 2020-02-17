@@ -1,14 +1,17 @@
-/* div class based on id */
+h1{
+  /* div class based on id */
   font-size: 70px;
-color: blue;
+color: white;
 }
 h2 {
   background-color: blue;
+color: white;
  
 }
 body{
 
-
+color: white;
+ background-color: blue;
   width: 100vw;
 
   font-family: 'helvetica';
@@ -16,6 +19,11 @@ body{
   padding: 2vw;
   justify-content: center;
   align-items: center;
+}
+h2 {
+  background-color: blue;
+color: white;
+ 
 
 
 }
@@ -41,13 +49,13 @@ e;
 
 }
 
-.highlight2{
+.highlight{
 
   color: 'yellow';
 
 }
 
-.cities2 {
+.cities {
   
   color: white;
   margin: 20px;
