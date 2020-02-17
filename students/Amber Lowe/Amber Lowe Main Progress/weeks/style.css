@@ -19,7 +19,7 @@ h2{
 width: 804px;
 height: 80px;
 text-shadow: 0 2px 2px #8d6a6a;
-color: 13033F;
+color: pink;
 /*font-family: "consolas";*/
 font-size: 20px;
 font-weight: 400;
@@ -73,7 +73,7 @@ a{
 
 body{
 
-  background-image: url('Images/Landing Page Offical.jpg');
+  background-image: url('../Images/Landing Page Offical.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -85,9 +85,7 @@ body{
 
   */
 
- 
-
-}
+ }
 
 
 /*  min-width: 290px;

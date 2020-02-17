@@ -36,7 +36,7 @@
              //strokeWeight(7,4,3)
             
 
-             stroke(0)
+             stroke(255)
              noFill()
 
              //for (var random = 0;  random++)
@@ -60,7 +60,7 @@
                   //quadrilateral(a,b,10,10,)
                
 
-                  arc(a, b, 80, 80, 0, PI + QUARTER_PI)*width/2
+                  arc(a, b, 80, 80, 0, PI + QUARTER_PI)
                   
 
                 

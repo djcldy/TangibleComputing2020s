@@ -73,7 +73,7 @@ a{
 
 body{
 
-  background-image: url('Images/Landing Page Offical.jpg');
+  background-image: url('../Images/Landing Page Offical.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -85,9 +85,7 @@ body{
 
   */
 
- 
-
-}
+ }
 
 
 /*  min-width: 290px;
