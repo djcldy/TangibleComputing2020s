@@ -6,16 +6,19 @@
 
   <title> DIDI Tangible Computing - 2019 </title>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
   <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src = 'examples/3_flowerpower.js'></script>
-  <link href="http://fonts.googleapis.com/css?family=Walter+Turncoat&.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.2.0/themes/prism.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-twilight.css" rel="stylesheet" />
+  <script src = 'examples/2_gradient.js'></script>
+  <!-- <link href="http://fonts.googleapis.com/css?family=Walter+Turncoat&.css" rel="stylesheet"/> -->
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+   <!-- <script src = '../sketch.js'></script> -->
 
-  <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script>
+  <link rel="stylesheet" type="text/css" href="../style.css"> 
+  <!-- <script src="https://cdn.jsdelivr.net/prism/1.2.0/prism.js"></script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../style.css">  -->
+
   <link rel="stylesheet" type="text/css" href="../style.css"> 
 
 </head>
@@ -37,21 +40,21 @@
 
 
     <a href="syllabus.html" id ="content"> Course Syllabus </a>
-    <a href="Chapter_One.html" id ="content"> Project One </a>
-    <a href="Chapter_Two.html" id ="content"> Project Two </a>
+    <!-- <a href="Chapter_One.html" id ="content"> Project One </a> -->
+    <!-- <a href="Chapter_Two.html" id ="content"> Project Two </a> -->
     <a href="week_01.html" id ="content"> Week 01 - Introduction </a>
     <a href="week_02.html" id ="content"> Week 02 - Functions </a>
     <a href="week_03.html" id ="content"> Week 03 - Algorithms </a>
-    <a href="week_04.html" id ="content"> Week 04 - Coupling </a>
+<!--     <a href="week_04.html" id ="content"> Week 04 - Coupling </a>
     <a href="week_05.html" id ="content"> Week 05 - Spky Szn </a>
     <a href="week_05_5.html" id ="content"> Week 05.5 - Patterns </a>
     <a href="week_06.html" id ="content"> Week 06 - Hyperspace </a>
     <a href="week_07.html" id ="content"> Week 07 - Refactoring </a>
     <a href="week_08.html" id ="content"> Week 08 - Mid-Term </a>
     <a href="week_09.html" id ="content"> Week 09 - APIs </a>
-    <a href="week_10.html" id ="content"> Week 10 - Bots </a>
+    <a href="week_10.html" id ="content"> Week 10 - Bots </a> -->
 
-    <a href="students.html" id ="content"> Ghosts and Ghouls </a>
+    <a href="students.html" id ="content"> Students </a>
 
   </div>
 
@@ -60,7 +63,12 @@
   <div id="myContainer"></div>
 
   <h2> Summary </h2>
-  <p> This week we will explore Javascript objects and animation. </p>
+  <p> This week we will explore time-based animation using Javascript objects. </p>
+
+  <h2> Review </h2>
+  <p> <a href="https://p5js.org/reference/#/p5/text"> p5 Text Functions</a> </p>
+  
+
 
   <h2> Examples </h2>
   <p> Creating an object and setting its properties, option 1 </p>
@@ -122,8 +130,8 @@
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects"> Working with Objects</a></li> 
     <li><a href="https://www.youtube.com/watch?v=-e5h4IGKZRY"> Coding Train, JavaScript Objects - p5.js Tutorial </a></li>
 
-    <li><a href="https://www.youtube.com/watch?v=wRHAitGzBrg"> Coding Train, Function Basics - p5.js Tutorial </a></li>
-    <li><a href="https://www.youtube.com/watch?v=riDVvXZ_Kb4"> Prototypes in JavaScript - FunFunFunction #16</a></li> 
+    <li><a href="https://www.youtube.com/watch?v=wRHAitGzBrg"> Review: Coding Train, Function Basics - p5.js Tutorial </a></li>
+    <li><a href="https://www.youtube.com/watch?v=riDVvXZ_Kb4"> Advanced: Prototypes in JavaScript - FunFunFunction #16</a></li> 
 
 
   </ul>
@@ -135,13 +143,8 @@
 
     <ul  style="list-style-type:disc;">
 
-<!-- 
 
-      <p> Read <a href="http://www.publicseminar.org/2017/02/cognisphere/" target="open">"Citizens of the Cognisphere"</a> by Daniel Sauter (2017).</p> -->
-
-      <p>Visit verardo Reyes website about <a href="http://ereyes.net/ms/#about" target="open"> Motion Structure</a>. Check out the examples.</p>
-      <p> Read <a href="https://www.academia.edu/14883310/2015_-_Aesthetics_of_temporal_and_spatial_transformations_in_virtual_environments" target="open">"Aesthetics of temporal and spatial transformations in virtual environments"</a> by  Everardo Reyes (2015).</p>
-
+      <p> Read <a href="http://www.papert.org/articles/ComputerAsMaterial.html" target="open">"Computer as Material: Messing About with Time"</a> by  Seymour Papert (1988).</p>
 
 
 
@@ -149,16 +152,13 @@
 
 
       
-    <h2> Deliverables </h2>
+    <h2> Homework </h2>
 
     <ul  style="list-style-type:disc;">
     
-      <li> <b> P1:</b> You will continue to develop your proposal for <a href="Chapter_One.html">Project 1</a>. Include sketches, references, and any other research.</li>
 
-      <li> <b>Daily Practice:</b> Every day you will code a new p5 sketch <b>related to your P1 proposal</b>. This is an opportunity to explore p5.js and practice working with objects and animation. On the "Week 2" page on your personal website add links for each day. Here are some suggestions:
-
-      <li> <b>Daily Practice:</b> Every day you will code a new p5 sketch <b>related to your P1 proposal</b>. This is an opportunity to explore p5.js and practice working with objects and animation. On the "Week 3" page on your personal website add links for each day. Here are some suggestions:
-
+       <p> <b> Practice: Software Clocks (2%) </b> </p>
+       <p> How do we represent time? The Clock has been investigated by computational artists and designers for years. This clock assignment is a favourite new-media pioneer, John Maeda, and has been passed down for decades. Now its your turn! Your task this week is to create a software clock. You will base your design off of thevisual elements and interaction dynamics investigated in week 2  </p>
 
         <ul style="list-style-type:hiragana ;">
 
@@ -166,21 +166,13 @@
           <li> Review the <a href="https://p5js.org/examples/input-clock.html">p5 Clock Examples</a></li>
           
           <li> Only spend  20 - 40 minutes per sketch</li>
-          <li> Focus on creating <b>simple</b> programs</li>
-          <!-- <li> Each day try 10 different p5 functions from this <a href="https://p5js.org/reference/">list</a></li> -->
-          <li> Explore elements that you might like incorperate in P1</li>
+          <li> Work out the clock by creating <b>simple</b> programs, step by step</li>
           <li> If you get stuck ask for help </li>
-          <li> Draw out what you want your program to do, using flow charts before writing a single line of code</li>
+          <li> Sketch! Make sure to Draw out what you want your Clock to do. Remember its the journey not the destination</li>
 
         </ul>
 
       </li>
-
-
-      <li> <b> Bring an Arduino to next class! qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</b> </li>
-
-      <li> <b> Bring an Arduino to next class! </b> </li>
-
 
       <br>
 

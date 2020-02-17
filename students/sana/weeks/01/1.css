@@ -1,0 +1,63 @@
+/* div class based on id */
+title{
+  font-size: 70px;
+color: blue;
+}
+h2 {
+  background-color: black;
+ 
+}
+body{
+
+
+  width: 100vw;
+
+  font-family: 'helvetica';
+  /*color: #592C5F; */
+  padding: 2vw;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+#p5{
+  position: relative;
+}
+
+
+
+#week1style{
+    font-family: 'helvetica';
+
+
+}
+#week2style{
+
+  font-family: 'helvetica';
+
+
+
+}
+
+.highlight{
+
+  color: 'yellow';
+
+}
+
+.cities {
+  
+  color: white;
+  margin: 20px;
+  padding: 20px;
+}
+
+/*  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+  padding-right: 5;
+  overflow-x:hidden;*/

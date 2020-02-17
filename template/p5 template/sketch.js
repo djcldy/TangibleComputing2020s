@@ -1,30 +1,27 @@
-/*
 
-Gradient Array
-
-*/
-
+let xPrev = 0
+let yPrev = 0
 
 function setup(){
 
   createCanvas(800,800);
   stroke(255)
-
 }
+
 function draw(){
 
-  let numCol = 10
-  let numRow = 10
-  let stepX = width / numCol // height of box 
-  let stepY = height / numRow // width of box 
-   
-  background(255)
+  background(255,0,0)
+   let radius = 5
+  let x = mouseX
+  let y=  mouseY
 
-  for (var col = 0; col < numRow; col++){
-    for (var row = 0; row < numCol; row++){
-      fill(col/numCol*255,row/numRow*255,mouseX/width*255)
-      rect(row*stepX,col*stepY,stepX,stepY) 
-    }
+  let velocityX = x = xPrev
+  let velocityY = y = yPrev
+
+  fill(0,255,0,velocityX)
+  ellipse(x,y,velocityX,velocityY)
+ellipse(x-5,y-5,5,5)
+ellipse(x,y-5,5,5)
+  xPrev = x
+  yPrev = y
   }
-
-}
