@@ -1,65 +1,62 @@
 /*
 
-    Example Code: Interactive Gradient Array
+Gradient Array
 
 */
 
 
 
+function setup(){
 
-        function setup(){
-
-             // do not change anything in setup 
-
-              createCanvas(1000,1000)
-              TenThousandX()
-
-          }
-
-          function TenThousandX(){
-//background(90,155,215)
-//fill(255,0,0)
-//stroke(100)
-
-//ellipse(50,50,50,100)
-//fill(255,0,0)
-//strokeWeight(5)
-//ellipse(200,50,200,100)
-//fill(255,0,0)
-//strokeWeight(30)
-
-              
-              for ( var x = 0; x < 10000; x++ ){
-                //.......... it will be in same position 10000 unless we put random
-
-                //console.log(x)
-                //let a = random(width)
-                //let b = random(height)
-
-                //if we want them all vertical let b= x/10000*height
-                let a = sin(x/100)*width/2
-                let b = x/10000*height
-
-              ellipse(a,b,a/60,a/60)
-              ellipse(width-a,b,a/6,a/10)
-              stroke(200,60,25,20)
-                ellipse(a,b,a/50,a/50)
-              ellipse(width-a,b,a/150,a/10)
-              stroke(10,60,90,60)
-              ellipse(a,b,a/40,a/40)
-              ellipse(width-a,b,a/10,a/10)
-              stroke(10,60,0,2)
-              ellipse(a,b,a/40,a/40)
-              ellipse(width-a,b,a/10,a/10)
-              stroke(70,80,80,6)
-            strokeWeight(4)
-
-              
-//if we want lines we put line(0,b,a,b), 0 to start the line from begining of canvas
-                  // add code here 
+  createCanvas(800,800);
+  background(255)
 
 
+}
 
-              }
 
-            }
+function draw(){
+
+  drawIceCream(second(),200,1)
+  drawIceCream(minute(),400,2)
+  drawIceCream(hour(),600,3)
+
+  if (second()>58){
+    background(255)
+  }
+
+}
+
+function drawIceCream(time,posX,radius){
+
+  let x = posX + sin(time)*20
+  let y = height- time/60*height + random(-3,3)
+  let alpha = time/60*255
+  fill(alpha,0,255-alpha,alpha)
+  crazyHeart(x,y,time*radius,time*radius)
+
+}
+
+function heart(x,y,radius,radius){
+
+  noStroke()
+  ellipse(x-radius/4,y,radius/2)
+  ellipse(x+radius/4,y,radius/2)
+  triangle(x-radius/2,y, x+radius/2,y, x, y+radius/2);
+
+}
+
+
+function crazyHeart(x,y,radius,radius){
+
+  push()
+  translate(x,y)
+
+  rotate(random())
+  // noStroke()
+  ellipse(radius/4,0,radius/2)
+  ellipse(radius/4,0,radius/2)
+  triangle(radius/2,0, radius/2,y,0,radius/2);
+  pop()
+
+}
