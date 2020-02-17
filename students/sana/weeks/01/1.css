@@ -1,11 +1,7 @@
 /* div class based on id */
 title{
   font-size: 70px;
-
-
-  color: white;
-  margin: 20px;
-  padding: 20px;
+color: blue;
 }
 h2 {
   background-color: blue;
@@ -14,16 +10,44 @@ h2 {
 body{
 
 
-	width: 100vw;
+  width: 100vw;
 
-	font-family: 'helvetica';
-	/*color: #592C5F; */
-	padding: 2vw;
-	justify-content: center;
-	align-items: center;
+  font-family: 'helvetica';
+  /*color: #592C5F; */
+  padding: 2vw;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+#p5{
+  position: relative;
+}
 
 
 
+#week1style{
+    font-family: 'helvetica';
+
+
+}
+#week2style{
+
+  font-family: 'helvetica';
+
+
+
+}
+
+.highlight{
+
+  color: 'yellow';
+
+}
+
+.cities {
   
   color: white;
   margin: 20px;
