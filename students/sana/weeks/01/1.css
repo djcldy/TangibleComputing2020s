@@ -1,7 +1,11 @@
 /* div class based on id */
 title{
   font-size: 70px;
-color: blue;
+
+
+  color: white;
+  margin: 20px;
+  padding: 20px;
 }
 h2 {
   background-color: blue;
@@ -19,35 +23,7 @@ body{
 	align-items: center;
 
 
-}
 
-
-#p5{
-	position: relative;
-}
-
-
-
-#week1style{
-    font-family: 'helvetica';
-
-
-}
-#week2style{
-
-	font-family: 'helvetica';
-
-
-
-}
-
-.highlight{
-
-	color: 'yellow';
-
-}
-
-.cities {
   
   color: white;
   margin: 20px;
