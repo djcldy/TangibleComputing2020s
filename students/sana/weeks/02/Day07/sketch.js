@@ -17,7 +17,7 @@
           }
 
           function TenThousandX(){
-background(90,155,215)
+//background(90,155,215)
 //fill(255,0,0)
 //stroke(100)
 
@@ -37,21 +37,21 @@ background(90,155,215)
                 //let b = random(height)
 
                 //if we want them all vertical let b= x/10000*height
-                let a = sin(x/10)*width/2
+                let a = sin(x/100)*width/2
                 let b = x/10000*height
-               ellipse(a,b,a/6,a/6)
+
+              ellipse(a,b,a/60,a/60)
               ellipse(width-a,b,a/6,a/10)
               stroke(200,60,25,20)
-                quad(a,b,a/50,a/50)
+                ellipse(a,b,a/50,a/50)
               ellipse(width-a,b,a/150,a/10)
-              stroke(100,60,90,60)
+              stroke(10,60,90,60)
               ellipse(a,b,a/40,a/40)
-              rect(width-a,b,a/10,a/10)
-              stroke(80,60,0,2)
+              ellipse(width-a,b,a/10,a/10)
+              stroke(10,60,0,2)
               ellipse(a,b,a/40,a/40)
-              fill(10,30,50,100)
-              ellipse(width-a,b,a/100,a/100)
-              stroke(10,80,80,6)
+              ellipse(width-a,b,a/10,a/10)
+              stroke(70,80,80,6)
             strokeWeight(4)
 
               

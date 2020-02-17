@@ -33,30 +33,23 @@
                 //.......... it will be in same position 10000 unless we put random
 
                 //console.log(x)
-                //let a = random(width)
-                //let b = random(height)
+                let a = random(width)
+                let b = random(height)
 
-                //if we want them all vertical let b= x/10000*height
-                let a = sin(x/100)*width/2
-                let b = x/10000*height
 
-              ellipse(a,b,a/60,a/60)
-              ellipse(width-a,b,a/6,a/10)
-              stroke(200,60,25,20)
-                ellipse(a,b,a/50,a/50)
-              ellipse(width-a,b,a/150,a/10)
-              stroke(10,60,90,60)
-              ellipse(a,b,a/40,a/40)
-              ellipse(width-a,b,a/10,a/10)
-              stroke(10,60,0,2)
-              ellipse(a,b,a/40,a/40)
-              ellipse(width-a,b,a/10,a/10)
-              stroke(70,80,80,6)
-            strokeWeight(4)
-
-              
-//if we want lines we put line(0,b,a,b), 0 to start the line from begining of canvas
-                  // add code here 
+               
+ellipseMode(RADIUS); 
+fill(89,10,69,200); 
+ellipse(a,b,a/50, b/50, a/10, b/10); 
+ellipseMode(CENTER); 
+fill(10,0,90,100); 
+ellipse(a,b,a/100, a/100,a/60, a/60); 
+fill(80,79,90,200); 
+ellipse(a,b,b/100, a/100, b/60, a/60); 
+ellipseMode(CENTER); 
+fill(197,60,9,200); 
+ellipse(a,b,b/100, a/100, b/60, a/60); 
+ellipse(a,b,a/50, b/50, a/6, b/6); 
 
 
 
