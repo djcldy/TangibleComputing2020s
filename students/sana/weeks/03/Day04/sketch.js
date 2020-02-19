@@ -3,15 +3,12 @@
 Gradient Array
 
 */
-var gif_createImg;
 
-
- 
 
 
 function setup(){
 
-  createCanvas(800,800);
+  createCanvas(800,800,WEBGL);
   background(0)
 
 
@@ -20,12 +17,12 @@ function setup(){
 
 function draw(){
 
-  drawIceCream(second(),200,1)
-  drawIceCream(minute(),400,2)
-  drawIceCream(hour(),600,3)
+  drawIceCream(second(),100,1)
+  drawIceCream(minute(),200,2)
+  drawIceCream(hour(),300,3)
 
   if (second()>58){
-    background: createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+    
 
 
   }
@@ -49,10 +46,11 @@ function crazyHeart(x,y,radius,radius){
 
   rotate(random())
   // noStroke()
-ellipse(radius/4,0,radius/2)
-  ellipse(radius/4,0,radius/2)
-    circle(radius/2,0, radius/2,y,0,radius/2);
+  cylinder(radius,radius)
+  cylinder(radius/2,0,radius/2,y,0,radius/2)
   circle(radius/2,0, radius/2,y,0,radius/2);
+  circle(radius/2,0, radius/2,y,0,radius/2);
+   cylinder(radius,radius)
   pop()
 
 }
