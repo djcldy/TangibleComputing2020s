@@ -12,7 +12,7 @@ var gif_createImg;
 function setup(){
 
   createCanvas(800,800);
-  background(255)
+  background(0)
 
 
 }
@@ -25,8 +25,9 @@ function draw(){
   drawIceCream(hour(),600,3)
 
   if (second()>58){
-    background(255)
-     gif_createImg = createImg("https://media.giphy.com/media/13BN1Yu8DbpQOc/giphy.gif");
+    background(0)
+     gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+
   }
 
 }
@@ -41,16 +42,6 @@ function drawIceCream(time,posX,radius){
 
 }
 
-function heart(x,y,radius,radius){
-
-  noStroke()
-  ellipse(x-radius/4,y,radius/2)
-  ellipse(x+radius/4,y,radius/2)
-  triangle(x-radius/2,y, x+radius/2,y, x, y+radius/2);
-
-}
-
-
 function crazyHeart(x,y,radius,radius){
 
   push()
@@ -58,9 +49,10 @@ function crazyHeart(x,y,radius,radius){
 
   rotate(random())
   // noStroke()
+ellipse(radius/4,0,radius/2)
   ellipse(radius/4,0,radius/2)
-  ellipse(radius/4,0,radius/2)
-  triangle(radius/2,0, radius/2,y,0,radius/2);
+    circle(radius/2,0, radius/2,y,0,radius/2);
+  circle(radius/2,0, radius/2,y,0,radius/2);
   pop()
 
 }
