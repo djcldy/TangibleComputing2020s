@@ -25,8 +25,8 @@ function draw(){
   drawIceCream(hour(),600,3)
 
   if (second()>58){
-    background(0)
-     gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+    background: createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+
 
   }
 
