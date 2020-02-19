@@ -3,7 +3,10 @@
 Gradient Array
 
 */
+var gif_createImg;
 
+
+ 
 
 
 function setup(){
@@ -23,6 +26,7 @@ function draw(){
 
   if (second()>58){
     background(255)
+     gif_createImg = createImg("https://media.giphy.com/media/13BN1Yu8DbpQOc/giphy.gif");
   }
 
 }
