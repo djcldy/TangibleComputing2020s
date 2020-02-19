@@ -1,0 +1,103 @@
+/* div class based on id */
+
+
+body{
+	background-color: black;
+
+	width: 100vw;
+
+	font-family: 'helvetica';
+	/* color: #592C5F;
+	.color-primary-0 { color: #7D2A69 }	/* Main Primary color */
+/* .color-primary-1 { color: #BC7DAC }
+.color-primary-2 { color: #9D4E89 }
+.color-primary-3 { color: #5E104A }
+.color-primary-4 { color: #3F002F } */ 
+
+	color: white;
+
+	padding: 4vw;
+	justify-content: center;
+	align-items: center;
+
+}
+
+h1{
+	font-size : 70px;
+	color: white;
+	}
+
+	h2{
+	font-size : 45px;
+	color: #D48F6A;
+	}
+
+
+#pony01{
+
+	width:57vh;
+
+}
+
+#pony02{
+
+	width:38vh;
+
+}
+
+#pony03{
+
+	width:67vh;
+}
+
+#pony04{
+
+	width:49vh;
+}
+
+
+#p5{
+	position: relative;
+}
+
+img {}
+
+/*  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+  padding-right: 5;
+  overflow-x:hidden;*/
+
+a{
+color: gold;
+ text-shadow: 
+   
+ 
+   
+    0 0 10vw gold;
+  font-size: 4vw;
+  }
+
+
+  .border{
+
+    font-size: 2em;
+  	padding: 40px;
+  	border-left : 4px dotted orange;
+  
+  }
+
+  .springy-text {
+
+  	color: white;
+  animation-name: springy-text;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+
+}
