@@ -1,54 +1,28 @@
-/unction setup(){
 
-  createCanvas(800,800);
-  background(255)
+function setup() {
+  createCanvas(800, 800);
 
-
+  
 }
 
+function draw() {
+  background(0);
+ 
 
-function draw(){
+  let sc = second();
+var gif_loadImg,gif_createImg;
 
-  drawIceCream(second(),200,1)
-  drawIceCream(minute(),400,2)
-  drawIceCream(hour(),600,3)
-
-  if (second()>58){
-    background(255)
-  }
-
-}
-
-function drawIceCream(time,posX,radius){
-
-  let x = posX + sin(time)*20
-  let y = height- time/60*height + random(-3,3)
-  let alpha = time/60*255
-  fill(alpha,0,255-alpha,alpha)
-  crazyHeart(x,y,time*radius,time*radius)
+ strokeWeight(8);
+  
+  stroke(55, 125, 100);
+  fill(145,47,90,100);
+  let end = map(sc, 0, 60, 0, 360);
+  arc(400, 200, 300, 300, 0, end,PIE);
+  
+  	if (second()>58){
+    gif_loadImg = loadImage("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+  gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+   image(gif_loadImg, 50, 50);
 
 }
-
-function heart(x,y,radius,radius){
-
-  noStroke()
-  ellipse(x-radius/4,y,radius/2)
-  ellipse(x+radius/4,y,radius/2)
-  triangle(x-radius/2,y, x+radius/2,y, x, y+radius/2);
-
-}
-
-
-function crazyHeart(x,y,radius,radius){
-
-  push()
-  translate(x,y)
-
-  rotate(random())
-  // noStroke()
-  ellipse(radius/4,0,radius/2)
-  ellipse(radius/4,0,radius/2)
-  triangle(radius/2,0, radius/2,y,0,radius/2);
-  pop()
-
 }
