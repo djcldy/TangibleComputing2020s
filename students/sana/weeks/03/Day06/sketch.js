@@ -2,7 +2,7 @@ var img;
 var sprite;
 
 function preload() {
-  img = loadImage('desktop/Custom Edited - Mario Customs - Hoot Super Mario.png');
+  img = loadImage('Custom Edited - Mario Customs - Hoot Super Mario World-Style.png');
 }
 
 function setup() {
