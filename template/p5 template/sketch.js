@@ -1,27 +1,36 @@
+// TenThousandX Assignment: 
+          // Add to this code to create a drawing 
+          // Note: do not delete anything
 
-let xPrev = 0
-let yPrev = 0
+          function setup(){
 
-function setup(){
+             // do not change anything in setup 
+              createCanvas(800,800)
+              TenThousandX()
 
-  createCanvas(800,800);
-  stroke(255)
-}
+          }
 
-function draw(){
+          function TenThousandX(){
 
-  background(255,0,0)
-   let radius = 5
-  let x = mouseX
-  let y=  mouseY
 
-  let velocityX = x = xPrev
-  let velocityY = y = yPrev
+              for ( var x = 0; x < 10000; x++ ){
 
-  fill(0,255,0,velocityX)
-  ellipse(x,y,velocityX,velocityY)
-ellipse(x-5,y-5,5,5)
-ellipse(x,y-5,5,5)
-  xPrev = x
-  yPrev = y
-  }
+                //console.log(x)
+                //let a = random(width/2,width)
+                let a= sin(x/100)*width/2
+                let b= x/10000*height
+                //let b = random(height)
+                ellipse(a,b,a/10,a/10)
+                stroke(random(255,random(255,random(255,8,5))))
+                
+                ellipse(width-a,b,a/10,a/10)
+                stroke(77,0,0,77)
+                ellipse(b,height-a,a/10,a/10)
+                //ellipse(a,b,5,5)
+                //line(0,b,a,b)
+
+                  // add code here 
+
+              }
+
+            }
