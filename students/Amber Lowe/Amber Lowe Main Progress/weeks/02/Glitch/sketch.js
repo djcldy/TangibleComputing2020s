@@ -59,8 +59,8 @@ function drawIceCream(time,posX,radius){
 	let y = height- time/60*height + random(-40,10)
 	let alpha = time/60*255
 
-	fill(alpha,255,0-alpha,244+alpha)
-	stroke(255)
+	fill(alpha,30,20-alpha,0+alpha)
+	stroke(255,0,0)
 
 	//ellipse(x,y,time*radius,time*radius)
 	heart(x,y,time*radius/2,time*radius)
@@ -73,12 +73,14 @@ function heart(x,y,radius,radius){
   background(0)
   push()
   translate(x++,y)
-  rotate(x/100)
-  scale(sin(y/100)+1)
+  rotate(x/12)
+  scale(sin(y/2)+1)
 
 
     ellipse(x-radius/2,y,radius/2)
 	ellipse(x+radius/4,y,radius/2)
+	rect(x-radius/10,y,radius)
+
 	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
 	 pop()
   x+= (10,3)
