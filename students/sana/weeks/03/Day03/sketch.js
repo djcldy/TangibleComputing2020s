@@ -11,8 +11,6 @@ function setup() {
 
 function draw() {
 
-  // background(0);
-
   let sc = second()
 
   if (sc > 15){
