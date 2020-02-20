@@ -2,7 +2,7 @@ var img;
 var sprite;
 
 function preload() {
-  img = loadImage('Custom Edited - Mario Customs - Hoot Super Mario World-Style.png');
+  img = loadImage('PikPng.com_super-mario-world-png_1356777.png');
 }
 
 function setup() {
