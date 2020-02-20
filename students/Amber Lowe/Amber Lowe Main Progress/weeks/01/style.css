@@ -2,12 +2,12 @@
 h1{
 	/* Style for "Organic La" */
 position: absolute;
-    top:13vh;
+    top:0vh;
     left:25vh;
 width: 804px;
 height: 80px;
 text-shadow: 0 2px 2px #8d6a6a;
-color: white;
+color: black;
 font-family: 'Noto Serif', serif;
 font-size: 60px;
 font-weight: 600;
@@ -31,7 +31,7 @@ p{
 width: 804px;
 height: 80px;
 text-shadow: 0 2px 2px #8d6a6a;
-color: 13033F;
+color: white;
 /*font-family: "consolas";*/
 font-size: 15px;
 font-weight: 200;
@@ -48,7 +48,7 @@ a{
     position: absolute;
     top:30vh;
     left:25vh;
-    /*background: white;*/
+    background: pink;
     padding:2%;
 
     /*
@@ -73,17 +73,7 @@ a{
 
 body{
 
-  background-image: url('../Images/Landing Page Offical.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  	/*<img src= "Images/Landing Page Offical.jpg">*/
-
-
-  /*background: #FFCBCB;
-
-
-  */
+ background:white;
 
  }
 
