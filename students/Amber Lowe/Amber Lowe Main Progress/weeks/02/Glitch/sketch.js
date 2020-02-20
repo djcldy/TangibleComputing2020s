@@ -1,8 +1,4 @@
-/*
 
-    Example Code: Interactive Gradient Array
-
-*/
 
 
 function setup(){
@@ -45,10 +41,25 @@ function draw(){
 function drawIceCream(time,posX,radius){
 
 	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-3,3)
+	let y = height- time/60*height + random(-10,20)
 	let alpha = time/60*255
 
-	fill(alpha,255,0-alpha,alpha)
+	fill(alpha,255,0-alpha,244+alpha)
+	noStroke()
+
+	//ellipse(x,y,time*radius,time*radius)
+	heart(x,y,time*radius,time*radius)
+
+
+}
+
+function drawIceCream(time,posX,radius){
+
+	let x = posX + sin(time)*50
+	let y = height- time/60*height + random(-40,10)
+	let alpha = time/60*255
+
+	fill(alpha,255,0-alpha,244+alpha)
 	noStroke()
 
 	//ellipse(x,y,time*radius,time*radius)
@@ -69,7 +80,11 @@ function heart(x,y,radius,radius){
     ellipse(x-radius/2,y,radius/2)
 	ellipse(x+radius/4,y,radius/2)
 	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
-	pop()
+	 pop()
+  x+= (10,3)
+  y+= random()
+  if (x > width) x = 7
+  if (y >height) y = 0
 }
 
 
