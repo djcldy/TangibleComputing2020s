@@ -6,7 +6,7 @@
 
              // do not change anything in setup 
 
-              createCanvas(800,800)
+              createCanvas(2000,600)
               TenThousandX()
 
           }
@@ -23,24 +23,41 @@
              //ellipse(100,80,100,100)
 
              //fill(255)
+             
 
              //ellipse(200,200,100,100)
              //noStroke()
              //stroke(40,255,8)
              //noFill()
              //stroke(0,100)
+             //stroke(255,255,255)
+             //fill(0)
+
+             //strokeWeight(7,4,3)
+            
+
+            
+
+             //for (var random = 0;  random++)
+
+             //fill (var random = 0;  random++}
 
 
-              for ( var x = 0; x < 10000; x++){
 
-                  // add code here 
-                  //console.log(x);
-                  let a = (random)
-                  let b = (random)
-                  ellipse(a,b,10,10)
-                  //ellipse(width-a,b,a/10,a/10)
-                  //line(a,b,0,0)
+              //for ( var x = 0; x < 10000; x++)
 
-              }
+              	var img;
 
-            }
+
+function setup() {
+  createCanvas(500, 500);
+  img = createImg('http://www.petwebsite.com/hamsters/hamsters_images/syrian-hamster_000008437184.jpg');
+  img.hide();
+  background(100);
+
+}
+
+function draw() {
+  image(img, 0,0,width,height); 
+  
+}

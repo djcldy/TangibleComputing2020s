@@ -38,7 +38,7 @@
                 stroke(random(255,random(255,random(255,8,5))))
                 
                 ellipse(width-a,b,a/10,a/10)
-                stroke(77'/,0,0,77)
+                stroke(77/,0,0,77)
                 ellipse(b,height-a,a/10,a/10)
                 //ellipse(a,b,5,5)
                 //line(0,b,a,b)
