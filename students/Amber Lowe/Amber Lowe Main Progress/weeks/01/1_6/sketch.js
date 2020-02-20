@@ -14,7 +14,7 @@
           function TenThousandX(){
 
              //add code here 
-             //background(34,122,200)
+             background(95,20,76)
 
              //fill(255,0,0)
              //stroke(10)
@@ -36,8 +36,9 @@
              //strokeWeight(7,4,3)
             
 
-             stroke(255)
+             stroke(165,242,243)
              noFill()
+
 
              //for (var random = 0;  random++)
 
@@ -49,18 +50,18 @@
 
                   // add code here 
                   //console.log(x);
-                  let a = random(0,1000)
-                  let b = random(1,2000)
-                  ellipse(a,b,10,10)
-                  //ellipse(width-a,b,a/10,a/10)
+                  let a= sin(x++/400)*width/2
+                  let b= x/10000*height
+                  ellipse(width-a,b,a/10,a/10)
+                  //ellipse(a,b,10,10)
                   //line(a,b,0,0)
                   //triangle(a,b,10,10)
-                  rect(a,b,10,10)//r++
+                  //rect(a,b,10,10)//r++
                   //point(a,b,10,10)
                   //quadrilateral(a,b,10,10,)
                
 
-                  arc(a, b, 80, 80, 0, PI + QUARTER_PI)
+                  arc(a, b, 20, 80, 0, PI + HALF_PI)
                   
 
                 
