@@ -30,12 +30,12 @@ function setup(){
 
 function draw(){
 
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
+	drawIceCream(second(),100,1)
+	drawIceCream(minute(),200,2)
+	drawIceCream(hour(),400,3)
 
 	if (second()>58){
-		background(255)
+		background(0)
 	}
 }
 function drawIceCream(time,posX,radius){
@@ -60,10 +60,10 @@ function drawIceCream(time,posX,radius){
 	let alpha = time/60*255
 
 	fill(alpha,255,0-alpha,244+alpha)
-	noStroke()
+	stroke(255)
 
 	//ellipse(x,y,time*radius,time*radius)
-	heart(x,y,time*radius,time*radius)
+	heart(x,y,time*radius/2,time*radius)
 
 
 }
@@ -72,7 +72,7 @@ function heart(x,y,radius,radius){
 
   background(0)
   push()
-  translate(x,y)
+  translate(x++,y)
   rotate(x/100)
   scale(sin(y/100)+1)
 
