@@ -30,14 +30,15 @@
              //stroke(40,255,8)
              //noFill()
              //stroke(0,100)
-             //stroke(255,255,255)
+             stroke(20,2,30)
              //fill(0)
 
-             //strokeWeight(7,4,3)
+             strokeWeight(7,4,3)
             
 
-             stroke(255)
-             noFill()
+             stroke(0)
+             //fill(60,3,60)
+             //noFill()
 
              //for (var random = 0;  random++)
 
@@ -51,11 +52,11 @@
                   //console.log(x);
                   let a = random(0,1000)
                   let b = random(1,2000)
-                  ellipse(a,b,10,10)
-                  //ellipse(width-a,b,a/10,a/10)
+                  //ellipse(a,b,10,10)
+                  ellipse(width-a,b,a/10,a/10)
                   //line(a,b,0,0)
                   //triangle(a,b,10,10)
-                  rect(a,b,10,10)//r++
+                  //rect(a,b,10,10)//r++
                   //point(a,b,10,10)
                   //quadrilateral(a,b,10,10,)
                

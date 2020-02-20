@@ -14,7 +14,7 @@
           function TenThousandX(){
 
              //add code here 
-             //background(34,122,200)
+             background(34,12,20)
 
              //fill(255,0,0)
              //stroke(10)
@@ -54,13 +54,13 @@
                   ellipse(a,b,10,10)
                   //ellipse(width-a,b,a/10,a/10)
                   //line(a,b,0,0)
-                  //triangle(a,b,10,10)
-                  rect(a,b,10,10)//r++
+                  triangle(a,b,10,10)
+                  //rect(a,b,10,10)//r++
                   //point(a,b,10,10)
                   //quadrilateral(a,b,10,10,)
                
 
-                  arc(a, b, 80, 80, 0, PI + QUARTER_PI)
+                  //arc(a, b, 80, 80, 0, PI + QUARTER_PI)
                   
 
                 
