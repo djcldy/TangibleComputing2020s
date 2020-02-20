@@ -1,16 +1,24 @@
 
+var gif_loadImg;
+
+
+
 function setup() {
   createCanvas(800, 800);
-
-  
+  gif_loadImg = loadImage("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+ 
 }
 
 function draw() {
   background(0);
- 
-
   let sc = second();
-var gif_createImg;
+  if (sc>15){
+  	background(gif_loadImg);
+  }else{
+
+  	background(255)
+  }
+
 
  strokeWeight(8);
   
@@ -19,9 +27,8 @@ var gif_createImg;
   let end = map(sc, 0, 60, 0, 360);
   arc(400, 200, 300, 300, 0, end,PIE);
   
-  	if (second()>58){
-      gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
-   image(gif_createImg, 50, 50);
+  
+      
+}
 
-}
-}
+
