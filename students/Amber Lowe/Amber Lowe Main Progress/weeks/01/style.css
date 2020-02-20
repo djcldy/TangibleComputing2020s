@@ -43,11 +43,19 @@ margin-bottom:-5px;
 a{
 	color:blue;
 }
+
+#img1{
+	width:30%;
+}
+#img2{
+	width:30%;
+}
+
 .card {
 
     position: absolute;
-    top:30vh;
-    left:25vh;
+    top:50vh;
+    left:0vh;
     background: pink;
     padding:2%;
 
