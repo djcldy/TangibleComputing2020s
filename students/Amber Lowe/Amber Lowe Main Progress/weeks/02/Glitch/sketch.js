@@ -78,14 +78,14 @@ function heart(x,y,radius,radius){
 
 
     ellipse(x-radius/2,y,radius/2)
-	ellipse(x+radius/4,y,radius/2)
-	rect(x-radius/10,y,radius)
-
-	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
+	ellipse(x+radius,y,radius/2)
+	ellipse(x-radius/10,y,radius)
+	arc(x-radius,y,x+radius/20,y,x, y+radius);
+    arc(x-radius/2,y,x+radius/2,y,x, y+radius);
 	 pop()
-  x+= (10,3)
+  x+= (10,10)
   y+= random()
-  if (x > width) x = 7
+  if (x > width) x = 10
   if (y >height) y = 0
 }
 
