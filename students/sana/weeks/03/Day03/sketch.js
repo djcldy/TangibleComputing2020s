@@ -10,7 +10,7 @@ function draw() {
  
 
   let sc = second();
-var gif_loadImg,gif_createImg;
+var gif_createImg;
 
  strokeWeight(8);
   
@@ -20,9 +20,8 @@ var gif_loadImg,gif_createImg;
   arc(400, 200, 300, 300, 0, end,PIE);
   
   	if (second()>58){
-    gif_loadImg = loadImage("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
-  gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
-   image(gif_loadImg, 50, 50);
+      gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+   image(gif_createImg, 50, 50);
 
 }
 }
