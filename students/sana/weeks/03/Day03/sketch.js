@@ -1,36 +1,28 @@
 
-let clockFont;
-
-
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  clockFont = loadFont("digital-7.ttf");
-}
+  createCanvas(800, 800);
 
-function windowResized()
-{
- resizeCanvas(windowWidth, windowHeight);
+  
 }
 
 function draw() {
-  clock();
+  background(0);
+ 
+
+  let sc = second();
+var gif_loadImg,gif_createImg;
+
+ strokeWeight(8);
   
+  stroke(55, 125, 100);
+  fill(145,47,90,100);
+  let end = map(sc, 0, 60, 0, 360);
+  arc(400, 200, 300, 300, 0, end,PIE);
+  
+  	if (second()>58){
+    gif_loadImg = loadImage("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+  gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+   image(gif_loadImg, 50, 50);
 
 }
-
-function clock()
-{
- fill("red");
-  textFont(clockFont);
-  textAlign(CENTER, CENTER);
-  textSize(width/4.25);
-   var gif_createImg;
-  let Hour = hour();
-  let min = minute();
-  let secs = second()
-  let noon = Hour >= 12? " PM" : " AM"
-   
-  if (second()>58)
-  createImg=("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif”);
-
 }
