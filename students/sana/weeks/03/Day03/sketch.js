@@ -13,10 +13,9 @@ function windowResized()
 }
 
 function draw() {
-  background(0);
+  clock();
   
 
-clock();
 }
 
 function clock()
@@ -30,10 +29,8 @@ function clock()
   let min = minute();
   let secs = second()
   let noon = Hour >= 12? " PM" : " AM"
-  if(min < 10)
-    min = "0"+min
-  Hour%=12
-  text(Hour+":"+min+":"+secs+noon, width/2, height/2); 
-  background:("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif”);
+   
+  if (second()>58)
+  createImg=("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif”);
 
 }
