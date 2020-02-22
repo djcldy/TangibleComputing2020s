@@ -17,9 +17,9 @@ function setup(){
 
 function draw(){
 
-  drawIceCream(second(),200,1)
-  drawIceCream(minute(),400,2)
-  drawIceCream(hour(),600,3)
+  wormWorm(second(),200,1)
+  wormWorm(minute(),400,2)
+  wormWorm(hour(),600,3)
 
   if (second()>58){
     background(65)
@@ -27,17 +27,17 @@ function draw(){
 
 }
 
-function drawIceCream(time,posX,radius){
+function  wormWorm(time,posX,radius){
 
   let x = posX + sin(time)*20
-  let y = height+time/60*height + rotate(-90)
+  let y = height-time/60*height + random(-10,5)
   let alpha = time/60*255
   fill(alpha,0,255-alpha,alpha)
-  crazyHeart(x,y,time*radius,time*radius)
+  PaintWorm(x,y,time*radius,time*radius)
 
 }
 
-function crazyHeart(x,y,radius,radius){
+function PaintWorm(x,y,radius,radius){
 
   push()
   translate(x,y)
