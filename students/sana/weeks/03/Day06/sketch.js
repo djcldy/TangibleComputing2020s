@@ -1,15 +1,13 @@
 	
-	let bg
+		let bg
 	function setup() {
     createCanvas(800, 800);
     
  bg = loadImage('file:///Users/sanamohamed/Documents/GitHub/TangibleComputing2020s/students/sana/weeks/03/Day06/mario_PNG126.png');
 }
-
-//--------------------------
 function draw() {
-	background (bg)
-
+	
+background (bg);
 	let Hr = hour ()
 	let Mn = minute()
 	let Sc = second ()
