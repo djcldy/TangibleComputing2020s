@@ -1,16 +1,18 @@
-function setup() {
+	
+	let bg
+	function setup() {
     createCanvas(800, 800);
-
+    
+ bg = loadImage('file:///Users/sanamohamed/Documents/GitHub/TangibleComputing2020s/students/sana/weeks/03/Day06/mario_PNG126.png');
 }
 
 //--------------------------
 function draw() {
-	background (0)
-	
-	
-	var Hr = hour ()
-	var Mn = minute()
-	var Sc = second ()
+	background (bg)
+
+	let Hr = hour ()
+	let Mn = minute()
+	let Sc = second ()
 
 	strokeWeight (6)
 	stroke (100,55,119)
