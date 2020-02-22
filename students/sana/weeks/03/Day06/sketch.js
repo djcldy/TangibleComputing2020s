@@ -11,8 +11,7 @@ background (bg);
 	let Hr = hour ()
 	let Mn = minute()
 	let Sc = second ()
-	let alpha = time/60*255
-  fill(alpha,0,255-alpha,alpha)
+
 
 	strokeWeight (6)
 	stroke (100,55,119)
