@@ -2,7 +2,7 @@ let capture
           function setup(){
               createCanvas(800,800)
               capture=createCapture(VIDEO)
-              capture*hide()
+              capture.hide()
             
 }
 
@@ -19,10 +19,10 @@ for (var x =0; x<width; x+= spacing){
     //if (randoum()>0.9)continue
 
     let color =capture.get(x,y)
-    fill(color
-     rect(x,y,spacing,spacing/2)
+    //fill(color
+     //rect(x,y,spacing,spacing/2)
 
-  //eye(x,y,color,spacing/4)
+  eye(x,y,color,spacing/4)
 
           }
         }
