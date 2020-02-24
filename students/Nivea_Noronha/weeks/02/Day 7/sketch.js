@@ -1,7 +1,4 @@
-
-
-
-          // TenThousandX Assignment: 
+ // TenThousandX Assignment: 
           // Add to this code to create a drawing 
           // Note: do not delete anything
 
@@ -16,38 +13,31 @@
 
           function TenThousandX(){
 
-             /*background(16,87,83)
-             fill(25,0,0)
-             stroke(100)
+             background(214, 219, 223)
+             noFill()
+             stroke(0,50)
 
-             ellipse(50,50,100,100)
 
-             fill(255,0)
-             strokeWeight(5)
 
-             ellipse(65,65,100,100) */
+             // fill(255, 72, 72, 50)
+             // stroke(255, 72, 72, 50)
+             // ellipse (50, 50, 100, 100)
+
+             fill(255, 59, 255, 150)
               
               for ( var x = 0; x < 10000; x++ ){
 
-                //console.log(x)
-                //let a = random(width/2,width)
-                let a= sin(x/100)*width/2
-                let b= x/10000*height
-                //let b = random(height)
-                ellipse(a,b,a/10,a/10)
-                stroke(random(255,random(255,random(255,8,5))))
-                
-                ellipse(width-a,b,a/10,a/10)
-                stroke(77,0,0,77)
-                ellipse(b,height-a,a/10,a/10)
-                //ellipse(a,b,5,5)
-                //line(0,b,a,b)
+                  let a= sin(x/100)*width/2
+                let b= x/5000*height
 
                   // add code here 
+                  // console.log(x)
+                
+                  ellipse (a, b, a, a)
+                  ellipse (width-a, b, a/20, a)
+                  triangle(5000,b,a,b)
 
               }
 
             }
-
-
 

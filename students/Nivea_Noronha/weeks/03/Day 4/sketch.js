@@ -23,10 +23,10 @@ fill(minute()/60*255,hour()/60*255,second()/60*255)
 
 
   fill(255,87,0,velocityX)
-  ellipse(x,y,velocityX,velocityY) 
+  line(255) 
 
    fill(55,7,0,velocityX)
-  ellipse(x,y,velocityX/2,velocityY/2) 
+  line(255)
 
 
    
