@@ -1,53 +1,34 @@
+function setup(){
 
+  createCanvas(800,800)
+  TenThousandX()
 
+}
 
-          // TenThousandX Assignment: 
-          // Add to this code to create a drawing 
-          // Note: do not delete anything
+// Example: Alphabet
 
-          function setup(){
+function TenThousandX(t){
 
-             // do not change anything in setup 
+  let binary = '10'
+  noFill()
 
-              createCanvas(800,800)
-              TenThousandX()
+  for (var x =0; x < 10000; x++) {
 
-          }
-
-          function TenThousandX(){
-
-             /*background(16,87,83)
-             fill(25,0,0)
-             stroke(100)
-
-             ellipse(50,50,100,100)
-
-             fill(255,0)
-             strokeWeight(5)
-
-             ellipse(65,65,100,100) */
-              
-              for ( var x = 0; x < 10000; x++ ){
-
-                //console.log(x)
-                //let a = random(width/2,width)
                 let a= sin(x/100)*width/2
                 let b= x/10000*height
-                //let b = random(height)
-                ellipse(a,b,a/10,a/10)
-                stroke(random(255,random(255,random(255,8,5))))
-                
-                ellipse(width-a,b,a/10,a/10)
-                stroke(77'/,0,0,77)
-                ellipse(b,height-a,a/10,a/10)
-                //ellipse(a,b,5,5)
-                //line(0,b,a,b)
 
-                  // add code here 
+      let index = Math.floor(random(binary.length))
+      let letter = binary[index]
+      fill(random(255),random(10),random(122),97)
+    
+      textSize(Math.floor(random(width/75)))
+      text(letter,random(width),random(height))
 
-              }
 
-            }
+  }
+
+}
+
 
 
 
