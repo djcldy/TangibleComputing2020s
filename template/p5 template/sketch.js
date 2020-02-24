@@ -4,27 +4,77 @@ Gradient Array
 
 */
 
+var width = window.innerWidth,
+height = window.innerHeight,
+c = document.getElementById('c'),
+ctx = c.getContext('2d');
+c.width = width;
+c.height = height;
 
-function setup(){
+var paint = [];
 
-  createCanvas(800,800);
-  stroke(255)
+var totalPaints = width/50;
+var size = 20;
 
-}
-function draw(){
-
-  let numCol = 10
-  let numRow = 10
-  let stepX = width / numCol // height of box 
-  let stepY = height / numRow // width of box 
-   
-  background(255)
-
-  for (var col = 0; col < numRow; col++){
-    for (var row = 0; row < numCol; row++){
-      fill(col/numCol*255,row/numRow*255,mouseX/width*255)
-      rect(row*stepX,col*stepY,stepX,stepY) 
+function init(){
+    for (var i = 0; i < totalPaints; i++){
+        addPaint();
     }
-  }
-
+    setInterval( update, 40 );
 }
+
+function drawPaint(x,y,size, colour) {
+    ctx.beginPath();
+    ctx.arc(x, y, size ,0 , Math.PI*2, true);
+    ctx.closePath();
+	ctx.fillStyle=colour;
+	ctx.fill();
+}
+
+function update(){
+    for (var i = 0; i < paint.length; i++){
+        paint[i].y = paint[i].y + paint[i].v;
+        if (paint[i].y > height + 60){
+            paint.splice(i,1);
+            addPaint();
+        }
+        drawPaint(paint[i].x, paint[i].y, paint[i].s, paint[i].c);
+    }
+}
+
+function addPaint(){
+    //Try 50 times
+    var i = 50;
+    while(i > 0){
+        size = Math.random() * size + 10;
+        x = Math.random() * width;
+
+        found = false;
+
+        //Dont Allow drips ontop of each other (Overtaking drops destroy the prettyness)
+        for (var j = 0; j < paint.length; j++){
+            if ((x + size > paint[j].x) && (x - size < paint[j].x + paint[j].s)){
+                found = true;
+                break;
+            }
+
+            if ((x - size < paint[j].x) && (x + size > paint[j].x - paint[j].s)){
+                found = true;
+                break;
+            }
+        }
+
+        if (found == false){
+            paint.push({s:size,
+                       x:x,
+                       y:-60,
+                       v:(Math.random() * 2) + 2,
+                       c:'#' + (Math.random() * 0x313131 + 0xaaaaaa | 0).toString(16)});
+			i--;
+            return;
+        }
+    }
+}
+
+init();
+
