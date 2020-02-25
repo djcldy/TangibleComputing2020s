@@ -8,14 +8,14 @@
 function setup(){
 
   createCanvas(800,600);
-  stroke(255)
+  stroke(190)
 
 }
 
 function draw(){
-  background(255)
+  background(190)
 
-  let numCol = 20
+  let numCol = 40
   let numRow = 20
   let stepX = width / numCol // height of box 
   let stepY = height / numRow // width of box  
@@ -28,7 +28,7 @@ function draw(){
       push()
       translate(row*stepX,col*stepY)
       rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/600*TWO_PI) 
-      ellipse(0,0,stepX,stepY)
+      rect(0,0,stepX,stepY) 
       pop()
 
     }

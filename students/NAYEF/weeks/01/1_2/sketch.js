@@ -16,7 +16,7 @@ function draw(){
   background(255)
 
   let numCol = 20
-  let numRow = 20
+  let numRow = 30
   let stepX = width / numCol // height of box 
   let stepY = height / numRow // width of box  
 
@@ -28,7 +28,7 @@ function draw(){
       push()
       translate(row*stepX,col*stepY)
       rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/600*TWO_PI) 
-      ellipse(0,0,stepX,stepY)
+      ellipse(0,0,stepX,stepY) 
       pop()
 
     }
