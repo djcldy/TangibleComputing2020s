@@ -6,12 +6,13 @@ color: white;
 h2 {
   background-color: blue;
 color: white;
+
  
 }
 body{
 
-color: white;
- background-color: blue;
+color: black;
+ //background-color: blue;
   width: 100vw;
 
   font-family: 'helvetica';
@@ -21,13 +22,29 @@ color: white;
   align-items: center;
 }
 h2 {
-  background-color: blue;
+  //background-color: blue;
 color: white;
  
 
 
-}
 
+}
+h4 {
+  //background-color: blue;
+color: white;
+}
+body{
+
+color: black;
+ //background-color: blue;
+  width: 100vw;
+
+  font-family: 'helvetica';
+  /*color: #592C5F; */
+  padding: 2vw;
+  justify-content: center;
+  align-items: center;
+}
 
 #p5{
   position: relativtitle{

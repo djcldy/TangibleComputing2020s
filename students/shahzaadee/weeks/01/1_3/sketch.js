@@ -24,8 +24,9 @@
               
               for ( var x = 0; x < 10000; x+=5 ){
 
-                  // add code here 
                   console.log(x)
+                  let a = x
+                  let b = random()*2 
                   let 10 = sin(x/500)*20/2
                   let 10 = x/10000*20
                   fill(260,0,0,60)

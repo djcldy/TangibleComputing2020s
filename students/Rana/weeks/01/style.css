@@ -1,0 +1,43 @@
+/* div class based on id */
+
+
+body{
+background-color:#ff1476;
+	width: 100vw;
+
+	font-family: 'georgia';
+color: #B05883 ;
+	justify-content: center; 
+	align-items: center;
+
+}
+
+h1{font-size: 60px;
+	top: 100vw;
+color: #E6E278
+
+}
+h4{font-size: 50px;
+         top: -100px;                                                                                   
+color: #3C8EC4;
+}
+h2{color:#ebbaff;
+left:center;}
+
+
+p{
+color: #ebbaff
+;
+}
+#ccooz{
+	height: 670px;
+	align-items: center;
+}
+
+/*  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+  padding-right: 0;
+  overflow-x:hidden;*/

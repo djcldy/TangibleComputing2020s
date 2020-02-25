@@ -35,28 +35,49 @@ h1{
 
 #pony01{
 
-	width:57vh;
+	width:53vh;
 
 }
 
 #pony02{
 
-	width:38vh;
+	width:37vh;
 
 }
 
 #pony03{
 
-	width:67vh;
+	width:62vh;
 }
 
 #pony04{
 
-	width:49vh;
+	width:29vh;
 }
 
 
-#p5{
+#dragon{
+
+  width:59vh;
+}
+
+#dragon01{
+
+  width:79vh;
+}
+
+#snake{
+
+  width:79vh;
+}
+
+#flower{
+
+  width:79vh;
+}
+
+
+#p56
 	position: relative;
 }
 
