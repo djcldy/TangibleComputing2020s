@@ -35,7 +35,7 @@ function draw() { //mirror elements with girds, layered and sharp movement
         rect(x,y,res,res)
         rect(y,x,res,res)
         rect(y,x,res2,res2)
-        stroke(0,c[1],0)
+        stroke(c[1],0,c[2])
         rect(x,y,res,res)
 
     }
