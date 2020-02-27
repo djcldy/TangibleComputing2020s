@@ -2,12 +2,12 @@
 h1{
 	/* Style for "Organic La" */
 position: absolute;
-    top:0vh;
+    top:13vh;
     left:25vh;
 width: 804px;
 height: 80px;
 text-shadow: 0 2px 2px #8d6a6a;
-color: black;
+color: white;
 font-family: 'Noto Serif', serif;
 font-size: 60px;
 font-weight: 600;
@@ -19,7 +19,7 @@ h2{
 width: 804px;
 height: 80px;
 text-shadow: 0 2px 2px #8d6a6a;
-color: 13033F;
+color: pink;
 /*font-family: "consolas";*/
 font-size: 20px;
 font-weight: 400;
@@ -31,7 +31,7 @@ p{
 width: 804px;
 height: 80px;
 text-shadow: 0 2px 2px #8d6a6a;
-color: black;
+color: 13033F;
 /*font-family: "consolas";*/
 font-size: 15px;
 font-weight: 200;
@@ -41,22 +41,14 @@ margin-bottom:-5px;
 }
 
 a{
-	color:blue;
+	color:white;
 }
-
-#img1{
-	width:30%;
-}
-#img2{
-	width:30%;
-}
-
 .card {
 
     position: absolute;
-    top:20vh;
-    left:0vh;
-    background: pink;
+    top:30vh;
+    left:25vh;
+    /*background: white;*/
     padding:2%;
 
     /*
@@ -80,9 +72,18 @@ a{
 
 
 body{
-  
-   background:white;
 
+  /*background-image: url('../Images/Landing Page Offical.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  	/*<img src= "Images/Landing Page Offical.jpg">*/
+
+
+  background: #FFCBCB;
+
+
+  
 
  }
 
