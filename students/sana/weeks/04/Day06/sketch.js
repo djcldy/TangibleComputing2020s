@@ -1,57 +1,79 @@
 	
 	
-	function setup() {
-    createCanvas(800, 800);
-    
+let capture 
+          function setup(){
+              createCanvas(800,800)
+              capture=createCapture(VIDEO)
+              capture.hide()
+            
+}
+
+ function draw(){
+background(255)
+
+              //eye(50,50,[34,155,20],40)
+              //eye(100,100,[154,15,70],20)
+              //eye(200,25,[78,95,20],10)
+let spacing = (50)
+for (var x =0; x<width; x+= spacing){
+
+  for (var y =0; y<height; y+= spacing/2){
+    //if (randoum()>0.9)continue
+
+    let color =capture.get(x,y)
+    //fill(color
+     //rect(x,y,spacing,spacing/2)
+
+  eye(x,y,color,spacing/4)
+
+          }
+        }
+      }
+
+  function eye(x,y,color,r1){
+
+
+
+
+//let y =50
+//let r1=10
+//let r2=10
+fill(255)
+ ellipse(x,y,r1*4,r1*2)// white
+fill(color)
+ ellipse(x,y,r1*2,r1*2)// iris 
+ fill(20)
+ ellipse(x,y,r1,r1)//pupil
+ fill(224)
+ ellipse(x+r1/2,y-r1/2,r1/2,r1/2)//pupil
+
+
  
-}
-function draw() {
-	
-background (0);
-	let Hr = hour ()
-	let Mn = minute()
-	let Sc = second ()
-push();
 
-	strokeWeight (6)
-	stroke (100,55,119)
-	fill(17,144,230)
-	 rect(width/7, Sc*5, height/2, Hr, 10, Mn) 
-	//push()
-	translate (100,100)
-	
-	strokeWeight (5)
-	stroke (10,45,19)
-	fill (34, 44, 150)
-	rect (width/6, Sc*10, height/3, Hr, 10, Mn) 
-	//push ()
-	translate (100, 100)
-	
-	strokeWeight (4)
-	stroke (190,5,11)
-	fill (99, 176, 177)
-	rect (width/5, Sc*15, height/4, Hr, 10, Mn) 
-	//push ()
-	translate (100, 100)
-	
-	strokeWeight (3)
-	stroke (44,55,99)
-	fill (66, 10, 44)
-	rect(width/4, Sc*20, height/5, Hr, 10, Mn)
-	//push ()
-	translate (100, 100)
-	
-	strokeWeight (2)
-	stroke (50,75,89)
-	fill (90, 160, 80)
-	rect(width/3, Sc*25, height/6, Hr, 10, Mn)
-	//push ()
-	translate (100, 100)
+              }
 
-	strokeWeight (1)
-	stroke (210,55,9)
-	fill (254, 112, 210)
-	rect (width/2, Sc*30, height/7, Hr, 10, Mn)
-	pop ()
+// function draw() {
 
-}
+//   // background(255);
+
+//   for (var x = 0; x < width; x += res) {
+
+//     let s = second()
+//     let diff = Math.abs(s/60 - x/width)
+
+//     if (diff > 0.1) continue
+
+//     for (var y = 0; y < height; y += res){
+
+//         let c = capture.get(x,y) // gets pixel color of canvas returns [r,g,b,a]
+//         fill(c[0],0,c[2])
+//         rect(x,y,res,res)
+//         stroke(0,c[1],0)
+//         rect(x,y,res,res,10)
+
+//     }
+
+
+//   }
+
+// }
