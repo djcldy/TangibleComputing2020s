@@ -1,56 +1,43 @@
-/*
-
-Gradient Array
-
-*/
-
 
 
 function setup(){
 
-  createCanvas(800,800,WEBGL);
-  background(0)
+  createCanvas(800, 800);
 
 
 }
 
 
-function draw(){
+function moonLight(x,y,r1){
 
-  drawIceCream(second(),100,1)
-  drawIceCream(minute(),200,2)
-  drawIceCream(hour(),300,3)
-
-  if (second()>58){
-    
-
-
-  }
-
-}
-
-function drawIceCream(time,posX,radius){
-
-  let x = posX + sin(time)*20
-  let y = height- time/60*height + random(-3,3)
-  let alpha = time/60*255
-  fill(alpha,0,255-alpha,alpha)
-  crazyHeart(x,y,time*radius,time*radius)
-
-}
-
-function crazyHeart(x,y,radius,radius){
-
-  push()
+  
   translate(x,y)
 
-  rotate(random())
-  // noStroke()
-  cylinder(radius,radius)
-  cylinder(radius/2,0,radius/2,y,0,radius/2)
-  circle(radius/2,0, radius/2,y,0,radius/2);
-  circle(radius/2,0, radius/2,y,0,radius/2);
-   cylinder(radius,radius)
-  pop()
+fill(245)
+  ellipse(x,y,r1*30,r1*30);
+  fill(255,9,30)
+  ellipse(x,y-2,r1*20,r1/2);
+   fill(164,69,130)
+    ellipse(x,y+6,r1*60,r1/2);
+ ellipse(x,y-2,r1*20,r1/2);
+   fill(64,9,110)
+    ellipse(x-80,y+40,r1*60,r1/2);
+fill(64,9,110)
+    ellipse(x-80,y+40,r1*60,r1/2);
+    fill(69,90,110)
+    ellipse(x-150,y+100,r1*60,r1);
+  }
+function draw() {
+      background(0) 
+  let second=60
+  
+  push();
+  translate(width/2, height/2);
+  moonLight(frameCount/second*20,13,12,49,20+(frameCount/4));
+  pop();
+  
 
+             
+         
 }
+
