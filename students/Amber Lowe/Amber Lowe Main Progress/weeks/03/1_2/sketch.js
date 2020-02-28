@@ -24,7 +24,7 @@ background(234)
 
   //for (var y = 0; y < height; y+= spacing/2){
 
-  	let y = second()/60*height
+  	let y = second()/60*height // after time start capturing color
 
   	let color = capture.get(x,y)
 
