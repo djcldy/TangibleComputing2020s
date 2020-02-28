@@ -3,7 +3,7 @@
 let t =0
 function setup() {
   createCanvas(800, 800);
-recMode(CENTER)
+rectMode(CENTER)
 noStroke()
 
    
@@ -11,12 +11,13 @@ noStroke()
 
 
 //function mario(x,y,color,r1) {
-  function draw (){
+  function mario (X,y){
   background(255);
   fill(255,0,0)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
-  rect(0,0,25,25)
+  rect(0,0,100,25)
+  rect(x-10,0,100,25)
   pop()
 
    fill(0,0,255)
