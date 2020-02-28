@@ -24,7 +24,7 @@ function draw(){
 
     for (var row = 0; row < numCol; row++){
     
-      fill(col/numCol*255,row/numRow*255,mouseX/width*255)   
+      fill(numCol*255,row/numRow*255,mouseX/width*255)   
       push()
       translate(row*stepX,col*stepY)
       rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/1000*TWO_PI) 
