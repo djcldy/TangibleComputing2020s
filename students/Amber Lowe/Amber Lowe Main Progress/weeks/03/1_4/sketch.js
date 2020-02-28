@@ -26,12 +26,12 @@ function fish(){
 
   let radius = 10 
 
-  let s = second()
-  let x = (mouseX,s/30)
+  //let s = second()
+  let x = mouseX
   let y = mouseY 
   
 
-  let velocityX = x - xPrev
+  let velocityX = x + xPrev
   let velocityY = y - yPrev
 
   fill(minute()/60*70,hour()/60*60,second()/60*255)
