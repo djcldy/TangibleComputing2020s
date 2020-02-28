@@ -7,7 +7,7 @@
 
 function setup(){
   
-  fill(0)
+ 
   createCanvas(1200,600);
   stroke(0)
 

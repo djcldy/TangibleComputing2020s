@@ -38,7 +38,7 @@ background(234)
 
 }
 }
-}
+}	
 
 
 function eye(x,y,color,r1){

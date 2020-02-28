@@ -2,8 +2,9 @@ let capture //global variable
 
 function setup(){
 
-  createCanvas(500,500);
+  createCanvas(600,400);
   capture = createCapture(VIDEO)
+  capture.hide();
  
 
 

@@ -1,7 +1,7 @@
 let capture 
+//neon pink girds , diagonal and incremental movement 
 
-
-function setup(){
+function setup(){ 
 
   createCanvas(500,500)
   capture = createCapture(VIDEO)

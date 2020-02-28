@@ -1,35 +1,44 @@
-let capture //global variable
+let capture;
+let res = 10
 
-function setup(){
-
-  createCanvas(500,500);
-  capture = createCapture(VIDEO)
- 
-
-
+function setup() {
+  createCanvas(800, 400);
+  capture = createCapture(VIDEO);
+  capture.size(800, 400);
+  rectMode(CENTER)
+  capture.hide();
+  stroke(255)
+  image(capture,0,0)
+  // noStroke()/
 }
 
-function draw(){
+function draw() { //mirror elements with girds, layered and sharp movement 
 
-background(234)
-  //eye(50,50,[34,155,215],50)
-  //eye(100,100,[255,155,215],5)
-  //eye(200,25,[255,155,215],5)
-  //eye(200,25,[34,0,215],10)
+  // background(255);
 
-  let spacing = 50 //local vairable (scoped locally)
+  for (var x = 0; x < width; x += res) {
 
-  for (var x = 0; x < width; x+= spacing){
+    let s = second()
+    let diff = Math.abs(s/60 - x/height)
+    let riff = Math.abs(s/58 - y/width)
 
-  for (var y = 0; y < height; y+= spacing/2){
 
-  	let color = capture.get(x,y)
+    if (diff > 0.1) continue
+    if (riff < 0.1) continue	
 
-  	rect(x,y,spacing,spacing/2)
+    for (var y = 0; y < width; y += res){
+
+        let c = capture.get(x,y) // gets pixel color of canvas returns [r,g,b,a]
+    
+        fill(c[1],0,c[2])
+        rect(x,y,res,res)
+        rect(y,x,res,res)
+        stroke(0,c[1],0)
+        rect(x,y,res,res)
+
+    }
+
+
+  }
 
 }
-}
-}
-
-
-

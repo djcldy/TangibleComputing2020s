@@ -1,5 +1,8 @@
 let capture //global variable
 
+let xPrev = 0 
+let yPrev = 0
+
 function setup(){
 
   createCanvas(500,500);
@@ -9,27 +12,29 @@ function setup(){
 
 }
 
+
 function draw(){
 
-background(234)
-  //eye(50,50,[34,155,215],50)
-  //eye(100,100,[255,155,215],5)
-  //eye(200,25,[255,155,215],5)
-  //eye(200,25,[34,0,215],10)
+  let radius = 5 
 
-  let spacing = 50 //local vairable (scoped locally)
+  let x = mouseX 
+  let y = mouseY 
 
-  for (var x = 0; x < width; x+= spacing){
+  let velocityX = x - xPrev
+  let velocityY = y - yPrev
 
-  for (var y = 0; y < height; y+= spacing/2){
+  fill(minute()/60*255,hour()/60*255,second()/60*255)
 
-  	let color = capture.get(x,y)
 
-  	rect(x,y,spacing,spacing/2)
+  ellipse(x,y,50,50)
+
+  fill(0)
+  ellipse(x,y,25,25)
+
+  ellipse(x-5,y-5,5,5)
+  ellipse(x+5,y-5,5,5)
+
+  xPrev = x 
+  yPrev = y
 
 }
-}
-}
-
-
-
