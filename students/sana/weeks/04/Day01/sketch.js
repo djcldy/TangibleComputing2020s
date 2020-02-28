@@ -1,52 +1,41 @@
-/*
-
-Gradient Array
-
-*/
-
-
-
 function setup(){
+              createCanvas(800,800)
+              background(255)
+             
+let spacing = 80
+for (var x =0; x<width; x+= spacing){
 
-  createCanvas(800,800);
-  background(255)
+  for (var y =0; y<height; y+= spacing){
 
-
+  flower(x,y,[random(255),random(255),random(255)],random(2,12))
+}
 }
 
+          }
 
-function draw(){
+          function flower(x,y,color,r1){
 
-  wormWorm(second(),200,1)
-  wormWorm(minute(),400,2)
-  wormWorm(hour(),600,3)
 
-  if (second()>58){
-    background(65)
-  }
 
-}
+fill(145,20,129)
+ ellipse(x+r1*2,y,r1*6,r1*4)// white
+ fill(69,112,55)
+ ellipse(x-r1*2,y,r1*6,r1*4)
+ fill(80,113,241)
+ ellipse(x,y-r1*2,r1*6,r1*3,r1*4)
+ fill(187,33,166)
+ ellipse(x,y+r1*2,r1*6,r1*4,r1*5)
+ fill(85,40,33)
+ ellipse(x,y,r1*4,r1*6,r1*2)
+  fill(85,17,220)
+  ellipse(x+r1*2,y,r1*4,r1*2)
+  fill(162,147,150)
+  ellipse(x-r1*2,y,r1*4,r1*2)
+ fill(color)
+ ellipse(x,y,r1*2,r1*2)
+ 
 
-function  wormWorm(time,posX,radius){
 
-  let x = posX + sin(time)*20
-  let y = height-time/60*height + random(-10,5)
-  let alpha = time/60*255
-  fill(alpha,0,255-alpha,alpha)
-  PaintWorm(x,y,time*radius,time*radius)
+ 
 
-}
-
-function PaintWorm(x,y,radius,radius){
-
-  push()
-  translate(x,y)
-
-  rotate(random())
-   noStroke()
-  rect(radius/4,0,radius/2,10,y+50)
- rect(radius/2,0,radius/4,12,y+2)
- triangle(radius/4,0, radius/4,x,y-10);
-  pop()
-
-}
+              }
