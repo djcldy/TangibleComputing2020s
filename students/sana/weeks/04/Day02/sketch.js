@@ -1,8 +1,19 @@
 
 
-let timer = 0
+
 function setup() {
   createCanvas(800, 800);
+  background (255)
+            
+              let spacing = 100
+for (var x =0; x<width; x+= spacing){
+
+ for (var y =0; y<height; y+= spacing){
+cat(x,y,[random(255)],(2,18))
+     
+   
+}
+}
   
 }
 
@@ -61,20 +72,6 @@ arc(x+50,y-105,r1*2,100,0,4)
               }
                        
           
-              function draw(){
-              let spacing = 50
-for (var x =0; x<width; x+= spacing){
+    
 
- for (var y =0; y<height; y+= spacing){
-//      //cat(x,y,[random(255),random(255),random(255)],random(2,12))
-     
-   if (millis() >= 300+timer) {
-
- cat(x,y,[random(255),random(255),random(255)],10,2)
-   
-    timer = millis();
-}
-}
-}
-}
   
