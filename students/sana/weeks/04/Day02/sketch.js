@@ -9,7 +9,7 @@ function setup() {
 for (var x =0; x<width; x+= spacing){
 
  for (var y =0; y<height; y+= spacing){
-cat(x,y,[random(255)],(2,18))
+cat(x,y,[random(255)],random(2,12))
      
    
 }
