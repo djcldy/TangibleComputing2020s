@@ -1,5 +1,5 @@
 	
-	
+var img;	
 let capture 
           function setup(){
               createCanvas(800,800)
@@ -25,9 +25,15 @@ for (var x =0; x<width; x+= spacing){
      //rect(x,y,spacing,spacing/2)
 
   eye(x,y,color,spacing/4)
+  image(img,0,0);
+
 
           }
         }
+      }
+      function preload(){
+      	img=loadImage("sana.jpg");
+      	
       }
 
   function eye(x,y,color,r1){
