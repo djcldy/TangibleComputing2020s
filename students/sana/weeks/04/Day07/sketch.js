@@ -11,62 +11,66 @@ let capture
 function setup() { 
   createCanvas(700, 700);
   frameRate(1000);
- capture=createCapture(VIDEO)
-              capture.hide()
+ capture=createCapture(VIDEO);
+
+              capture.hide();
             
 } 
 
 
-function rainbowColor(x,y,color,r1) {
+function rainbowColor(x,y,color,radius) {
       
   let Hr = hour();
   let Mn= minute();
   let Sc = second();
    
-}
-
-function draw() { 
 
 background(255)
 
-              //eye(50,50,[34,155,20],40)
-              //eye(100,100,[154,15,70],20)
-              //eye(200,25,[78,95,20],10)
 let spacing = (50)
-for (var x =0; x<width; x+= spacing){
+ for (var x =0; x<width; x+= spacing){
 
-  for (var y =0; y<height; y+= spacing/2){
-    //if (randoum()>0.9)continue
+   for (var y =0; y<height; y+= spacing/2){
+  
 
-    let color =capture.get(x,y)
-    //fill(color
-     //rect(x,y,spacing,spacing/2)
+ let color =capture.get(x,y)
+   
 
   rainbowColor(x,y,color,spacing/4)
+   image(capture, 0, 0, 320, 240);
+  filter(INVERT);
+}
 
- push()
+ }
+ }
+
+function draw() { 
+ 
  translate(100,100)
-  let alpha = time/60*255
+  let rainbowColor= time/60*255
   let Sc = second();
-     stroke(90,50,154,10)
-     fill(alpha,0,255-alpha,alpha)
   let radius = map(Sc,0,60,0,500)
- circle(400, 400, radius);
+  stroke(90,50,154,10)
+     fill(34,29,10,100)
+  circle(400, 400, radius);
 strokeWeight(4);
      stroke(66,5,55,100)
-     fill(alpha,0,255-alpha,alpha)
+     fill(34,67,90,100)
  circle(300,300, radius);
 strokeWeight(2);
      stroke(40,75,15,100)
-     fill(alpha,0,255-alpha,alpha)
+     fill(232,49,100,18)
  circle(200,200, radius);
 strokeWeight(1);
      stroke(80,5,45,140)
-     fill(alpha,0,255-alpha,alpha)
+     fill(85,49,30,100)
  circle(100,100, radius);
-pop()
+
  
 
 }  
+
+
+
 
   
