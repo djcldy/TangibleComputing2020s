@@ -34,7 +34,7 @@ function fish(){
   let velocityX = x + xPrev
   let velocityY = y - yPrev
 
-  fill(minute()/60*70,hour()/60*60,second()/60*255)
+  fill(second()/60*255,hour()/60*60,minute()/60*255)
 
   rotate(x*2)
   ellipse(x,y,20,50)
