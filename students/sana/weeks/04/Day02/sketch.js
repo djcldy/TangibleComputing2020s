@@ -1,21 +1,24 @@
 
 
+let a = 0.0;
+let s = 0.0;
+
 
 function setup() {
   createCanvas(800, 800);
-  background (255)
+  //background (255)
             
-              let spacing = 100
-for (var x =0; x<width; x+= spacing){
+         //     let spacing = 100
+//for (var x =0; x<width; x+= spacing){
 
- for (var y =0; y<height; y+= spacing){
-cat(x,y,[random(255),random(255),random(255)],random(1,20))
+// for (var y =0; y<height; y+= spacing){
+//cat(x,y,[random(255),random(255),random(255)],random(1,20))
      
    
 }
-}
+//}
   
-}
+//}
 
 function cat(x,y,color,r1) {
 
@@ -70,8 +73,19 @@ arc(x+50,y-105,r1*2,100,0,4)
 
  
               }
-                       
+      function draw() {
+  background(102);
+
+  //Slowly increase 'a' and then animate 's' with
+  //a smooth cyclical motion by finding the cosine of 'a'
+  a = a + 0.04;
+  s = cos(a) * 2;                 
           
-    
+      translate(width / 2, height / 2);
+  scale(s);
+  fill(color);
+
+cat(0,0,50,50)
+}
 
   
