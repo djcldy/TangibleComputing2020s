@@ -1,5 +1,4 @@
 let capture 
-//neon pink girds , diagonal and incremental movement 
 
 function setup(){ 
 
