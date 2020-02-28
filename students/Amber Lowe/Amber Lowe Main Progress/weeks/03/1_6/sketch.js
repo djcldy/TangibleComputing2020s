@@ -12,8 +12,14 @@ function setup() {
   image(capture,0,0)
   // noStroke()/
 }
+function draw(){
 
-function draw() { //mirror elements with girds, layered and sharp movement 
+	diagonalarray()
+
+}
+
+
+function diagonalarray() { //mirror elements with girds, layered and sharp movement 
 
   // background(255);
 
@@ -21,7 +27,7 @@ function draw() { //mirror elements with girds, layered and sharp movement
 
     let s = second()
     let diff = Math.abs(s/60 - x/height)
-    let riff = Math.abs(s/58 - y/width)
+    let riff = Math.abs(s/58 - y*width)
 
 
     if (diff > 0.1) continue

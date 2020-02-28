@@ -26,7 +26,8 @@ function fish(){
 
   let radius = 10 
 
-  let x = mouseX
+  let s = second()
+  let x = (mouseX,s/30)
   let y = mouseY 
   
 

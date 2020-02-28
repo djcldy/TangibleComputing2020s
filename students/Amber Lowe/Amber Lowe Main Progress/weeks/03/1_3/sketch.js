@@ -18,7 +18,7 @@ background(234)
   //eye(200,25,[255,155,215],5)
   //eye(200,25,[34,0,215],10)
 
-  let spacing = 100 //local vairable (scoped locally)
+  let spacing = 10 //local vairable (scoped locally)
 
   for (var x = 0; x < width; x+= spacing){
 
@@ -26,7 +26,7 @@ background(234)
 
   	let color = capture.get(x,y)
 
-  	pacman(x,y,color,spacing/5)
+  	pacman(x,y,color,spacing*10)
 
 }
 }

@@ -12,7 +12,12 @@ function setup() {
   // noStroke()/
 }
 
-function draw() { //mirror elements with girds, layered and sharp movement 
+function draw(){
+
+	mirror()
+}
+
+function mirror() { //mirror elements with girds, layered and sharp movement 
 
   // background(255);
 
