@@ -3,7 +3,7 @@ let capture //global variable
 let xPrev = 0 
 let yPrev = 0
 
-function setup(){
+function setup(){  //neon blues and pinks randomized growth movement 
 
   createCanvas(500,500);
   capture = createCapture(VIDEO)
@@ -16,6 +16,7 @@ function setup(){
 function draw(){
 
 	fish()
+	fish2()
 
 
 
@@ -26,15 +27,15 @@ function fish(){
 
   let radius = 10 
 
-  let s = second()
-  let x = (mouseX,s/30)
+  //let s = second()
+  let x = mouseX
   let y = mouseY 
   
 
   let velocityX = x - xPrev
   let velocityY = y - yPrev
 
-  fill(minute()/60*70,hour()/60*60,second()/60*255)
+  fill(second()/60*255,hour()/60*60,minute()/60*255)
 
   rotate(x*2)
   ellipse(x,y,20,50)
@@ -44,8 +45,7 @@ function fish(){
   noStroke()
   //fill(255,0,0)
 
-  fill(minute()/60*30,hour()/60*60,second()/60*25)
-  ellipse(x,y,12.5,25)
+
 
   translate(x,y)
   push()
@@ -55,5 +55,18 @@ function fish(){
 
   xPrev = x 
   yPrev = y
+
+}
+
+function fish2(){
+
+  let x = mouseX
+  let y = mouseY 
+  let velocityX = x + xPrev
+  let velocityY = y + yPrev
+    
+  fill(second()/60*255,hour()/60*60,minute()/60*244)
+  ellipse(x,y,12.5,25)
+
 
 }

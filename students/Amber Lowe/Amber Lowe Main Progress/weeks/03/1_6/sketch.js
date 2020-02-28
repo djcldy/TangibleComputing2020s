@@ -33,9 +33,9 @@ function diagonalarray() { //mirror elements with girds, layered and sharp movem
     if (diff > 0.1) continue
     if (riff < 0.1) continue	
 
-    for (var y = 0; y < width; y += res2){
+    for (var y = sin(20); y < width; y += res2){
 
-        let c = capture.get(x,y) // gets pixel color of canvas returns [r,g,b,a]
+        let c = capture.get(x,y/2) // gets pixel color of canvas returns [r,g,b,a]
 
         rotate(x/25)
     
