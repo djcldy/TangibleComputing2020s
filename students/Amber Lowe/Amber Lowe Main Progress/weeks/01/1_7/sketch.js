@@ -50,8 +50,6 @@
                   // add code here 
                   //console.log(x);
                   let a = random(0,1000)
-                  //let a= sin(x/100)*width/2
-                  //let b= x/10000*height
                   let b = random(1,2000)
                   ellipse(a,b,10,10)
                   ellipse(width-a,b,a/10,a/10)

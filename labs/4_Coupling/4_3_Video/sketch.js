@@ -1,7 +1,6 @@
 let capture 
 
-
-function setup(){
+function setup(){ 
 
   createCanvas(500,500)
   capture = createCapture(VIDEO)

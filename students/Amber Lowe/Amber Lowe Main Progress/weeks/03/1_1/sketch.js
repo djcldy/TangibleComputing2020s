@@ -27,10 +27,11 @@ background(234)
   //eye(100,100,[255,155,215],5)
   //eye(200,25,[255,155,215],5)
   //eye(200,25,[34,0,215],10)
+  let x = second()/60*width
+  let spacing = (50)
+  
 
-  let spacing = 50
-
-  for (var x = 0; x < width; x+= spacing){
+  //for (var x = 0; x < width; x+= spacing){
 
   for (var y = 0; y < height; y+= spacing){
 
@@ -38,7 +39,7 @@ background(234)
 
 }
 }
-}
+	
 
 
 function eye(x,y,color,r1){
@@ -47,6 +48,7 @@ function eye(x,y,color,r1){
 	//let y = 50
 	//let r1 = 10
 	//let r2 = 10
+
 
 	noStroke()
 

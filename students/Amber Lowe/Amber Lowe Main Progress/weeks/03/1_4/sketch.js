@@ -1,9 +1,13 @@
 let capture //global variable
 
-function setup(){
+let xPrev = 0 
+let yPrev = 0
+
+function setup(){  //neon blues and pinks randomized growth movement 
 
   createCanvas(500,500);
   capture = createCapture(VIDEO)
+  capture.hide();
  
 
 
@@ -11,25 +15,58 @@ function setup(){
 
 function draw(){
 
-background(234)
-  //eye(50,50,[34,155,215],50)
-  //eye(100,100,[255,155,215],5)
-  //eye(200,25,[255,155,215],5)
-  //eye(200,25,[34,0,215],10)
+	fish()
+	fish2()
 
-  let spacing = 50 //local vairable (scoped locally)
 
-  for (var x = 0; x < width; x+= spacing){
 
-  for (var y = 0; y < height; y+= spacing/2){
-
-  	let color = capture.get(x,y)
-
-  	rect(x,y,spacing,spacing/2)
-
-}
-}
 }
 
 
+function fish(){
 
+  let radius = 10 
+
+  //let s = second()
+  let x = mouseX
+  let y = mouseY 
+  
+
+  let velocityX = x - xPrev
+  let velocityY = y - yPrev
+
+  fill(second()/60*255,hour()/60*60,minute()/60*255)
+
+  rotate(x*2)
+  ellipse(x,y,20,50)
+
+  //fill(255)
+  ellipse(x,y,25,25)
+  noStroke()
+  //fill(255,0,0)
+
+
+
+  translate(x,y)
+  push()
+  //fill(0)
+  rect(x-5,y-5,5,5)
+  rect(x+5,y-5,5,5)
+
+  xPrev = x 
+  yPrev = y
+
+}
+
+function fish2(){
+
+  let x = mouseX
+  let y = mouseY 
+  let velocityX = x + xPrev
+  let velocityY = y + yPrev
+    
+  fill(second()/60*255,hour()/60*60,minute()/60*244)
+  ellipse(x,y,12.5,25)
+
+
+}

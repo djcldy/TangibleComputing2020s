@@ -2,8 +2,9 @@ let capture //global variable
 
 function setup(){
 
-  createCanvas(500,500);
+  createCanvas(600,400);
   capture = createCapture(VIDEO)
+  capture.hide();
  
 
 
@@ -21,18 +22,20 @@ background(234)
 
   for (var x = 0; x < width; x+= spacing){
 
-  for (var y = 0; y < height; y+= spacing/2){
+  //for (var y = 0; y < height; y+= spacing/2){
+
+  	let y = second()/60*height // after time start capturing color
 
   	let color = capture.get(x,y)
 
-  	eye(x,y,color,spacing/5)
+  	petal(x,y,color,spacing/2)
 
 }
 }
-}
 
 
-function eye(x,y,color,r1){
+
+function petal(x,y,color,r1){
 
 	//let x = 200
 	//let y = 50
@@ -42,15 +45,16 @@ function eye(x,y,color,r1){
 	noStroke()
 
     fill(255)
-	ellipse(x,y,r1*4.5,r1*2) //x,y,r1,r2
+	ellipse(x,y,r1*2,r1*2)//x,y,r1,r2
 	
 	fill(color)
 	ellipse(x,y,r1*2,r1*2) // iris
 	
-	fill(0)
-	ellipse(x,y,r1/4,r1/4) // pupil 
+	rotate(y/2)
+	fill(255,4,40)
+	arc(x,y,r1,r1,0, PI + HALF_PI) // pupil 
 
-    noStroke()
+    //noStroke()
 	fill(255)
 	ellipse(x+r1/2,y-r1/5,r1/2,r1/2) // reflection 
 
