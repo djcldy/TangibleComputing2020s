@@ -1,7 +1,4 @@
-
-
-              
-
+      
   var time = 0;
 
 let capture 
@@ -13,12 +10,12 @@ function setup() {
   frameRate(1000);
  capture=createCapture(VIDEO);
 
-              capture.hide();
+ capture.hide();
             
 } 
 
 
-function rainbowColor(x,y,color,radius) {
+function selfieTime(x,y,color,radius) {
       
   let Hr = hour();
   let Mn= minute();
@@ -36,18 +33,19 @@ let spacing = (50)
  let color =capture.get(x,y)
    
 
-  rainbowColor(x,y,color,spacing/4)
-   image(capture, 0, 0, 320, 240);
-  filter(INVERT);
-}
+ selfieTime(x,y,color,spacing/4)
+ 
+  }
 
  }
  }
 
 function draw() { 
- 
+   image( capture, 0, 0,700, 700);
+  filter(INVERT);
+
  translate(100,100)
-  let rainbowColor= time/60*255
+  let selfieTime= time/60*255
   let Sc = second();
   let radius = map(Sc,0,60,0,500)
   stroke(90,50,154,10)
@@ -65,9 +63,10 @@ strokeWeight(1);
      stroke(80,5,45,140)
      fill(85,49,30,100)
  circle(100,100, radius);
-
  
-
+if(frameCount % 60 == 0){
+    background(random(256), random(256), random(256));
+}
 }  
 
 
