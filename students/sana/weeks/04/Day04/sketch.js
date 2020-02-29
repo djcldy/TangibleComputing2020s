@@ -11,11 +11,11 @@ function setup(){
 function draw() {
 
   background(0) 
-  // let second=60 // don't need this 
+  let second=60 // don't need this 
   push()
   translate(width/2, height/2);
-  moonLight(sin(frameCount/100)*width/4,sin(frameCount/20)*height/8,second()/4) // SP: another way
-  // moonLight(frameCount/second*20,13,12,49,20+(frameCount/4))
+  // moonLight(sin(frameCount/100)*width/4,sin(frameCount/20)*height/8,second()/4) // SP: try this another way
+  moonLight(frameCount/second*20,13,12,49,20+(frameCount/4))
   pop()
   
 
@@ -28,7 +28,7 @@ function moonLight(x,y,r1){
 
   
   translate(x,y)
-  rotate(frameCount/100) // SP Added some rotation
+  // rotate(frameCount/100) // SP try some rotation
   fill(245)
   rect(x,y,r1*30,r1*30);
   fill(255,9,30)
