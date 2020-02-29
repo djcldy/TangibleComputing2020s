@@ -1,38 +1,36 @@
-
-
 let t =0
-function setup() {
-  createCanvas(800, 800);
-rectMode(CENTER)
-noStroke()
 
-   
+
+function setup() {
+  
+  createCanvas(800, 800);
+  rectMode(CENTER)
+  noStroke()
+
 }
 
 
-  function draw(){
+function draw(){
+
   background(255);
-  fill(245,0,0)
-  push()
-  translate(sin(t)*width/4+width/2,height*0.2)
-  rect(0,0,220,45)
+
+  drawMario(t) // SP: organize into smaller functions. a function should be 10-20 lines maximum
+
   pop()
-   fill(255,0,0)
-  push()
-  translate(sin(t)*width/4+width/2,height*0.2)
-  rect(0,10,250,55)
-  pop()
-   fill(255,0,44)
-  push()
-  translate(sin(t)*width/4+width/2,height*0.2)
-  rect(0,20,350,25)
-  pop()
-   fill(255,50,0)
-  push()
-  translate(sin(t)*width/4+width/2,height*0.2)
-  rect(0,55,400,50)
-  pop()
-   fill(255,10,0)
+  t+=0.01
+
+
+}
+
+function drawMario(t){
+
+  // SP: right now this is impossible to understand and difficult to edit
+  // SP: break down into smaller functions 
+
+  drawHat(t)
+  // can you fix the rest of the code by making smaller functions
+
+  fill(255,10,0)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(0,60,450,50)
@@ -47,13 +45,13 @@ noStroke()
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(-60,120,700,50)
   pop()
-fill(0)
+  fill(0)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(-60,200,700,200)
   pop()
 
-fill(160)
+  fill(160)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(-10,150,750,40)
@@ -83,14 +81,12 @@ fill(160)
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(50,280,400,90)
   pop()
-
   fill(180)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(55,340,600,60)
   pop()
-
-fill(180)
+  fill(180)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   rect(-50,360,700,50)
@@ -121,7 +117,7 @@ fill(180)
   translate(sin(t)*width/4+width/2,height*0.2)
   square(-150,170,200,300,10,10)
   pop()
-   fill(0)
+  fill(0)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   square(-150,350,200,300,10,10,45)
@@ -153,7 +149,7 @@ fill(180)
   pop()
   fill(0)
   push()
-   fill(0)
+  fill(0)
   push()
   translate(sin(t)*width/4+width/2,height*0.2)
   square(-300,350,200,300,10,10,45)
@@ -163,71 +159,50 @@ fill(180)
   translate(sin(t)*width/4+width/2,height*0.2)
   square(-320,200,280,700,10,0,115)
   pop()
- 
 
-t+=0.01
 }
 
-//face
-//  fill(255)
-//  stroke(27)
-//  strokeWeight(2)
-//  ellipse(x,y,r1*18,r1*13)
-//  //eyes
-//  fill(255)
-//  ellipse(x+r1*5,y,r1*4,r1)
-//  fill(255)
-//  ellipse(x-r1*5,y,r1*4,r1)
-//  //eye pupil
-//  fill(34,175,150)
-// ellipse(x-r1*5,y,r1,r1)
-//  fill(34,175,150)
-// ellipse(x+r1*5,y,r1,r1)
-//  fill(255)
-// ellipse(x-r1*5,y,r1/2,r1)
-//  fill(255)
-// ellipse(x+r1*5,y,r1/2,r1)
-// //nose
-//  fill(0)
-//  stroke(0)
-// ellipse(x,y+18,r1*2,8)
-// //wiskes
-// stroke(39)
-// noFill()
-// arc(x-26,y+16,r1*2,20,0,3)
-// stroke(39)
-// noFill()
-// arc(x-26,y+24,r1*2,20,0,3)
-// stroke(39)
-// noFill()
-// arc(x+26,y+16,r1*2,20,0,3)
-// stroke(39)
-// noFill()
-// arc(x+26,y+24,r1*2,20,0,3)
 
-// //mouth
-// fill(37,50,99)
-// stroke(22,59,20)
-// arc(x,y+40,r1*2,-24,1,-4,-6)
-// // ears
-// fill(10)
-// stroke(0)
-// arc(x-50,y-105,r1*2,100,0,4)
-// fill(10)
-// stroke(0)
-// arc(x+50,y-105,r1*2,100,0,4)
+function drawHat(t){
 
- 
-//               }
-      //function draw() {
-     
-  //background(0)
+  // this code is written inefficiently - you only need to call push() and pop() once 
+  // everything is moving together
 
-             
-          
-    // translate(width / 2, height / 2);
+  // SP: Correct way
 
+  push()
+  fill(245,0,0)
+  translate(sin(t)*width/4+width/2,height*0.2)
+  rect(0,0,220,45)
+  fill(255,0,0)
+  rect(0,10,250,55)
+  fill(255,0,44)
+  rect(0,20,350,25)
+  fill(255,50,0)
+  rect(0,55,400,50)
+  pop()
 
-//mario(frameCount,10,11,18,13+(frameCount/2));
-//}
-  
+  // SP: works but inefficient
+
+  // fill(245,0,0)
+  // push()
+  // translate(sin(t)*width/4+width/2,height*0.2)
+  // rect(0,0,220,45)
+  // pop()
+  // fill(255,0,0)
+  // push()
+  // translate(sin(t)*width/4+width/2,height*0.2)
+  // rect(0,10,250,55)
+  // pop()
+  //  fill(255,0,44)
+  // push()
+  // translate(sin(t)*width/4+width/2,height*0.2)
+  // rect(0,20,350,25)
+  // pop()
+  //  fill(255,50,0)
+  // push()
+  // translate(sin(t)*width/4+width/2,height*0.2)
+  // rect(0,55,400,50)
+  // pop()
+
+}
