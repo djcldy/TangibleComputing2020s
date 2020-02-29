@@ -1,54 +1,73 @@
-	
-	
+	let cam;
+let step = 10;
+let size;
 
-let capture 
-          function setup(){
-              createCanvas(800,800)
-              capture=createCapture(VIDEO)
-              capture.hide()
-            
+let maxB = 0;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  cam = createCapture(VIDEO);
+  cam.hide();
+
+  pixelDensity(1);
+  noStroke();
+  
+  size = int(width / (cam.width / step)) / 2;
 }
 
- function draw(){
-background(255)
+function draw() {
+  background(255, 50);
+  
+  cam.loadPixels();
+  
+  maxB = 0;
 
-              //eye(50,50,[34,155,20],40)
-              //eye(100,100,[154,15,70],20)
-              //eye(200,25,[78,95,20],10)
-let spacing = (50)
-for (var x =0; x<width; x+= spacing){
+  if (cam.pixels.length > 0) {
+    for (let y = 0; y < cam.height; y += step) {
+      for (let x = 0; x < cam.width; x += step) {
+        let i = (y * cam.width + x) * 4;
 
-  for (var y =0; y<height; y+= spacing/2){
-    //if (randoum()>0.9)continue
+        let r = cam.pixels[i];
+        let g = cam.pixels[i + 1];
+        let b = cam.pixels[i + 2];
 
-    let color =capture.get(x,y)
-    //fill(color
-     //rect(x,y,spacing,spacing/2)
+        let pColor = color(r, g, b);
+        let pBright = brightness(pColor);
 
-  eye(x,y,color,spacing/4)
-
-          }
+        
+        if(pBright > maxB){
+          maxB = pBright;  
         }
+        
+        let bright = int(map(pBright, 0, maxB, 0, 8));
+
+        let txt = "";
+        textStyle(NORMAL);
+        switch (bright) {
+          case 0:
+            txt = "fun";
+              break;
+          case 1:
+            txt = "is";
+            break;
+          case 2:
+            txt = "coding is fun";
+           
+          
+        }
+        
+        let xpos = map(x, 0, cam.width, 0, width);
+        let ypos = map(y, 0, cam.height, 0, height);
+
+        fill(0, (pBright - (maxB / 9) * bright) * 20);
+        textSize(size - 15);
+        text(txt, xpos, ypos + size);
       }
+    }
+  }
+}
+//note: orginal code was showing emojes every second and i played with the code to show text instead
+// refrence https://editor.p5js.org/js6450/sketches/FHgRurpt3
 
-  function eye(x,y,color,r1){
-
-
-
-
-//let y =50
-//let r1=10
-//let r2=10
-fill(255)
- ellipse(x,y,r1*4,r1*2)// white
-fill(color)
- ellipse(x,y,r1*2,r1*2)// iris 
- fill(20)
- ellipse(x,y,r1,r1)//pupil
- fill(224)
- ellipse(x+r1/2,y-r1/2,r1/2,r1/2)//pupil
-
-
- 
-
-              }
+        
