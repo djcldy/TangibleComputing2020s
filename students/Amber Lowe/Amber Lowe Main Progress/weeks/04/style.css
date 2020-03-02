@@ -1,0 +1,121 @@
+/* div class based on id */
+h1{
+	/* Style for "Organic La" */
+position: absolute;
+    top:0vh;
+    left:25vh;
+width: 804px;
+height: 80px;
+text-shadow: 0 2px 2px #8d6a6a;
+color: black;
+font-family: 'Noto Serif', serif;
+font-size: 60px;
+font-weight: 600;
+letter-spacing: 6px;
+}
+
+h2{
+	/* Style for "Amber_Lowe" */
+width: 804px;
+height: 80px;
+text-shadow: 0 2px 2px #8d6a6a;
+color: 13033F;
+/*font-family: "consolas";*/
+font-size: 20px;
+font-weight: 400;
+letter-spacing: 5px;
+}
+
+p{
+	/* Style for "paragraph" */
+width: 804px;
+height: 80px;
+text-shadow: 0 2px 2px #8d6a6a;
+color: black;
+/*font-family: "consolas";*/
+font-size: 15px;
+font-weight: 200;
+letter-spacing: 1px;
+margin-bottom:-5px;
+
+}
+
+a{
+	color:blue;
+}
+
+#img1{
+	width:30%;
+}
+#img2{
+	width:56%;
+}
+
+.card {
+
+    position: absolute;
+    top:20vh;
+    left:0vh;
+    background: pink;
+    padding:2%;
+
+    /*
+  transform: rotate(39.68deg);
+   transform: rotate(39.68deg);
+
+     width: 801.9px;
+  height: 577.83px;
+  left: 644.43px;
+  top: 38.59px;
+    width: 652.01px;
+  height: 469.82px;
+  left: 667.63px;
+  top: 128.01px;
+    position: absolute;
+    */
+    box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
+
+}
+.card1 {
+
+    position: absolute;
+    top:135vh;
+    left:0vh;
+    background: pink;
+    padding:2%;
+
+    /*
+  transform: rotate(39.68deg);
+   transform: rotate(39.68deg);
+
+     width: 801.9px;
+  height: 577.83px;
+  left: 644.43px;
+  top: 38.59px;
+    width: 652.01px;
+  height: 469.82px;
+  left: 667.63px;
+  top: 128.01px;
+    position: absolute;
+    */
+    box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
+
+}
+
+
+body{
+
+ background:whites;
+
+ }
+
+
+/*  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+  padding-right: 5;
+  overflow-x:hidden;*/

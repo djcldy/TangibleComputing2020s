@@ -1,38 +1,42 @@
-/*
 
-    Example Code: Interactive Gradient Array
 
-*/
+let list = ['honey','flour','milk','chocolate','cereal']
+let verbs = ['sitting','slapping','dancing','running','seeing']
+let names = ['amber','sana','nivea','nayef','sajel']
+let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Comic Sans']
+
+
+let numElements = list.length //
+console.log(list[0]) // prints honey
+console.log(list[3]) // prints chocolate
+console.log(numElements)
 
 
 function setup(){
 
-  createCanvas(800,800);
-  stroke(239)
+	createCanvas(500,500)
+	background(0)
+	let spacing = height/numElements 
 
-}
 
-function draw(){
-  background(239)
+for (var i = 0; i < numElements; i++){
 
-  let numCol = 60
-  let numRow = 60
-  let stepX = width / numCol // height of box 
-  let stepY = height / numRow // width of box  
+    let msg = random(names) + "'s " + list[i] + ' is ' + verbs[i]
+	
+	console.log(msg)
 
-  for (var col = 0; col < numRow; col++){
+    let numChar = msg.length
+    let size = width/numChar
+    //console.log(size)
+    textFont(random(fonts))
+    textSize(size*2)
 
-    for (var row = 0; row < numCol; row++){
     
-      fill(col/numCol*255,row/numRow*255,mouseX/width*255)   
-      push()
-      translate(row*stepX,col*stepY)
-      /*rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/800*TWO_PI)*/ 
-      ellipse(0,0,stepX,stepY) 
-      pop()
-
-    }
-
-  }
-
+    for(var j = 0; j < numChar; j++ ){
+	
+	fill(255,50)
+	fill(random(255),random(255),random(255))
+	text(msg,5,spacing*i)
+   }
+}
 }
