@@ -3,7 +3,7 @@
 let list = ['honey','flour','milk','chocolate','cereal']
 let verbs = ['sitting','slapping','dancing','running','seeing']
 let names = ['amber','sana','nivea','nayef','sajel']
-let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Comic Sans']
+let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Consolas']
 
 
 let numElements = list.length //
@@ -12,7 +12,7 @@ console.log(list[3]) // prints chocolate
 console.log(numElements)
 
 
-function setup(){
+function setup(){``
 
 	createCanvas(500,500)
 	background(0)
