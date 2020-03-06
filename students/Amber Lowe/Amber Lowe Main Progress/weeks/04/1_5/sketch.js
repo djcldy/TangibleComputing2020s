@@ -1,112 +1,49 @@
-let drops = []
-  let y = 0
-let spacing = 10
+let capture;
+let res = 10
 
-function setup(){
+function setup() {
+  createCanvas(800, 400);
+  capture = createCapture(VIDEO);
+  capture.size(800, 400);
+  rectMode(CENTER)
+  capture.hide();
+  stroke(255)
+  image(capture,0,0)
+  // noStroke()/
+}
 
-  createCanvas(500,500)
-  capture = createCapture(500,500)
-  capture.hide()
+function draw(){
+
+	mirror()
+}
+
+function mirror() { //mirror elements with girds, layered and sharp movement 
+
+  // background(255);
+
+  for (var x = 0; x < width; x += res) {
+
+    let s = second()
+    let diff = Math.abs(s/60 - x/height)
+    let riff = Math.abs(s/58 - y/width)
+
+
+    if (diff > 0.1) continue
+    if (riff < 0.1) continue	
+
+    for (var y = 0; y < width; y += res){
+
+        let c = capture.get(x,y) // gets pixel color of canvas returns [r,g,b,a]
     
-  let x = width/2
-
-  let numDrop = 50
-
-  for (var i = 0; i < numDrop; i++){
-
-    let x = i/numDrop*width
-    drops.push(createDrop(x,0))
-
-  }
-  
-  //let c = capture.get(x,y) 
-
-  background(255)
-  //noStroke()
-  //let x = width/2
-  //fill(255,0,0)
-  //let numDrop = 10
-
-  //for (var i = 0; i < numDrop; i++){
-
-    //let x = i/numDrop*width
-    //drops.push(createDrop(x,0))
-
-    drip()
-    createDrop()
-
-  }
-
-
-
-//}
-
-function drip(){
-  y++
-  
-  let s = second()
-  
-  for (var i = 0; i < drops.length; i++){
-
-      let drip = drops[i]
-      drip.x += (noise(drip.t)-0.5)*drip.scl // random
-      drip.r = spacing*noise(drip.t)*drip.scl
-      drip.t += 0.1
-      stroke(drip.col)
-      
-      let q = (width*s/60)
-      let c = capture.get(q,y) 
-      //stroke(c[1],0,c[2])
-      fill(c[1],0,c[2])
-
-      ellipse(drip.x-drip.r,y+drip.r,drip.x+drip.r,y+drip.r)
-
-      // if (random() > 0.95) {
-
-      //   for (var i = 0; i < 30; i++){
-
-      //     push()
-      //     console.log('splat!')
-      //     translate(drip.x,y)
-      //     ellipse(random(-25,25),random(-25,25),2,2)
-      //     pop()
-
-
-      //   }
-
-
-      // }
+        fill(c[1],0,c[2])
+        rect(x,y,res,res)
+        rect(y,x,res,res)
+        stroke(0,c[1],0)
+        rect(x,y,res,res)
 
     }
 
-    if (y > height){
-      background(0)
-      y = 0
-    }
 
+  }
 
 }
-
-
-function createDrop(x,y,r){
-
-  let drop = {}
-  drop.x = x 
-  drop.y = y
-  drop.r = r
-  drop.col = [random(255),random(255),random(255),150]
-  drop.t = random(10)
-  drop.scl = random(1,10)
-
-  return drop
-
-}
-
-// let spacing = 10 
-
-// for (var y = 0; y < height; y += spacing/2) {
-
-//     ellipse(x,y,spacing,spacing)
-
-// }
-//     }

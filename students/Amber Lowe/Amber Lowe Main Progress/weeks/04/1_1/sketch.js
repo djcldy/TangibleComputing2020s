@@ -1,42 +1,71 @@
+function setup(){
 
+  createCanvas(1200,700);
+  background(234)
+  //eye(50,50,[34,155,215],50)
+  //eye(100,100,[255,155,215],5)
+  //eye(200,25,[255,155,215],5)
+  //eye(200,25,[34,0,215],10)
 
-let list = ['honey','flour','milk','chocolate','cereal']
-let verbs = ['sitting','slapping','dancing','running','seeing']
-let names = ['amber','sana','nivea','nayef','sajel']
-let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Consolas']
+  //let spacing = 50
 
+  //for (var x = 0; x < width; x+= spacing){
 
-let numElements = list.length //
-console.log(list[0]) // prints honey
-console.log(list[3]) // prints chocolate
-console.log(numElements)
+  //for (var y = 0; y < height; y+= spacing){
 
+  	//eye(x,y,[random(255),random(255),random(255)],random(1,20))
+  //}
 
-function setup(){``
+  //}
 
-	createCanvas(500,500)
-	background(0)
-	let spacing = height/numElements 
+}
 
+function draw(){
 
-for (var i = 0; i < numElements; i++){
+background(234)
+  //eye(50,50,[34,155,215],50)
+  //eye(100,100,[255,155,215],5)
+  //eye(200,25,[255,155,215],5)
+  //eye(200,25,[34,0,215],10)
+  let x = second()/60*width
+  let spacing = (50)
+  
 
-    let msg = random(names) + "'s " + list[i] + ' is ' + verbs[i]
-	
-	console.log(msg)
+  //for (var x = 0; x < width; x+= spacing){
 
-    let numChar = msg.length
-    let size = width/numChar
-    //console.log(size)
-    textFont(random(fonts))
-    textSize(size*2)
+  for (var y = 0; y < height; y+= spacing){
 
-    
-    for(var j = 0; j < numChar; j++ ){
-	
-	fill(255,50)
-	fill(random(255),random(255),random(255))
-	text(msg,5,spacing*i)
-   }
+  	eye(x,y,[random(255),random(255),random(255)],random(1,20))
+
 }
 }
+	
+
+
+function eye(x,y,color,r1){
+
+	//let x = 200
+	//let y = 50
+	//let r1 = 10
+	//let r2 = 10
+
+
+	noStroke()
+
+    fill(255)
+	ellipse(x,y,r1*4.5,r1*2) //x,y,r1,r2
+	
+	fill(10,230,60)
+	ellipse(x,y,r1*2,r1*2) // white of the eye
+	
+	fill(0)
+	ellipse(x,y,r1/4,r1/4) // pupil 
+
+    noStroke()
+	fill(255)
+	ellipse(x+r1/2,y-r1/5,r1/2,r1/2) // reflection 
+
+
+	
+}
+

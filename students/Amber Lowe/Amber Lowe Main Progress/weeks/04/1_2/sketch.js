@@ -1,49 +1,64 @@
-let numX = 25 
-let numY = 60
-let xStep, yStep 
-let capture
-
-let i = 0 
+let capture //global variable
 
 function setup(){
 
-	createCanvas(500,500)
-	capture = createCapture(500,500)
-	capture.hide()
-	xStep = width/numX
-	yStep = height/numY 
-	
+  createCanvas(600,400);
+  capture = createCapture(VIDEO)
+  capture.hide();
+ 
+
 
 }
-
 
 function draw(){
 
-	let i = int(second()/60*numX) // int returns a whole number 
-	console.log(i)
+background(234)
+  //eye(50,50,[34,155,215],50)
+  //eye(100,100,[255,155,215],5)
+  //eye(200,25,[255,155,215],5)
+  //eye(200,25,[34,0,215],10)
 
-	for (var row = 0; row < numX; row++ ){
+  let spacing = 50 //local vairable (scoped locally)
 
-		let offX = (i+row)
+  for (var x = 0; x < width; x+= spacing){
 
-		if (offX > numX){
-			offX = offX - numX 
-		}
+  //for (var y = 0; y < height; y+= spacing/2){
 
-		for (var col = 0; col < numY; col ++ ){
+  	let y = second()/60*height // after time start capturing color
 
-			let yy = col*yStep
-			let xx = offX*xStep 
-			//console.log(xx,yy)
- 
-		    let color = capture.get(offX*xStep,col*yStep) // returns color 
-		    fill(color)
-			//console.log(color)
-			rect(row*xStep,col*yStep,xStep,yStep)
+  	let color = capture.get(x,y)
 
-	
-		}
-
-	}
+  	petal(x,y,color,spacing/2)
 
 }
+}
+
+
+
+function petal(x,y,color,r1){
+
+	//let x = 200
+	//let y = 50
+	//let r1 = 10
+	//let r2 = 10
+
+	noStroke()
+
+    fill(255)
+	ellipse(x,y,r1*2,r1*2)//x,y,r1,r2
+	
+	fill(color)
+	ellipse(x,y,r1*2,r1*2) // iris
+	
+	rotate(y/2)
+	fill(255,4,40)
+	arc(x,y,r1,r1,0, PI + HALF_PI) // pupil 
+
+    //noStroke()
+	fill(255)
+	ellipse(x+r1/2,y-r1/5,r1/2,r1/2) // reflection 
+
+
+	
+}
+

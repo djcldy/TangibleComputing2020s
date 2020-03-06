@@ -1,91 +1,84 @@
+let capture;
+let res = 10
+let res2 = 30
 
-
-let onesyllable = ['life','love','day','one','near','man']
-let twosyllable = ['nature','loose','future','death','heaven','dance']
-let threesyllable = ['amazement','banana','dilemma','eletric','curious','bicycle']
-let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Comic Sans']
-
-
-let numElements = 6
-console.log(onesyllable[0]) 
-console.log(threesyllable[3])
-console.log(numElements)
-
-
-function setup(){
-
-	
-  createCanvas(1600,800)
-  textAlign(CENTER,CENTER)
-  
-  generateMeme()
-
+function setup() {
+  createCanvas(800, 400);
+  capture = createCapture(VIDEO);
+  capture.size(800, 400);
+  rectMode(CENTER)
+  capture.hide();
+  stroke(255)
+  image(capture,0,0)
+  // noStroke()/
 }
 
+function draw() { //neon pink and blue diagional movement rectangular layered movement 
+
+  // background(255);
+
+  for (var x = 0; x < width; x += res) {
+
+    let s = second()
+    let diff = Math.abs(s/60 - x/height)
+    let riff = Math.abs(s/58 - y/width)
 
 
-function generateMeme(){
+    if (diff > 0.1) continue
+    if (riff < 0.1) continue	
 
-  let backgroundColor = getRandomColor()
-  background(backgroundColor)
+    for (var y = 0; y < width; y += res2){
 
-  let numLines = int(random())
-  
-  let fontColor = getRandomColor()
-  fill(fontColor)
- 
-  let message = getMessage()
-  let message2 = getMessage()
- 
-  let font = random(fonts)
-  textFont(font)
- 
-  let size = width/message.length
-  textSize(size)
+        let c = capture.get(x,y) // gets pixel color of canvas returns [r,g,b,a]
+    
+        fill(c[1],0,c[2])
+        rect(x,y,res,res)
+        rect(y,x,res,res)
+        rect(y,x,res2,res2)
+        stroke(c[1],0,c[2])
+        rect(x,y,res,res)
 
-  for (var i = 0; i < message.length; i++){
+        box(x,y,[random(200),random(1),random(26)],random(10,6))
 
-    // fill(255)
-    // text(message[i],size*i,height/2)
-
-    for (var j = 1; j < 2; j+=.1){
-
-      push()
-      translate(size*i,height/2)
-      scale(j)
-      fill(fontColor[0],fontColor[1],fontColor[2],50)
-      text(message[i],0,0)
-      scale(j*2)
-      text(message2[i],10,10)
-
-
-      pop()
 
     }
 
 
+    function box(x,y,color,r1){
+
+
+  push()
+  translate(x,y)
+  rotate(x/100)
+  scale(sin(y/10)+1)
+
+
+	noStroke()
+
+    fill(255,110,199)
+	rect(x,y,r1*2.5,r1*2) //neon pink
+	
+	fill(21,244,238)
+	rect(x,y,r1*2,r1*2) // neon blue
+	
+	noFill()
+	stroke(70,24,218)
+	arc(x,y,r1,r1,0, PI + HALF_PI) // arc 
+
+    noStroke()
+	fill(255)
+	ellipse(x+r1/2,y-r1/5,r1/2,r1/2) // reflection 
+
+ 
+
+
+	
+}
+
+
+
+
+
   }
-
-}
-
-
-function getMessage(){
-
-  let name = random(onesyllable)
-  let adjective = random(threesyllable)
-  let noun = random(twosyllable)
-  let verb = random(onesyllable)
-  let message = ' Okay ' + random(onesyllable)  + ' ' + random(twosyllable) + ' is ' + random(threesyllable) + ' '
-  let message2 = ' Okay ' + name  + 'from ' + adjective + ' to ' + verb 
-  
-  return message
-
-}
-
-function getRandomColor(){
-
-  // returns randomColor
-  let color = [random(255),random(255),random(255)]
-  return color 
 
 }

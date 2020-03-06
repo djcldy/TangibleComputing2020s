@@ -1,44 +1,50 @@
-
-
-let onesyllable = ['life','love','day','one','near','man']
-let twosyllable = ['nature','bread','future','death','heaven','dance']
-let threesyllable = ['amazement','banana','dilemma','eletric','curious','bicycle']
-let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Comic Sans']
-
-
-let numElements = 4 //
-console.log(onesyllable[0]) // prints honey
-console.log(threesyllable[3]) // prints chocolate
-console.log(numElements)
-
+let capture //global variable
 
 function setup(){
 
-	createCanvas(1200,500)
-	background(13,5,70)
-	let spacing = height/numElements 
+  createCanvas(600,500);
+  capture = createCapture(VIDEO)
+  capture.hide();
+ 
 
 
-for (var i = 0; i < numElements; i++){
-
-    let msg = random(onesyllable)  +  random(twosyllable)  + ' is ' +  twosyllable[i]  +
-              random(threesyllable)  +  onesyllable[i]  + ' for ' +  twosyllable[i]  +
-	          random(onesyllable)  +  random(threesyllable)  + ' to ' +  onesyllable[i] 
-	
-	console.log(msg)
-
-    let numChar = msg.length
-    let size = width/numChar
-    //console.log(size)
-    textFont(random(fonts))
-    textSize(size*2)
-
-    
-    for(var j = 0; j < numChar; j++ ){
-	
-	fill(255,50)
-	fill(random(255),random(255),random(255))
-	text(msg,5,spacing*j)
-   }
 }
+
+function draw(){ 
+
+background(234)
+  //eye(50,50,[34,155,215],50)
+  //eye(100,100,[255,155,215],5)
+  //eye(200,25,[255,155,215],5)
+  //eye(200,25,[34,0,215],10)
+
+  let spacing = 10 //local vairable (scoped locally)
+  
+  for (var x = 0; x < width; x+= spacing){
+  let s = second()
+  let diff = Math.abs(s/60 - x/width*2)
+
+    if (diff > 0.1) continue
+
+
+  for (var y = 0; y < height; y+= spacing/2){
+
+  	let color = capture.get(x,y)
+
+  	layers(x,y,color,spacing*10)
+
+}
+}
+}
+
+
+function layers(x,y,color,r1){
+
+	noStroke()
+	fill(color)
+	arc(x,y,r1*2,r1*2,0, PI + HALF_PI) // iris
+	
+	
+
+	
 }

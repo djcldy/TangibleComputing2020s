@@ -1,102 +1,72 @@
+let capture //global variable
+
+let xPrev = 0 
+let yPrev = 0
+
+function setup(){  //neon blues and pinks randomized growth movement 
+
+  createCanvas(500,500);
+  capture = createCapture(VIDEO)
+  capture.hide();
+ 
 
 
-let onesyllable = ['life','love','day','one','near','man']
-let twosyllable = ['nature','bread','future','death','heaven','dance']
-let threesyllable = ['amazement','banana','dilemma','eletric','curious','bicycle']
-let fonts = ['Arial', 'Georgia', 'Times New Roman', 'Verdana', 'Courier', 'Impact','Comic Sans']
+}
+
+function draw(){
+
+	fish()
+	fish2()
 
 
-let numElements = 4 //
-console.log(onesyllable[0]) // prints honey
-console.log(threesyllable[3]) // prints chocolate
-console.log(numElements)
 
- let drops = []
- let y = 0
+}
 
 
-function setup(){
+function fish(){
 
-	createCanvas(1200,500)
-	background(13,5,70)
-	let spacing = height/numElements 
+  let radius = 10 
+
+  //let s = second()
+  let x = mouseX
+  let y = mouseY 
+  
+
+  let velocityX = x - xPrev
+  let velocityY = y - yPrev
+
+  fill(second()/60*255,hour()/60*60,minute()/60*255)
+
+  rotate(x*2)
+  ellipse(x,y,20,50)
+
+  //fill(255)
+  ellipse(x,y,25,25)
+  noStroke()
+  //fill(255,0,0)
 
 
-for (var i = 0; i < numElements; i++){
 
-    let msg = random(onesyllable)  +  random(twosyllable)  + ' is ' +  twosyllable[i]  +
-              random(threesyllable)  +  onesyllable[i]  + ' for ' +  twosyllable[i]  +
-	          random(onesyllable)  +  random(threesyllable)  + ' to ' +  onesyllable[i] 
+  translate(x,y)
+  push()
+  //fill(0)
+  rect(x-5,y-5,5,5)
+  rect(x+5,y-5,5,5)
 
+  xPrev = x 
+  yPrev = y
 
-	
-	console.log(msg)
+}
 
+function fish2(){
 
-    let numChar = msg.length
-    let size = width/numChar
-    //console.log(size)
-    textFont(random(fonts))
-    textSize(size*2)
-
+  let x = mouseX
+  let y = mouseY 
+  let velocityX = x + xPrev
+  let velocityY = y + yPrev
     
-    for(var j = 0; j < numChar; j++ ){
-    rotate(j*height)
-	
-	fill(255,50)
-	fill(random(255),random(255),random(255))
-	text(msg,5,spacing*j)
-
-	let x = width/2
-    fill(255,0,0)
-    let numDrop = 20
-
-  for (var i = 0; i < numDrop; i++){
-
-    let x = i/numDrop*width
-    drops.push(createDrop(x,0))
-    drip()
-	
-   }
-}
-}
-
-function drip(){
-  y++
-  for (var t = 0; t < drops.length; t++){
-
-      let drip = drops[t]
-      drip.x += (noise(drip.t)-0.5)*drip.scl 
-      drip.r = spacing*noise(drip.t)*drip.scl
-      drip.t += 2
-      stroke(drip.col)
-      line(drip.x-drip.r,y+drip.r,drip.x+drip.r,y+drip.r)
-
-
-
-    }
-
-    if (y > height){
-      background(0)
-      y = 2
-    }
+  fill(second()/60*255,hour()/60*60,minute()/60*244)
+  ellipse(x,y,12.5,25)
 
 
 }
-
-function createDrop(x,y,r){
-
-  let drop = {}
-  drop.x = x 
-  drop.y = y
-  drop.r = r
-  drop.col = [random(255),random(255),random(255),150]
-  drop.t = random(10)
-  drop.scl = random(5,10)
-
-  return drop
-
-}
-}
-
-

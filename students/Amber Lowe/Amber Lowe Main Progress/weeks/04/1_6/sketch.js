@@ -1,48 +1,59 @@
+// SP: Added comments 
 
+let capture
+let res = 10
+let res2 = 30
 
-let onesyllable = ['life','run','day','one','near','luck']
-let twosyllable = ['corrupt','disease','future','death','escape','fall']
-let threesyllable = ['destruction','creation','dilemma','eletric','curious','vehicle']
-let fonts = ['Georgia', 'Verdana', 'Courier', 'Impact','Consales']
+function setup() {
 
+  createCanvas(800, 400);
+  capture = createCapture(VIDEO);
+  capture.size(800, 400);
+  rectMode(CENTER)
+  capture.hide();
+  stroke(255)
+  image(capture,0,0)
+  // noStroke()/
 
-let numElements = 4 //
-console.log(onesyllable[0])
-console.log(threesyllable[3]) 
-console.log(numElements)
-
-
-function setup(){
-
-	createCanvas(1200,500)
-	background(0)
-	let spacing = height/numElements 
-
-
-for (var i = 0; i < numElements; i++){
-
-    let msg = random(onesyllable)  +  random(twosyllable)  + ' is ' +  twosyllable[i*4]  +
-              
-              random(threesyllable)  +  onesyllable[i]  + ' for ' +  twosyllable[i]  +
-	          
-	          random(onesyllable)  +  random(threesyllable)  + ' to ' +  onesyllable[i] 
-	
-	console.log(msg)
-    rotate(i*sin(100))
-    let numChar = msg.length
-    let size = width/numChar
-    //console.log(size)
-    textFont(random(fonts))
-    textSize(size*5)
-
-    
-    for(var j = 0; j < numChar; j++ ){
-	
-	fill(255,110,199)
-	text(msg,1,spacing*j)
-
-	fill(70,102,255)
-	text(msg,5,spacing*j)
-   }
 }
+function draw(){
+
+
+  diagonalArray() // SP: write function names using camelCase, it still works but this is convention
+	// diagonalarray()
+
 }
+
+
+function diagonalArray() { 
+
+  // mirror elements with girds, layered and sharp movement
+  // background(255);
+  let s = second() // call this function here. you only need to get the time once. in the four loop it retrieves time multiple times
+  
+  for (var x = 0; x < width; x += res) {
+
+    // let s = second() //
+    let diff = Math.abs(s/60 - x/height)
+    let riff = Math.abs(s/58 - y*width)
+
+    if (diff > 0.1) continue
+    if (riff < 0.1) continue	
+
+    for (var y = sin(20); y < width; y += res2){
+
+        let c = capture.get(x,y/2) // gets pixel color of canvas returns [r,g,b,a]
+        rotate(x/25)
+        fill(c[1],0,c[2])
+        rect(x,y,res,res)
+        triangle(x,y,res2,res,res,res2)
+        rect(y,x,res,res)
+        rect(y,x,res2,res2)
+        stroke(c[1],0,c[2])
+        rect(x,y,res,res)
+
+      }
+	
+    }
+}
+
