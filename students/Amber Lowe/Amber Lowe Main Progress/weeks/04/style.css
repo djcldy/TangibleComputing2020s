@@ -48,6 +48,7 @@ a{
 	width:30%;
 }
 #img2{
+	
 	width:56%;
 }
 
@@ -80,7 +81,7 @@ a{
 .card1 {
 
     position: absolute;
-    top:135vh;
+    top:95vh;
     left:0vh;
     background: pink;
     padding:2%;
