@@ -20,12 +20,17 @@ body{
 }
 
 h1{
-	font-size: 5vh;
+	font-size: 8vh;
+  color: darkviolet;
 }
 
 h2{
 	font-size: 4vh;
 	color: #633974;
+}
+
+p{
+  font-size: 3vh
 }
 
 #bayo{
@@ -39,8 +44,24 @@ h2{
 	width:25%;
 
 }
- 
 
+a{
+color: #BA55D3;
+
+font-size: 3vw;
+  }
+
+
+  .border {
+
+    font-size: 2em;
+  	padding: 40px;
+  	border-left : 4px dashed #DA70D6;
+    border-right :4px dashed #DA70D6;
+  
+  }
+
+}
 /*  min-width: 290px;
   color: #4d4e53;
   background-color: #ffffff;
