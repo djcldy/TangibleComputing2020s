@@ -1,46 +1,49 @@
-/*
+let numX = 25 
+let numY = 60
+let xStep, yStep 
+let capture
 
-    Example Code: Interactive Gradient Array
-
-*/
-let xPrev = 0
-let yPrev = 0
+let i = 10 
 
 function setup(){
 
-  createCanvas(1200,600);
-  stroke(255)
+	createCanvas(500,500)
+	capture = createCapture(500,500)
+	capture.hide()
+	xStep = width/numX*2
+	yStep = height/numY*4
+	
 
 }
 
+
 function draw(){
 
-    let radius = 5
-    let x = mouseX
-    let y = mouseY
+	let i = int(second()/60*numX) // int returns a whole number 
+	console.log(i)
 
+	for (var row = 0; row < numX; row++ ){
 
-    let velocityX = x - xPrev
-    let velocityY = y - yPrev
+		let offX = (i+row)
 
-    fill(second()/60*255,minute()/60*255,hour()/60*255)
+		if (offX > numX){
+			offX = offX - numX 
+		}
 
-    noStroke()
-    fill(41,5,68,velocityY)
+		for (var col = 0; col < numY; col ++ ){
 
-	//ellipse(x,y,velocityX,velocityY)
-	rect(x,y,velocityX,velocityY)
+			let yy = col*yStep
+			let xx = offX*xStep 
+			//console.log(xx,yy)
+ 
+		    let color = capture.get(offX*xStep,col*yStep) // returns color 
+		    fill(color)
+			//console.log(color)
+			rect(row*xStep,col*yStep,xStep,yStep)
 
-	fill(90,0,200)
-	ellipse(x,y,velocityX/2,velocityY/2)
+	
+		}
 
-	//ellipse(x-5,y-5,5,5)
-	//ellipse(x+5,y-5,5,5)
-
-
-
-	xPrev = x
-	yPrev = y
-   
+	}
 
 }

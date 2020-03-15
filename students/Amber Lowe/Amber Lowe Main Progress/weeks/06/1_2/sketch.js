@@ -1,111 +1,96 @@
 /*
-
-    Example Code: Interactive Gradient Array
+    MuW201: Tangible Computing
+    Week 03 Clocks
+    Adapted from https://p5js.org/examples/input-clock.html
 
 */
-let xPrev = 0
-let yPrev = 0
 
-function setup(){
+let particles = []
+let capture
 
-  createCanvas(1200,600);
-  stroke(255)
+
+function setup() {
+
+  createCanvas(800, 800)
+  capture = createCapture(800,800)
+  capture.hide()
+  noStroke()
+
+  for (var i = 0; i < 60; i++){
+    particles.push(createParticle(i/60*width,i,i))
+  }
+
+}
+
+function draw() {
+
+  for (var i = 0; i < particles.length; i++){
+
+    let p = particles[i]
+
+    if (i < second()){
+      moveParticle(p)
+    }
+
+    drawParticle(p)
+
+  }
+
+  let s = second()
+  console.log(s)
+
+  if (s > 58) { 
+    resetParticles(particles)
+  }
+
+  //ellipse(mouseX,mouseY,100,100)
 
 }
 
 
-function draw(){
+function createParticle(positionX, positionY, radius){
+   // double curly brackets is shorthand for an object
+    let particle = {} // This method creates a new object extending the prototype object passed as a parameter.
+    particle.x = positionX
+    particle.y = positionY
+    particle.r = radius
+    let color = capture.get(particle.x*particle.r,particle.x*particle.r)
+    particle.col = (color)
 
-    let radius = 5
-    let x = mouseX
-    let y = mouseY
-
-
-    let velocityX = x - xPrev
-    let velocityY = y - yPrev
-
-    fill(second()/60*255,minute()/60*255,hour()/60*255)
-
-    noStroke()
-    fill(41,5,68,velocityY)
-
-	ellipse(x,y,velocityX,velocityY)
-	//rect(x,y,velocityX,velocityY)
-
-	fill(95,0,100)
-	ellipse(x,y,velocityX/2,velocityY/2)
-
-	ellipse(x-5,y-5,5,5)
-	ellipse(x+5,y-5,5,5)
-
-
-    xPrev = x
-	yPrev = y
-
-}
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*function draw(){
-
-	let x = width/2 + random(-3,3)
-	let y = height- second()/60*height
-	let alpha = second()/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	ellipse(x,y,second(),second())
-
-	if(second()>58){
-		background(255)
-	}
-
- 
-   
-
+    return particle
 }
 
-function draw(){
+function moveParticle(particle){
 
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
 
-	if (second()>58){
-		background(255)
-	}
-}
-function drawIceCream(time,posX,radius){
-
-	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-3,3)
-	let alpha = time/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	//ellipse(x,y,time*radius,time*radius)
-	heart(x,y,time*radius,time*radius)
+  particle.x += random(-5,5)
+  particle.y += random(1)
+  particle.r += random(0.5)
+    
 
 
 }
 
-function heart(x,y,radius,radius){
+function resetParticles(particles){
 
-	ellipse(x-radius/4,y,radius/2)
-	ellipse(x+radius/4,y,radius/2)
-	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
-}*/
+  background(255)
+  console.log('reset particles!')
+
+  for (var i = 0; i < particles.length; i++){
+
+    let particle = particles[i]
+    particle.y = i
+    particle.x = i/60*width
+    particle.r = i
+  }
+
+
+}
+
+function drawParticle(particle){
+
+  fill(particle.col)
+
+  rect(particle.x,particle.y,particle.r,particle.r)
+
+}
