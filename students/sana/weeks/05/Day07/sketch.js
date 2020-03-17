@@ -40,7 +40,7 @@ function draw(){
 
       enemy.vx = (mouseX - enemy.x)/width 
       enemy.vy = (mouseY - enemy.y)/height
-  s
+  
 
     }
 

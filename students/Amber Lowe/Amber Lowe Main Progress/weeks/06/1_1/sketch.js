@@ -1,38 +1,49 @@
-/*
+let numX = 25 
+let numY = 60
+let xStep, yStep 
+let capture
 
-    Example Code: Interactive Gradient Array
-
-*/
-
+let i = 10 
 
 function setup(){
 
-  createCanvas(800,800);
-  stroke(239)
+	createCanvas(500,500)
+	capture = createCapture(500,500)
+	capture.hide()
+	xStep = width/numX*2
+	yStep = height/numY*4
+	
 
 }
 
+
 function draw(){
-  background(239)
 
-  let numCol = 60
-  let numRow = 60
-  let stepX = width / numCol // height of box 
-  let stepY = height / numRow // width of box  
+	let i = int(second()/60*numX) // int returns a whole number 
+	console.log(i)
 
-  for (var col = 0; col < numRow; col++){
+	for (var row = 0; row < numX; row++ ){
 
-    for (var row = 0; row < numCol; row++){
-    
-      fill(col/numCol*255,row/numRow*255,mouseX/width*255)   
-      push()
-      translate(row*stepX,col*stepY)
-      /*rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/800*TWO_PI)*/ 
-      ellipse(0,0,stepX,stepY) 
-      pop()
+		let offX = (i+row)
 
-    }
+		if (offX > numX){
+			offX = offX - numX 
+		}
 
-  }
+		for (var col = 0; col < numY; col ++ ){
+
+			let yy = col*yStep
+			let xx = offX*xStep 
+			//console.log(xx,yy)
+ 
+		    let color = capture.get(offX*xStep,col*yStep) // returns color 
+		    fill(color)
+			//console.log(color)
+			rect(row*xStep,col*yStep,xStep,yStep)
+
+	
+		}
+
+	}
 
 }

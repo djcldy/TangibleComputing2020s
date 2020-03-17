@@ -48,7 +48,7 @@ a{
 	width:30%;
 }
 #img2{
-	width:30%;
+	width:56%;
 }
 
 .card {
@@ -77,12 +77,37 @@ a{
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
 
 }
+.card1 {
+
+    position: absolute;
+    top:135vh;
+    left:0vh;
+    background: pink;
+    padding:2%;
+
+    /*
+  transform: rotate(39.68deg);
+   transform: rotate(39.68deg);
+
+     width: 801.9px;
+  height: 577.83px;
+  left: 644.43px;
+  top: 38.59px;
+    width: 652.01px;
+  height: 469.82px;
+  left: 667.63px;
+  top: 128.01px;
+    position: absolute;
+    */
+    box-shadow: 0px 4px 75px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.45);
+
+}
 
 
 body{
-  
-   background:white;
 
+ background:whites;
 
  }
 

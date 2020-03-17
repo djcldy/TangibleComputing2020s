@@ -1,66 +1,71 @@
-/*
+// TenThousandX Assignment: 
+          // Add to this code to create a drawing 
+          // Note: do not delete anything
 
-    Example Code: Interactive Gradient Array
+          function setup(){
 
-*/
+             // do not change anything in setup 
 
+              createCanvas(2000,600)
+              TenThousandX()
 
-function setup(){
+          }
 
-  createCanvas(1200,600);
-  stroke(255)
+          function TenThousandX(){
 
-}
+             //add code here 
+             background(95,20,76)
 
-/*function draw(){
+             //fill(255,0,0)
+             //stroke(10)
+             //strokeWeight(5)
 
-	let x = width/2 + random(-3,3)
-	let y = height- second()/60*height
-	let alpha = second()/60*255
+             //ellipse(100,80,100,100)
 
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
+             //fill(255)
+             
 
-	ellipse(x,y,second(),second())
+             //ellipse(200,200,100,100)
+             //noStroke()
+             //stroke(40,255,8)
+             //noFill()
+             //stroke(0,100)
+             //stroke(255,255,255)
+             //fill(0)
 
-	if(second()>58){
-		background(255)
-	}
+             //strokeWeight(7,4,3)
+            
 
- 
-   
-
-}*/
-
-function draw(){
-
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
-
-	if (second()>58){
-		background(255)
-	}
-}
-function drawIceCream(time,posX,radius){
-
-	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-10,5)
-	let alpha = time/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	//ellipse(x,y,time*radius,time*radius)
-	icecream(x,y,time*radius,time*radius)
+             stroke(165,242,243)
+             noFill()
 
 
-}
+             //for (var random = 0;  random++)
 
-function icecream(x,y,radius,radius){
+             //fill (var random = 0;  random++}
 
-	ellipse(x-radius/8,y,radius)
-	rect(x+radius/10,y,radius)
-	triangle(x-radius/2,y,x+radius/2,y,x, y+radius);
-}
 
+
+              for ( var x = 0; x < 10000; x++){
+
+                  // add code here 
+                  //console.log(x);
+                  let a= sin(x++/400)*width/2
+                  let b= x/10000*height
+                  ellipse(width-a,b,a/10,a/10)
+                  //ellipse(a,b,10,10)
+                  //line(a,b,0,0)
+                  //triangle(a,b,10,10)
+                  //rect(a,b,10,10)//r++
+                  //point(a,b,10,10)
+                  //quadrilateral(a,b,10,10,)
+               
+
+                  arc(a, b, 20, 80, 0, PI + HALF_PI)
+                  
+
+                
+
+              }
+
+            }
