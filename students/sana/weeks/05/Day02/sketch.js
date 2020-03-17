@@ -15,17 +15,7 @@ function setup(){
   fill(0)
 
 }
-var score = 0;
-var player = {
-	color : "#FFF",
-	x : 280,
-	width : 40,
-	y : 355,
-	height: 40,
-	draw : function(){
-		image(img_player, this.x, this.y, this.width, this.height);
-    },
-}
+
 
 
 function draw(){
