@@ -1,3 +1,4 @@
+//this is mario 
 function setup() {
   
   createCanvas(800, 800);
@@ -72,5 +73,33 @@ function draw(){
   
 
 }
+//here the object i managed to write
+//
+// var player = {x:0,
+//               y:100,
+//               diameter:50
+//              };
+//   var player2 = {x:0,
+//               y:10,
+//               diameter:5
+//              };
+  
+// function setup() {   
+//   createCanvas(400, 400);   
+    
+// }   
+// function draw() {   
+//   background(90);   
+//   noStroke(),   
+//   fill(120,40,90,50);   
+//   ellipse(player.x,player.y,player.diameter,player.diameter)   
+// player.diameter= player.diameter+1;  
+//   player.x=player.x+1;
+//   player.y=player.y+1;
+//  fill(48); rect(player2.x,player2.y,player2.diameter,player2.diameter)   
+// player2.diameter= player2.diameter+1;  
+//   player2.x=player2.x+1;
+//   player2.y=player2.y+1;
+// }
 
 
