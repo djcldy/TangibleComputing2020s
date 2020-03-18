@@ -10,8 +10,12 @@ function setup() {
 
 function draw(){
 
-  background(255);
-
+  background(random(255),0,random(255));
+  mario();
+}
+  
+  function mario(){
+ 
   fill(245,0,0)
   rect(0,0,220,45)
   fill(255,0,0)
@@ -20,13 +24,10 @@ function draw(){
   rect(0,20,350,25)
   fill(255,50,0)
   rect(0,55,400,50)
-
  fill(0)
   square(-300,350,200,300,10,10,45)
   fill(0)
   square(-320,200,280,700,10,0,115)
-
-  
   fill(255,10,0)
   rect(0,60,450,50)
    fill(255,0,0)
