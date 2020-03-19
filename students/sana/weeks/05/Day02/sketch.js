@@ -1,7 +1,8 @@
 
 
+ 
 function setup() {
-  
+ 
   createCanvas(1000, 1000);
   rectMode(CENTER)
   noStroke()
@@ -10,19 +11,23 @@ function setup() {
 function draw() {
      
  background(random(255),0,random(255));
-
-
+fill(255);
+textSize(30);
+text("score:",12,25);
 cat(100,200,13);
 cat(100,400,13);
   cat(400,200,13);
    cat(400,400,13);
    cat(700,200,13);
     cat(700,400,13);
+
     mario();
  
 }
 
 function cat(x,y,r1) {
+
+
 
 //face
  fill(255)
@@ -73,12 +78,11 @@ fill(10)
 stroke(0)
 arc(x+50,y-105,r1*2,100,0,4)
 
- 
-              }
 
-
-function mario(){
+}
   
+              
+function mario(){  
  translate(mouseX,mouseY);
   fill(245,0,0)
   rect(0,0,220,45)
@@ -139,7 +143,6 @@ function mario(){
   fill(0)
   rect(210,285,90,50)
 
-  
 }
 
 
