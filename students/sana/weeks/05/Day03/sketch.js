@@ -62,8 +62,7 @@ flower.show();
  
  
 } 
- 
- 
+  
 class Flower { 
  
 constructor(X, Y, r1) { 
@@ -76,7 +75,6 @@ this.r1 = r1;
  
 } 
  
- 
 move() { 
  
 this.X = this.X + random(-3, 4); 
@@ -85,7 +83,6 @@ this.Y = this.Y + random(-3, 4);
  
 } 
  
-  
 show() { 
  
  let X = width / 2;;
@@ -108,3 +105,4 @@ show() {
 } 
 
 //step 3 make array of flowers 
+//step 4 give the flowers certain behaviours to interact with mario
