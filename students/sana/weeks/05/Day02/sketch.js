@@ -19,7 +19,7 @@ cat(100,400,13);
    cat(700,200,13);
     cat(700,400,13);
     mario();
-
+ 
 }
 
 function cat(x,y,r1) {
@@ -78,10 +78,8 @@ arc(x+50,y-105,r1*2,100,0,4)
 
 
 function mario(){
-   
- translate(mouseX,mouseY);
-
   
+ translate(mouseX,mouseY);
   fill(245,0,0)
   rect(0,0,220,45)
   fill(255,0,0)
