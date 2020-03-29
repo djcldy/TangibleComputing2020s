@@ -18,7 +18,7 @@ function draw() {
   pointLight(255,0, 255, width,height, 250);
 
   let offset = sin(frameCount/100)*100 
-  let scl = sin(frameCount/100)
+  let scl = sin(frameCount/100)+1
   stroke(255)
 
   push();
@@ -29,9 +29,9 @@ function draw() {
     // ambientMaterial(25);
 
 
-  for (x = -5; x < 6; x ++){
-    for (y = -5; y < 6; y ++){
-      for(z =-5; z < 6; z++){
+  for (x = -3; x < 4; x ++){
+    for (y = -3; y < 4; y ++){
+      for(z =-3; z < 4; z++){
 
         push()
 
