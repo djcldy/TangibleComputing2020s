@@ -1,66 +1,94 @@
-/*
-
-    Example Code: Interactive Gradient Array
-
-*/
-
+let i = 0 
+let capW = 500 // width capture 
+let capH = 500 // height capture
+let cellW = 50 // width cell 
+let cellH = 50  // height cell 50
+let cells = []
 
 function setup(){
-
-  createCanvas(1200,600);
-  stroke(255)
-
+	
+	
+	createCanvas(500,500)
+	id = 0
+	for (let x = 0; x < width; x += cellW) {
+		
+		for (let y = 0; y < height; y += cellH){
+			
+			col = [x/width*255, y/height*255, 100]
+			tx = x 
+			ty = y
+			let newCell = new Cell(x,y,tx,ty,cellW,cellH,col,id) 
+			cells.push(newCell)
+			id++ 
+			
+		}
+	}	
+	
+	
+	
 }
-
-/*function draw(){
-
-	let x = width/2 + random(-3,3)
-	let y = height- second()/60*height
-	let alpha = second()/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	ellipse(x,y,second(),second())
-
-	if(second()>58){
-		background(255)
-	}
-
- 
-   
-
-}*/
 
 function draw(){
-
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
-
-	if (second()>58){
-		background(255)
+	
+	background(255)
+	
+	for (i = 0; i < cells.length; i++){
+		
+		let cell = cells[i] 
+		cell.update()
+		cell.display()
+		
 	}
-}
-function drawIceCream(time,posX,radius){
-
-	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-3,3)
-	let alpha = time/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	ellipse(x,y,time*radius,time*radius)
-	//heart(x,y,time*radius,time*radius)
-
-
+	
+	if (random()>0.99){
+			swapPosition( cells[second()], cells[int(random(cells.length))])
+	}
+	
+ 
+	
 }
 
-/*function heart(x,y,radius,radius){
+function swapPosition(cell1, cell2){
+	
+	let tempX = cell1.tx 
+	let tempY = cell1.ty 
 
-	ellipse(x-radius/4,y,radius/2)
-	ellipse(x+radius/4,y,radius/2)
-	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
-}*/
+	cell1.tx = cell2.tx 
+	cell1.ty = cell2.ty 
+	
+	cell2.tx = tempX
+	cell2.ty = tempY 
+	
+}
 
+function Cell(x,y,tx,ty,w,h,col,id){
+	
+	this.id = id 
+	this.x = x 
+	this.y = y 
+	this.tx = tx 
+	this.ty = ty 
+	this.w = w 
+	this.h = h 
+	this.col = col
+	
+	this.update = function(){
+		
+		this.x = (this.tx - this.x)*0.1 + this.x
+		this.y = (this.ty - this.y)*0.1 + this.y
+		
+		
+	} 
+	
+	
+	this.display = function(){
+		
+		fill(this.col) 
+		rect(this.x,this.y,this.w,this.h)
+		fill(255)
+		text(this.id,this.x,this.y)
+		
+	}
+	
+	
+}
