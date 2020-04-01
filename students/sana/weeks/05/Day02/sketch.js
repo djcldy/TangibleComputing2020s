@@ -10,6 +10,10 @@ function setup() {
 
 } 
 function draw() {     
+
+
+
+
 background(255); 
 fill(255); 
 textSize(30); 
