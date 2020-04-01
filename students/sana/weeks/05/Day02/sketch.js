@@ -3,7 +3,7 @@ let ground = 200
  let gravity = 0.1 
 let bg;
 function setup() { 
-	bg = loadImage('bac-01.jpg');
+	bg = loadImage("bac-01.jpg");
   createCanvas(1000, 1000); 
   rectMode(CENTER) 
   noStroke() 
@@ -11,7 +11,7 @@ function setup() {
 
 } 
 function draw() {     
-background(bg); 
+background(bg,0,0); 
 fill(255); 
 textSize(30); 
 text("score:",12,25); 
