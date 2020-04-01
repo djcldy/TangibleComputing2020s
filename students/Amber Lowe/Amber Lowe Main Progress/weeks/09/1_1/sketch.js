@@ -10,10 +10,7 @@ function draw() {
 	rotateX(mouseX/width*PI)
 	rotateY(mouseY/height*PI)
 	fill(100,40,200)
-	sphere(400)
-  
-
-
-
-
-}
+	//sphere(400)
+	torus(50,400)
+ 
+ }
