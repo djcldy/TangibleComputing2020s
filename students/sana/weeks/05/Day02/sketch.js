@@ -1,7 +1,7 @@
 let ground = 200 
  let mario
  let gravity = 0.1 
-
+let loadImg;
 function setup() { 
   createCanvas(1000, 1000); 
   rectMode(CENTER) 
@@ -10,11 +10,13 @@ function setup() {
 
 } 
 function draw() {     
+ loadImg = "background: url("https://previews.123rf.com/images/vitaliyvill/vitaliyvill1609/vitaliyvill160900011/62999356-seamless-game-background-flat-style-2d-game-application.jpg");
+  // gif_createImg = createImg("https://media.giphy.com/media/3ohfFIJ9M9XCUkE6Na/giphy.gif");
+  
 
 
 
-
-background(255); 
+//background(255); 
 fill(255); 
 textSize(30); 
 text("score:",12,25); 
