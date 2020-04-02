@@ -8,10 +8,10 @@ function setup() {
 }
 function draw() {
     
-    background(255)
+    background(0)
     fill(second()/60*255,minute()/60*255,hour()/60*255)
     //translate(x,y,z) 
-    translate(x,-height/8,10) 
+    //translate(x,-height/8,10) 
     rotateY(frameCount*0.5)
     grid()
 
@@ -19,7 +19,8 @@ function draw() {
 
 function grid() {
 	
-	strokeWeight(2)
+	translate(x,-height/8,10) 
+    strokeWeight(2)
 	box(80)
 	translate(0,100,0) 
 	box(80)
