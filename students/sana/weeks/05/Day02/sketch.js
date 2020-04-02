@@ -8,40 +8,59 @@ function setup() {
   createCanvas(1000,700);  
   rectMode(CENTER)  
   noStroke()  
-      mario = new Mario() 
-       for (let i =0;i<15;i++){    
+  mario = new Mario() 
+
+  for (let i =0;i<15;i++){    
+     
      let X=10+70*i;    
-flower[i] = new Flower (X, 80, 10);     
-   
-}   
+     flower[i] = new Flower (X, 80, 10);     
+
+   }   
   
 }  
 function draw() {   
-  
-background(255);  
-fill(0);  
-textSize(30);  
-text("score:",12,25);  
-cat(150,250,13);  
-cat(450,250,13);  
+
+  // background(255);
+
+  drawBackground()  
+  fill(0);  
+  textSize(30); 
+
+  text("score:",12,25);  
+  cat(150,250,13);  
+  cat(450,250,13);  
   cat(750,250,13);  
    
   mario.update()  
   
-  for (let i=0;i< flower.lenght;i++){  
-      
+  for (let i=0;i< flower.length;i++){  
+  
+  }  
+
+  for (let i =0;i<flower.length;i++){    
+     flower[i].move();     
+     flower[i].show();  
+
+     if (flower[i].contains( mario.x, mario.y, mario.r )){  
+
+       flower.splice(i,1)
+       mario.score ++ 
+
     }  
-     
-     
-for (let i =0;i<flower.length;i++){    
-      
-flower[i].move();     
-     
-flower[i].show();     
-     
+
+  } 
+
 }    
-}    
-       
+
+function drawBackground(){
+
+  background(255,0,0)
+  fill(0)
+  rect(800,0,800,height)
+
+
+
+}
   
    
 function cat(x,y,r1) {  
@@ -98,20 +117,21 @@ pop();
 }  
               
 function Mario(){    
-  
-     this.x = width/2 
-     this.y = 0 
+
+    this.x = width/2 
+    this.y = 0 
     this.vx = 0  
     this.vy = 0  
     this.ax = 0  
     this.ay = 0 
     this.mass = 100 
+    this.score = 0
     this.checkGround = function(){ 
          
     if (this.y > height - ground){ 
         console.log('check ground') 
         this.vy = 0 
-    this.ay = -5*(gravity / this.mass)  
+        this.ay = -5*(gravity / this.mass)  
     this.y = height - ground 
              
     } 
@@ -121,30 +141,30 @@ function Mario(){
     this.checkBoundary = function(){ 
          
          
-    if (this.x > width) this.x = 0  
-if (this.x < 0) this.x = width  
+      if (this.x > width) this.x = 0  
+      if (this.x < 0) this.x = width  
          
          
     } 
      
     this.update = function(){ 
-         
-this.ax = 0 
+        
+        this.ax = 0 
         let drag = -0.5*this.ax  
         this.ax += drag  
         this.ay += gravity / this.mass  
-  
         this.checkGround() 
         this.vx += this.ax  
         this.vy += this.ay      
         this.x += this.vx  
-        this.y += this.vy  
+        this.y += this.vy
+        this.r = 100   
          
-//translate(mouseX,mouseY);  
-push();  
-translate(this.x,this.y)  
-scale(0.2);  
-  fill(245,0,0)  
+        //translate(mouseX,mouseY);  
+        push();  
+        translate(this.x,this.y)  
+        scale(0.2);  
+        fill(245,0,0)  
   rect(0,0,220,45)  
   fill(255,0,0)  
   rect(0,10,250,55)  
@@ -201,38 +221,51 @@ fill(0)
   fill(0)  
   rect(-50,380,200,80)  
   fill(0)  
-  rect(210,285,90,50)  
-pop(); 
-this.checkBoundary()  
+  rect(210,285,90,50)
+
+  noFill()
+  strokeWeight(5)
+  stroke(255,0,0)
+  ellipse(0,0,this.r,this.r)  
+  pop(); 
+  this.checkBoundary()  
 }  
    
 } 
   
-class Flower {  //class parameters of the flower to have random radius and movement   
+class Flower {  
+
+  constructor(X, Y, r1,speed) { 
+
+      //class parameters of the flower to have random radius and movement    
+      this.X = random(width);//X;   
+      this.Y = random(height);//Y;     
+      this.r1 =random(40,15);   
+      this.speed=1;    
+
+    }     
      
-constructor(X, Y, r1,speed) {     
-     
-this.X = random(width);//X;   
-     
-this.Y = random(height);//Y;     
-     
-this.r1 =random(40,15);   
-    
-this.speed=1;    
-     
-}     
-     
-   contains(px,py){// this how the mouse figure out it is the flower  
+   contains( px, py, r) { 
+
+    // this how the mouse figure out it is the flower  
     let d =dist(px,py,this.X,this.Y);  
-    if (d<this.r1){  
-      return true;  
-    }else {  
-      return false;  
+
+      if (d < r){  
+      
+        return true;
+
+      } else {  
+        
+        return false;  
+      
+      }  
+    
     }  
-    }  
-     
-move() {  //move the flower in x direction in the speed i declared up   
-  this.X=this.X+this.speed;    
+    
+    move() {  
+
+      //move the flower in x direction in the speed i declared up   
+      this.X=this.X+this.speed;    
    
 }     
      
@@ -267,10 +300,15 @@ let X = width / 2;
     console.log('jump force', mario.ay) 
   
     for (let i= flower.length-1; i>=0;i--){  
+
     if (flower[i].contains(mouseX,mouseY)){  
+
        flower.splice(i,1);  
+
+    }  
+
   }  
-}  
+
 }     
      
   
