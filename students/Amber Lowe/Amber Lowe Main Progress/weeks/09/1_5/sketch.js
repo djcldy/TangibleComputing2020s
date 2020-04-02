@@ -10,8 +10,6 @@ function draw() {
     
     background(0)
     fill(second()/60*255,minute()/60*255,hour()/60*255)
-    //translate(x,y,z) 
-    //translate(x,-height/8,10) 
     rotateY(frameCount*0.5)
     grid()
 

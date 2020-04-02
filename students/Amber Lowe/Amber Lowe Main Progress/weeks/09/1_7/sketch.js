@@ -1,74 +1,130 @@
-/*
+let x = 0
+let y = 0
+let z = 0 
 
-    Example Code: Interactive Gradient Array
-
-*/
-
-
-function setup(){
-
-  createCanvas(1200,600);
-  stroke(255)
+function setup() {
+  createCanvas( 600, 800, WEBGL);
 
 }
+function draw() {
+    
+    background(48, 25, 52)
+    fill(random(255),random(255),random(255))
+    noStroke()
+    rect(600,800,600,800)
 
-/*function draw(){
+    fill(random(255),random(255),random(255))
+    rotateY(frameCount*0.5)
+    grid()
+    rotateX(frameCount*0.1)
+    planes()
+    invertedplanes()
 
-	let x = width/2 + random(-3,3)
-	let y = height- second()/60*height
-	let alpha = second()/60*255
+}	
 
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
+function grid() {
+	
+	translate(x,-height/8,10) 
+    strokeWeight(2)
+	box(80)
+	translate(0,100,0) 
+	box(80)
+	translate(0,100,0) 
+	rotate(PI/2)
+	box(80)
+	translate(0,100,0) 
+	box(80)
+	translate(0,100,0) 
+	box(80)
+	rotate(PI/2)
+    translate(0,100,0) 
+	box(80)
+	translate(0,100,0) 
+	box(80)
+	rotate(PI/2)
+    translate(0,100,0) 
+	box(80)
+	rotate(PI/2)
+    translate(0,100,0) 
+	box(80)
 
-	ellipse(x,y,second(),second())
-
-	if(second()>58){
-		background(255)
-	}
-
- 
-   
-
-}*/
-
-function draw(){
-
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
-
-	if (second()>58){
-		background(255)
-	}
-}
-function drawIceCream(time,posX,radius){
-
-	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-3,3)
-	let alpha = time/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	//ellipse(x,y,time*radius,time*radius)
-	heart(x,y,time*radius,time*radius)
-
-
-}
-
-function heart(x,y,radius,radius){
-
-	push()
-	translate(x,y)
-	rotate(random())
-
-
-    ellipse(x-radius/4,y,radius/2)
-	ellipse(x+radius/4,y,radius/2)
-	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
-	pop()
+	
+	x ++ 
+	y ++
+	
+	if (x > width/2) x = -width/2 
+    if (y > height/2) y = -height/2 		
+	
 }
 
 
 
+function planes() {
+	
+	translate(x,+height/8,10) 
+    strokeWeight(2)
+	plane(80,40)
+	translate(100,100,10) 
+	plane(80,40)
+	translate(100,100,10) 
+	rotate(PI/4)
+	plane(80,40)
+	translate(100,100,10) 
+	plane(80,40)
+	translate(100,100,10) 
+	plane(80,40)
+	rotate(PI/4)
+    translate(100,100,10) 
+	plane(80,40)
+	translate(100,100,10) 
+	plane(80,40)
+	rotate(PI/4)
+    translate(100,100,10) 
+	plane(80,40)
+	rotate(PI/4)
+    translate(100,100,10) 
+	plane(80,40)
+
+	
+	x ++ 
+	y ++
+	
+	if (x > width/2) x = -width/2 
+    if (y > height/2) y = -height/2 		
+	
+}
+
+function invertedplanes() {
+	
+	translate(x,+height/8,10) 
+    strokeWeight(2)
+	plane(40,80)
+	translate(10,500,100) 
+	plane(40,80)
+	translate(10,500,100) 
+	rotate(PI/4)
+	plane(40,80)
+	translate(10,500,100) 
+	plane(40,80)
+	translate(10,500,100) 
+	plane(40,80)
+	rotate(PI/4)
+    translate(10,500,100) 
+	plane(40,80)
+	translate(10,500,100) 
+	plane(40,80)
+	rotate(PI/4)
+    translate(10,500,100) 
+	plane(40,80)
+	rotate(PI/4)
+    translate(10,500,100) 
+	plane(40,80)
+
+	
+	x ++ 
+	y ++
+	
+	if (x > width/2) x = -width/2 
+    if (y > height/2) y = -height/2 		
+	
+}
