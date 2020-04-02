@@ -22,7 +22,7 @@ function setup() {
 function draw() {
 
   image(vid,0,0,width,height)
-  filter(34,155,215)
+  filter( 34, 155, 215)
   // drawEye( eyeLeftX, eyeLeftY, 10)
   // drawEye( eyeRightX, eyeRightY, 20)
 

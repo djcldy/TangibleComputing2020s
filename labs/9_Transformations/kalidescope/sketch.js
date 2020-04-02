@@ -52,7 +52,7 @@ function draw() {
         rotateX(frameCount/100)
         
         fill(125+x*25,125+y*25,125+z*25)
-        box(50)
+        box(5)
         pop()
 
       }
