@@ -1,22 +1,24 @@
 let x = 0
 let y = 0
 let z = 0 
+let velocity = [0.01,0.02,0.03,0.04,0.05,0.1,0.2,0.3,0.4,0.5]
 
 function setup() {
   createCanvas( 600, 800, WEBGL);
 
 }
 function draw() {
-    
+    //how can I make the frame count a variable velocity that can change every second() minute() hour()
+    //can velocity be an array?
     background(48, 25, 52)
     fill(random(255),random(255),random(255))
     noStroke()
     rect(600,800,600,800)
-
+    
     fill(random(255),random(255),random(255))
-    rotateY(frameCount*0.5)
+    rotateY(frameCount*(velocity[5]))
     grid()
-    rotateX(frameCount*0.1)
+    rotateX(frameCount*random(velocity))
     planes()
     invertedplanes()
 
