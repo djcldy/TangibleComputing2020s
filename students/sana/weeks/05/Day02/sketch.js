@@ -1,7 +1,7 @@
 let clouds = []; 
 let c;  
 let ground = 200   
-let mario;
+let mario
 let gravity = 0.1   
 let flowers = []    
 let trees = []
@@ -10,10 +10,10 @@ let trees = []
 function setup() {
 
   createCanvas(1000,700);   
-  rectMode(CENTER)   
-  noStroke()   
-  mario = new Mario()  
+  rectMode(CENTER);  
+  noStroke() ;  
   
+ mario = new Mario() 
   for ( i = 0; i < 12; i++) {
 
     trees.push(new Tree())
@@ -23,7 +23,6 @@ function setup() {
 
     clouds.push(new Cloud())
  }
-
 
   for ( i =0;i<10;i++){     
       
@@ -89,7 +88,6 @@ function draw() {
     // background(255); 
     push(); 
     scale(1.5); 
-    translate(this.x,this.y)
     fill('brown');
     rect(200,200,30,130);
     fill('green');
