@@ -3,29 +3,29 @@ let c;
 let ground = 200   
 let mario  
 let gravity = 0.1   
-<<<<<<< HEAD
+
 let flower=[];    
 // let trees=[];
-=======
+
 let flowers = [];    
 let trees = [];
 
 function setup() {
->>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
+
 
   createCanvas(1000,700);   
   rectMode(CENTER)   
   noStroke()   
-<<<<<<< HEAD
+
 
   // for ( i = 0; i < 12; i++) { 
   
   //  trees[i] = new Tree();
-=======
+
   mario = new Mario()  
   
   for ( i = 0; i < 12; i++) {
->>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
+
 
     trees.push(new Tree)
   } 
@@ -66,19 +66,19 @@ function draw() {
 
   }
 
-<<<<<<< HEAD
+
   // for (var i = 0; i < trees.length; i++) { 
   //       trees[i].display(); 
   //          }    
              
     } 
-=======
+
   for (var i = 0; i < trees.length; i++) { 
 
     trees[i].display(); 
  
   } 
->>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
+
      
 
   mario.update()   
@@ -98,10 +98,10 @@ function draw() {
   
   }  
   
-}     
+    
   
  //function drawBackground(){ 
-<<<<<<< HEAD
+
 //  	function Tree(x,y){
 //    this.x= random(width/3); 
 //    this.y= random(height);            
@@ -120,7 +120,7 @@ function draw() {
   
   
 //  } 
-=======
+
  function Tree(x,y){
   
   this.x= random(width/3); 
@@ -141,7 +141,7 @@ function draw() {
   
   
  } 
->>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
+
    
 function Cloud(){ 
 
@@ -412,10 +412,10 @@ function mousePressed(){
       }   
     }   
   
-<<<<<<< HEAD
+
   }   
   
-}  
+  
 // } 
 // }
 // function getFlower(Mario,Flower) {
@@ -423,10 +423,5 @@ function mousePressed(){
 // 	score+=1; 
 // }   
   
-=======
-  }  
 
-
-
->>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
 
