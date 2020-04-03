@@ -2,11 +2,7 @@ let clouds = [];
 let c;  
 let ground = 200   
 let mario  
-let gravity = 0.1   
-
-let flower=[];    
-// let trees=[];
-
+let gravity = 0.1 
 let flowers = [];    
 let trees = [];
 
