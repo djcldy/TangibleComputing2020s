@@ -1,7 +1,7 @@
 let clouds = []; 
 let c;  
 let ground = 200   
-let mario  
+let mario;
 let gravity = 0.1   
 let flowers = []    
 let trees = []
@@ -89,6 +89,7 @@ function draw() {
     // background(255); 
     push(); 
     scale(1.5); 
+    translate(this.x,this.y)
     fill('brown');
     rect(200,200,30,130);
     fill('green');
@@ -100,7 +101,7 @@ function draw() {
   }
   
   
- } 
+ 
    
 function Cloud(){ 
 
@@ -368,5 +369,5 @@ function mousePressed(){
   
       }   
     }   
-  
+  }
   }
