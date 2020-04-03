@@ -89,7 +89,6 @@ function draw() {
     // background(255); 
     push(); 
     scale(1.5); 
-    translate(this.x,this.y)
     fill('brown');
     rect(200,200,30,130);
     fill('green');
