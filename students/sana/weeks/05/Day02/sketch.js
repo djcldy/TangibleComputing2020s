@@ -108,19 +108,20 @@ function Cloud(){
   this.y= random(height/3); 
   this.radius= random(15, 50); 
   this.display=function(){ 
+
+
   
     noStroke(); 
-    fill(c); 
+    fill(0); 
     ellipse(this.x, this.y, this.radius*2); 
   
   } 
   
   this.move=function(){ 
-    
+
         this.x += random(-1,1); 
         this.y += random(-1,1); 
-         
-    } 
+  } 
   
   
 } 
