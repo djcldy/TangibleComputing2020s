@@ -16,7 +16,7 @@ function setup() {
   
   for ( i = 0; i < 12; i++) {
 
-    trees.push(new Tree)
+    trees.push(new Tree())
   } 
   
   for ( i = 0; i < 1000; i++) { 
@@ -83,12 +83,13 @@ function draw() {
  //function drawBackground(){ 
  function Tree(x,y){
   
-  this.x= random(width/3); 
-  this.y= random(height);            
-  this.display=function(){ 
+  // this.x= random(width/3); 
+  // this.y= random(height);            
+  // this.display=function(){ 
     // background(255); 
     push(); 
     scale(1.5); 
+    translate(this.x,this.y)
     fill('brown');
     rect(200,200,30,130);
     fill('green');
@@ -100,7 +101,7 @@ function draw() {
   }
   
   
- } 
+ 
    
 function Cloud(){ 
 
