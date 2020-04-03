@@ -86,7 +86,7 @@ function draw() {
   this.x= random(width/3); 
   this.y= random(height);            
   this.display=function(){ 
-    background(255); 
+    // background(255); 
     push(); 
     scale(1.5); 
     fill('brown');
@@ -116,6 +116,7 @@ function Cloud(){
   } 
   
   this.move=function(){ 
+    
         this.x += random(-1,1); 
         this.y += random(-1,1); 
          
