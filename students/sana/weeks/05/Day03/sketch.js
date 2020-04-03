@@ -349,4 +349,18 @@ let X = width / 2;
    
 }    
  
- 
+ // function Tree(,){
+  
+  
+ //    // background(255); 
+ //    push(); 
+ //    scale(1.5); 
+ //    fill('brown');
+ //    rect(200,200,30,130);
+ //    fill('green');
+ //    ellipse(205,175,70,70);
+ //    ellipse(205,200,50,50);
+ //    ellipse(205,150,40,40);
+ //    ellipse(180,170,50,70);
+ //    pop();
+ //  }
