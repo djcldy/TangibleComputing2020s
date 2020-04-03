@@ -4,16 +4,16 @@ let ground = 200
 let mario  
 let gravity = 0.1   
 let flower=[];    
-let trees=[];
+// let trees=[];
 
 function setup() {   
   createCanvas(1000,700);   
   rectMode(CENTER)   
   noStroke()   
 
-  for ( i = 0; i < 12; i++) { 
+  // for ( i = 0; i < 12; i++) { 
   
-   trees[i] = new Tree();
+  //  trees[i] = new Tree();
 
   for ( i = 0; i < 1000; i++) { 
   
@@ -49,9 +49,9 @@ function draw() {
         clouds[i].display(); 
             clouds[i].move(); 
 
-  for (var i = 0; i < trees.length; i++) { 
-        trees[i].display(); 
-           }    
+  // for (var i = 0; i < trees.length; i++) { 
+  //       trees[i].display(); 
+  //          }    
              
     } 
      
@@ -79,24 +79,24 @@ function draw() {
 }     
   
  //function drawBackground(){ 
- 	function tree(x,y){
-   this.x= random(width/3); 
-   this.y= random(height);            
-  this.display=function(){ 
- background(255); 
-push(); 
-  scale(1.5); 
-  fill('brown');
-  rect(200,200,30,130);
-  fill('green');
-  ellipse(205,175,70,70);
-  ellipse(205,200,50,50);
-   ellipse(205,150,40,40);
-   ellipse(180,170,50,70);
-pop();
+//  	function Tree(x,y){
+//    this.x= random(width/3); 
+//    this.y= random(height);            
+//   this.display=function(){ 
+//  background(255); 
+// push(); 
+//   scale(1.5); 
+//   fill('brown');
+//   rect(200,200,30,130);
+//   fill('green');
+//   ellipse(205,175,70,70);
+//   ellipse(205,200,50,50);
+//    ellipse(205,150,40,40);
+//    ellipse(180,170,50,70);
+// pop();
   
   
- } 
+//  } 
    
      function Cloud(){ 
      this.x= random(width); 
@@ -365,8 +365,8 @@ let X = width / 2;
   }   
   
 }  
-} 
-}
+// } 
+// }
 // function getFlower(Mario,Flower) {
 // 	flower.splice();
 // 	score+=1; 
