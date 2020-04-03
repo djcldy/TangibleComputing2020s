@@ -3,37 +3,51 @@ let c;
 let ground = 200   
 let mario  
 let gravity = 0.1   
+<<<<<<< HEAD
 let flower=[];    
 // let trees=[];
+=======
+let flowers = [];    
+let trees = [];
 
-function setup() {   
+function setup() {
+>>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
+
   createCanvas(1000,700);   
   rectMode(CENTER)   
   noStroke()   
+<<<<<<< HEAD
 
   // for ( i = 0; i < 12; i++) { 
   
   //  trees[i] = new Tree();
-
-  for ( i = 0; i < 1000; i++) { 
-  
-   clouds[i] = new Cloud();
-
+=======
   mario = new Mario()  
   
+  for ( i = 0; i < 12; i++) {
+>>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
+
+    trees.push(new Tree)
+  } 
+  
+   // trees[i] = new Tree();
+
+  for ( i = 0; i < 10; i++) { 
+
+    clouds.push(new Cloud())
+ }
+
+
   for ( i =0;i<10;i++){     
       
-     let X=10+70*i;     
-     flower[i] = new Flower (X, 80, 10);  
-    
+     let X = 10+70*i;     
+     flowers.push(new Flower (X, 80, 10)) 
 
-      
-  
- }     
-  
-   }    
-   
+   }     
+ 
 }   
+
+
 function draw() {    
   
   background(255); 
@@ -46,30 +60,38 @@ function draw() {
 
   c = color(20,70, 100,10); //cloud
  for (var i = 0; i < clouds.length; i++) { 
-        clouds[i].display(); 
-            clouds[i].move(); 
 
+  clouds[i].display(); 
+  clouds[i].move();
+
+  }
+
+<<<<<<< HEAD
   // for (var i = 0; i < trees.length; i++) { 
   //       trees[i].display(); 
   //          }    
              
     } 
+=======
+  for (var i = 0; i < trees.length; i++) { 
+
+    trees[i].display(); 
+ 
+  } 
+>>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
      
 
   mario.update()   
    
-  for (let i=0;i< flower.length;i++){   
-   
-  }   
-  
-  for (let i =0;i<flower.length;i++){     
-     flower[i].move();      
-     flower[i].show(); 
+  for (let i = 0; i< flowers.length;i++){   
+     
+     flowers[i].move();      
+     flowers[i].show(); 
      
   
-     if (flower[i].contains( mario.x, mario.y, mario.r )){   
+     if (flowers[i].contains( mario.x, mario.y, mario.r )){   
   
-       flower.splice(i,1) 
+       flowers.splice(i,1) 
        mario.score ++  
   
     }   
@@ -79,6 +101,7 @@ function draw() {
 }     
   
  //function drawBackground(){ 
+<<<<<<< HEAD
 //  	function Tree(x,y){
 //    this.x= random(width/3); 
 //    this.y= random(height);            
@@ -97,23 +120,49 @@ function draw() {
   
   
 //  } 
+=======
+ function Tree(x,y){
+  
+  this.x= random(width/3); 
+  this.y= random(height);            
+  this.display=function(){ 
+    // background(255); 
+    push(); 
+    scale(1.5); 
+    fill('brown');
+    rect(200,200,30,130);
+    fill('green');
+    ellipse(205,175,70,70);
+    ellipse(205,200,50,50);
+    ellipse(205,150,40,40);
+    ellipse(180,170,50,70);
+    pop();
+  }
+  
+  
+ } 
+>>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
    
-     function Cloud(){ 
-     this.x= random(width); 
-            this.y= random(height/3); 
-            this.radius= random(15, 50); 
-            this.display=function(){ 
+function Cloud(){ 
+
+  this.x= random(width); 
+  this.y= random(height/3); 
+  this.radius= random(15, 50); 
+  this.display=function(){ 
+
+
   
     noStroke(); 
-    fill(c); 
+    fill(0); 
     ellipse(this.x, this.y, this.radius*2); 
-} 
   
-this.move=function(){ 
+  } 
+  
+  this.move=function(){ 
+
         this.x += random(-1,1); 
         this.y += random(-1,1); 
-         
-    } 
+  } 
   
   
 } 
@@ -281,9 +330,9 @@ fill(0)
   strokeWeight(5) 
   stroke(255,0,0) 
   ellipse(0,0,this.r,this.r)   
-  pop();  
-  this.checkBoundary()   
-}   
+   pop();  
+    this.checkBoundary()   
+  }   
     
 }  
    
@@ -346,7 +395,7 @@ let X = width / 2;
 
   
    
-  function mousePressed(){  
+function mousePressed(){  
       
     
     mario.ay += -70*(gravity / mario.mass)  
@@ -354,14 +403,16 @@ let X = width / 2;
           
     console.log('jump force', mario.ay)  
    
-    for (let i= flower.length-1; i>=0;i--){   
+    for (let i= flowers.length-1; i>=0;i--){   
   
-    if (flower[i].contains(mouseX,mouseY)){   
+      if (flowers[i].contains(mouseX,mouseY)){   
   
-       flower.splice(i,1);   
+        flowers.splice(i,1);   
   
+      }   
     }   
   
+<<<<<<< HEAD
   }   
   
 }  
@@ -372,4 +423,10 @@ let X = width / 2;
 // 	score+=1; 
 // }   
   
+=======
+  }  
+
+
+
+>>>>>>> 36a85b26e5f078c674dfe4c6e838ce2db7b3415f
 
