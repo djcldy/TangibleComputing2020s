@@ -16,7 +16,7 @@ function setup() {
   
   for ( i = 0; i < 12; i++) {
 
-    trees.push(new Tree)
+    trees.push(new Tree())
   } 
   
   for ( i = 0; i < 1000; i++) { 
