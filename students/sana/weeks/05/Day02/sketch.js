@@ -1,7 +1,7 @@
 let clouds = []; 
 let c;  
 let ground = 200   
-let mario  
+let mario;
 let gravity = 0.1   
 let flowers = []    
 let trees = []
@@ -83,9 +83,9 @@ function draw() {
  //function drawBackground(){ 
  function Tree(x,y){
   
-  // this.x= random(width/3); 
-  // this.y= random(height);            
-  // this.display=function(){ 
+  this.x= random(width/3); 
+  this.y= random(height);            
+  this.display=function(){ 
     // background(255); 
     push(); 
     scale(1.5); 
@@ -369,5 +369,5 @@ function mousePressed(){
   
       }   
     }   
-  
+  }
   }
