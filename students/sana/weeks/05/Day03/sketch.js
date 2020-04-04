@@ -11,7 +11,7 @@ function setup() {
   rectMode(CENTER)
   noStroke()
   console.log(width,height)
-  for ( i = 0; i < 10; i++) { //cloud
+  for ( i = 0; i < 1000; i++) { //cloud
 
    clouds[i] = new Cloud();
 
@@ -44,11 +44,11 @@ function draw() {
 
 function updateBackground(){
 
-  background(34,155,215)
-  stroke(255,0,0)
-  strokeWeight(5)
-  console.log(width,height)
-  noStroke()
+  background(255)
+  // stroke(255,0,0)
+  // strokeWeight(5)
+  // console.log(width,height)
+  // noStroke()
 
 
 }
