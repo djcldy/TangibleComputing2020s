@@ -3,10 +3,9 @@ let c;
 let ground = 200    
 let mario   
 let gravity = 0.1    
-    
-let flower=[];       
-function setup() {    
-       
+let flower=[];     
+
+function setup() {         
   createCanvas(1000,700);    
   rectMode(CENTER)    
   noStroke()    
@@ -20,9 +19,7 @@ function setup() {
        
      let X=10+70*i;      
      flower[i] = new Flower (X, 80, 10);   
-  
-       
-   
+
 }      
    
    }     
@@ -31,10 +28,9 @@ function setup() {
 function draw() {     
    
   background(255);  
-   
-// drawBackground()   
-  
-  
+
+    mountains();
+    
   fill(0);    
   textSize(30);   
    
@@ -42,8 +38,15 @@ function draw() {
   cat(150,250,13);    
   cat(450,250,13);    
   cat(750,250,13);    
-  
-  
+ tree(200,300,40);
+ tree(100,100,30);
+  tree(300,200,70);
+  tree(400,400,60);
+  tree(500,500,20);
+   tree(600,600,80);
+     sunShine();
+   land();
+ 
   c = color(20,70, 100,10); //cloud 
 for (var i = 0; i < clouds.length; i++) {  
         clouds[i].display();  
@@ -70,21 +73,48 @@ for (var i = 0; i < clouds.length; i++) {
    
   }   
    
-}      
-   
-// function drawBackground(){  
-   
-//   background(255,0,0)  
-//   fill(0)  
-//   rect(800,0,800,height)  
-   
-   
-   
-// }  
+}    
+
+function sunShine() {
+  this.x = 50
+  this.y = 50
+    noStroke()
+    fill(255, 255, 0)
+    ellipse(this.x+800, this.y + 20, 100, 100)
+
+  }
+  
+   function mountains(){
+    this.x=360;
+    this.y=100;
+push();
+scale(.6);
+translate(this.x,this.y)
+
+    fill(100, 50, 40,90);
+  triangle(x, 80, 760, 500, -10, 500);
+  fill(60, 59, 40,60);
+  triangle(x-260, 170, 500, 500, -380, 500);
+    fill(85, 60, 10);
+  
+  triangle(x+300, 40, 1000, 500, -10, 500);
+
+  fill(90, 79, 40);
+
+  triangle(x+400, 300, 1000, 500, 100, 500);
+
+  fill(90, 79, 40)
+  rect(x+600,y+380,1000,40)
+
+  fill(40, 79, 40)
+  rect(x,y+450,2000,40)
+ pop();
+   }
+ 
     
      function Cloud(){  
      this.x= random(width);  
-            this.y= random(height/3);  
+            this.y= random(height/5);  
             this.radius= random(15, 50);  
             this.display=function(){  
    
@@ -101,6 +131,50 @@ this.move=function(){
    
    
 }  
+
+
+
+function tree(x,y,diameter){
+   this.x= 205;  
+   this.y= 0; 
+ this.diameter=random(50-70);
+    push(); 
+    scale(1.5); 
+    fill('brown');
+    rect(x,200,30,130);
+    fill('green');
+    ellipse(x,175,70,40,diameter);
+    ellipse(x,200,50,50,diameter);
+    ellipse(x,150,40,40,diameter);
+    ellipse(x-20,170,70,diameter);
+     ellipse(x-10,180,60,diameter);
+     fill('red')
+     ellipse(x,200,10,10);
+      ellipse(x+10,150,15,15);
+      ellipse(x-35,170,12,12); 
+    pop();
+  
+     
+  }
+
+
+  function land(x,y,height,width){
+
+  
+ this.X = 0;      
+   this.Y =0; 
+   this.height=1500
+   this.width=150     
+    
+push();
+    fill('green');
+    rect(300,700,this.height,this.width);
+    fill(14,120);
+   rect(300,700,this.height,this.width/2);
+    pop();
+  }
+
+
 function cat(x,y,r1) {    
 push();    
 scale(0.3);    
@@ -349,18 +423,3 @@ let X = width / 2;
    
 }    
  
- // function Tree(,){
-  
-  
- //    // background(255); 
- //    push(); 
- //    scale(1.5); 
- //    fill('brown');
- //    rect(200,200,30,130);
- //    fill('green');
- //    ellipse(205,175,70,70);
- //    ellipse(205,200,50,50);
- //    ellipse(205,150,40,40);
- //    ellipse(180,170,50,70);
- //    pop();
- //  }

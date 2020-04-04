@@ -1,27 +1,19 @@
 let clouds = []; 
 let c;  
 let ground = 200   
-<<<<<<< HEAD
 let mario
 let gravity = 0.1   
 let flowers = []    
 let trees = []
 
-=======
-let mario  
-let gravity = 0.1 
-let flowers = [];    
-let trees = [];
->>>>>>> parent of 26f1996... update
+
 
 function setup() {
 
 
   createCanvas(1000,700);   
-<<<<<<< HEAD
-  rectMode(CENTER);  
-  noStroke() ;  
-=======
+ 
+
   rectMode(CENTER)   
   noStroke()   
 
@@ -31,17 +23,14 @@ function setup() {
   //  trees[i] = new Tree();
 
   mario = new Mario()  
->>>>>>> parent of 26f1996... update
+
   
- mario = new Mario() 
+
   for ( i = 0; i < 12; i++) {
 
-<<<<<<< HEAD
-    trees.push(new Tree())
-=======
 
-    trees.push(new Tree)
->>>>>>> parent of 26f1996... update
+    trees.push(new Tree())
+
   } 
   
    // trees[i] = new Tree();
@@ -152,13 +141,9 @@ function draw() {
     pop();
   }
   
-  
-<<<<<<< HEAD
- 
-=======
+
  } 
 
->>>>>>> parent of 26f1996... update
    
 function Cloud(){ 
 
@@ -428,13 +413,9 @@ function mousePressed(){
   
       }   
     }   
-<<<<<<< HEAD
-  }
-  }
-=======
-  
 
-  }   
+  }
+ 
   
   
 // } 
@@ -446,4 +427,4 @@ function mousePressed(){
   
 
 
->>>>>>> parent of 26f1996... update
+
