@@ -11,12 +11,14 @@ function draw() {
     //how can I make the frame count a variable velocity that can change every second() minute() hour()
     //can velocity be an array?
     background(48, 25, 52)
+    
+    //fill(second()/60*255,minute()/60*255,hour()/60*255)
     fill(random(255),random(255),random(255))
     noStroke()
-    rect(600,800,600,800)
+    rect(x*10,y*10,600,800)
     
     fill(random(255),random(255),random(255))
-    rotateY(frameCount*(velocity[5]))
+    rotateY(frameCount*random(velocity))
     grid()
     rotateX(frameCount*random(velocity))
     planes()
