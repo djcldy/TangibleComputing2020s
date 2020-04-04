@@ -130,9 +130,9 @@ function mountains(){
     fill(90, 79, 40);
     triangle(x+400, 300, 1000, 500, 100, 500);
     fill(90, 79, 40)
-    rect(x+600,y+380,1000,40)
+    rect(x+600,y+360,1000,40)
     fill(40, 79, 40)
-    rect(x,y+450,2000,40)
+    rect(x-700,y+450,x*8,40)
     pop();
 }
 
@@ -166,15 +166,15 @@ function tree(x,y,diameter){
 
    this.x= 205;
    this.y= 0;
-   this.diameter=random(50-70);
+   this.diameter=random(50,70);
 
    push();
    scale(1.5);
    fill('brown');
-   rect(x,200,30,130);
+   rect(x-4,200,30,60);
    fill('green');
    ellipse(x,175,70,40,diameter);
-   ellipse(x,200,50,50,diameter);
+   ellipse(x+5,200,50,50,diameter);
    ellipse(x,150,40,40,diameter);
    ellipse(x-20,170,70,diameter);
    ellipse(x-10,180,60,diameter);
@@ -193,9 +193,9 @@ function land(x,y,w,h){
 
   push();
   fill('green');
-  rect(0,500,w,h);
-  fill(14,120);
-  // rect(0,300,w,h);
+  rect(0,600,w,h/9);
+  // fill(14,120);
+  // rect(0,600,w,h/9);
   pop();
 
 }
