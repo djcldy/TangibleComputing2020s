@@ -5,16 +5,21 @@ let mario
 let gravity = 0.1
 let flower=[];
 let score
-//let sound;
+let sound;
 
-// function preload() {
-//    //soundFormats('mp3','ogg');
-//  //sound=loadSound('mario_theme.mp3');
+function preload() {
+ soundFormats('mp3', 'ogg');
+sound=loadSound('http://www.mariomayhem.com/downloads/sound_tracks/Super_Mario_Bros._1/01-main-theme-overworld.mp3');
+}
+
+  // <embed src="http://www.mariomayhem.com/downloads/sound_tracks/Super_Mario_Bros._1/01-main-theme-overworld.mp3" autoplay="true"   loop="true" 
+  // width="145" height="60" hidden="true"></embed>
 
 function setup() {
 
   createCanvas(1000,700);
-  //sound.play();
+  cnv.mousePressed(canvasPressed);
+  sound.play();
   rectMode(CENTER)
   noStroke()
   console.log(width,height)
@@ -458,7 +463,9 @@ let X = width / 2;
 }
 }
 
-
+function canvasPressed() {
+  sound.play();
+}
 
   function mousePressed(){
 
