@@ -1,16 +1,27 @@
 let clouds = [];
-let c;
+let c
 let ground = 200
 let mario
 let gravity = 0.1
 let flower=[];
+let score
+let sound;
 
+function preload() {
+   soundFormats('mp3','ogg');
+ sound=loadSound('mario_theme.mp3');
+}
 function setup() {
 
   createCanvas(1000,700);
+  sound.play();
   rectMode(CENTER)
   noStroke()
   console.log(width,height)
+   
+  score=0;
+  
+ 
   for ( i = 0; i < 1000; i++) { //cloud
 
    clouds[i] = new Cloud();
@@ -29,22 +40,23 @@ function setup() {
 }
 
 function draw() {
-
   updateBackground()
   mountains();
   updateTrees()
-  sunShine();
   land(0,0,width,height);
   updateClouds()
+   sunShine();
   updateFlowers()
   mario.update()
   updateScore(mario.score)
+
 
 }
 
 function updateBackground(){
 
-  background(255)
+  background(215)
+
   // stroke(255,0,0)
   // strokeWeight(5)
   // console.log(width,height)
@@ -64,10 +76,18 @@ function updateTrees(){
 }
 
 function updateScore(score){
-
+fill(0);
+textSize(28);
+text("score:",12,28);
+fill(130,20,27);
+text(score,95,28);
+ themeSound.play()
+  if (mario.score==15){
   fill(0);
-  textSize(30);
-  text("score:",12,25);
+    text("YOU WON!");
+    textSize(40);
+
+  }
   cat(150,250,13)
   cat(500,250,13)
   cat(850,250,13)
@@ -109,8 +129,8 @@ function sunShine() {
   this.x = 50
   this.y = 50
     noStroke()
-    fill(255, 255, 0)
-    ellipse(this.x+800, this.y + 20, 100, 100)
+    fill(255, 225, 60,120)
+    ellipse(this.x+850, this.y + 20, 100, 100)
 
   }
 
@@ -132,7 +152,7 @@ function mountains(){
     fill(90, 79, 40)
     rect(x+600,y+360,1000,40)
     fill(40, 79, 40)
-    rect(x-700,y+450,x*8,40)
+    rect(x-700,y+400,x*10,40)
     pop();
 }
 
@@ -140,7 +160,7 @@ function mountains(){
 function Cloud(){
 
      this.x= random(width);
-     this.y= random(height/5);
+     this.y= random(height/6);
      this.radius= random(15, 50);
      this.display=function(){
 
@@ -171,7 +191,7 @@ function tree(x,y,diameter){
    push();
    scale(1.5);
    fill('brown');
-   rect(x-4,200,30,60);
+   rect(x-4,200,30,80);
    fill('green');
    ellipse(x,175,70,40,diameter);
    ellipse(x+5,200,50,50,diameter);
@@ -188,14 +208,19 @@ function tree(x,y,diameter){
 
 
 function land(x,y,w,h){
-
-  rectMode(CORNER)
+rectMode(CENTER)
 
   push();
   fill('green');
   rect(0,600,w,h/9);
-  // fill(14,120);
-  // rect(0,600,w,h/9);
+  fill(14,120,40);
+  rect(700,600,w,h/9);
+  fill(30);
+  rect(100,600,w,h/16);
+   fill(30);
+  rect(600,600,w,h/16);
+
+  
   pop();
 
 }
@@ -206,7 +231,7 @@ function cat(x,y,r1) {
   push();
   scale(0.3);
   //face
-  fill(255)
+  fill(185,140,30)
   stroke(27)
   strokeWeight(2)
   ellipse(x,y,r1*18,r1*13)
@@ -383,7 +408,7 @@ class Flower {
 
       //class parameters of the flower to have random radius and movement
       this.X = random(width);//X;
-      this.Y = random(height);//Y;
+      this.Y = random(height/2);//Y;
       this.r1 =random(40,15);
       this.speed=1;
 
@@ -416,7 +441,7 @@ class Flower {
 show() {  //show flower with random color and move it back and forth in canvas
 
 let X = width / 2;
-   let Y = height / 2;
+   let Y = height/2 ;
    let r1 = 20;
     if (this.X>width || this.X<0){this.speed=this.speed * -1;}
   fill(random(255), random(255), random(255));
@@ -437,7 +462,7 @@ let X = width / 2;
 
   function mousePressed(){
 
-
+ 
     mario.ay += -70*(gravity / mario.mass)
     mario.ax += (mouseX-width/2)/1000
 
@@ -454,3 +479,4 @@ let X = width / 2;
   }
 
 }
+
