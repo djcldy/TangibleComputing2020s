@@ -5,16 +5,16 @@ let mario
 let gravity = 0.1
 let flower=[];
 let score
-let sound;
+//let sound;
 
-function preload() {
-   soundFormats('mp3','ogg');
- sound=loadSound('mario_theme.mp3');
-}
+// function preload() {
+//    //soundFormats('mp3','ogg');
+//  //sound=loadSound('mario_theme.mp3');
+
 function setup() {
 
   createCanvas(1000,700);
-  sound.play();
+  //sound.play();
   rectMode(CENTER)
   noStroke()
   console.log(width,height)
@@ -81,7 +81,7 @@ textSize(28);
 text("score:",12,28);
 fill(130,20,27);
 text(score,95,28);
- themeSound.play()
+ 
   if (mario.score==15){
   fill(0);
     text("YOU WON!");
