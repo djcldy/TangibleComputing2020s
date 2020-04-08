@@ -1,111 +1,70 @@
-/*
+// TenThousandX Assignment: 
+          // Add to this code to create a drawing 
+          // Note: do not delete anything
 
-    Example Code: Interactive Gradient Array
+          function setup(){
 
-*/
-let xPrev = 0
-let yPrev = 0
+             // do not change anything in setup 
 
-function setup(){
+              createCanvas(2000,600)
+              TenThousandX()
 
-  createCanvas(1200,600);
-  stroke(255)
+          }
 
-}
+          function TenThousandX(){
 
+             //add code here 
+             //background(34,122,200)
 
-function draw(){
+             //fill(255,0,0)
+             //stroke(10)
+             //strokeWeight(5)
 
-    let radius = 5
-    let x = mouseX
-    let y = mouseY
+             //ellipse(100,80,100,100)
 
+             //fill(255)
+             
 
-    let velocityX = x - xPrev
-    let velocityY = y - yPrev
+             //ellipse(200,200,100,100)
+             //noStroke()
+             //stroke(40,255,8)
+             //noFill()
+             //stroke(0,100)
+             //stroke(255,255,255)
+             //fill(0)
 
-    fill(second()/60*255,minute()/60*255,hour()/60*255)
+             //strokeWeight(7,4,3)
+            
 
-    noStroke()
-    fill(41,5,68,velocityY)
+             stroke(80,1,5)
+             fill(20,5,12)
 
-	ellipse(x,y,velocityX,velocityY)
-	//rect(x,y,velocityX,velocityY)
+             //for (var random = 0;  random++)
 
-	fill(95,0,100)
-	ellipse(x,y,velocityX/2,velocityY/2)
-
-	ellipse(x-5,y-5,5,5)
-	ellipse(x+5,y-5,5,5)
-
-
-    xPrev = x
-	yPrev = y
-
-}
-   
+             //fill (var random = 0;  random++}
 
 
 
+              for ( var x = 0; x < 10000; x++){
 
+                  // add code here 
+                  //console.log(x);
+                  let a = random(0,1000)
+                  let b = random(1,2000)
+                  ellipse(a,b,10,10)
+                  //ellipse(width-a,b,a/10,a/10)
+                  //line(a,b,0,0)
+                  //triangle(a,b,10,10)
+                  rect(a,b,10,10)//r++
+                  //point(a,b,10,10)
+                  //quadrilateral(a,b,10,10,)
+               
 
+                  //arc(a, b, 80, 80, 0, PI + QUARTER_PI)
+                  
 
+                
 
+              }
 
-
-
-
-
-
-
-/*function draw(){
-
-	let x = width/2 + random(-3,3)
-	let y = height- second()/60*height
-	let alpha = second()/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	ellipse(x,y,second(),second())
-
-	if(second()>58){
-		background(255)
-	}
-
- 
-   
-
-}
-
-function draw(){
-
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
-
-	if (second()>58){
-		background(255)
-	}
-}
-function drawIceCream(time,posX,radius){
-
-	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-3,3)
-	let alpha = time/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	//ellipse(x,y,time*radius,time*radius)
-	heart(x,y,time*radius,time*radius)
-
-
-}
-
-function heart(x,y,radius,radius){
-
-	ellipse(x-radius/4,y,radius/2)
-	ellipse(x+radius/4,y,radius/2)
-	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
-}*/
+            }

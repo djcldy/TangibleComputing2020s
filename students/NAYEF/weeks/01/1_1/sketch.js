@@ -28,7 +28,7 @@ function draw(){
       push()
       translate(row*stepX,col*stepY)
       rotate(dist(row*stepX,col*stepY,mouseX,mouseY)/600*TWO_PI) 
-      rect(0,0,stepX,stepY) 
+      ellipse(0,0,stepX,stepY)
       pop()
 
     }
