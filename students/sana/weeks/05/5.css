@@ -5,7 +5,13 @@ color: white;
 }
 h2 {
   color: white;
-  background-color: blue;
+  background-color: red;
+ 
+}
+
+h3 {
+  color: yellow;
+  
  
 }
 body{
