@@ -315,7 +315,7 @@ function Mario() {
         push();
 
         translate(this.x, this.y)
-        rotate(frameCount*(this.y-500)/10000)
+        rotate(frameCount*(this.y-500)/9000)
         scale(0.2);
         fill(245, 0, 0)
         rect(0, 0, 220, 45)
@@ -463,7 +463,7 @@ function mousePressed() {
 
 
     mario.ay += -70 * (gravity / mario.mass)
-    mario.ax += (mouseX - width / 2)500 / 1000
+    mario.ax += (mouseX - width / 2) / 1000
 
     console.log('jump force', mario.ay)
 
