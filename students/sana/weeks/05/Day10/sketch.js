@@ -1,3 +1,5 @@
+// final step 10 adding score counter,time and music ,enjoy:)
+
 let clouds = []; 
 let c 
 let ground = 200 
@@ -24,14 +26,13 @@ function setup() {
     
   score=0; 
    
-  
-  for ( i = 0; i < 1000; i++) { //cloud 
+  for ( i = 0; i < 1000; i++) { 
   
    clouds[i] = new Cloud(); 
   
   } 
   
-  for (let i =0;i<15;i++){ 
+  for (let i =0;i<20;i++){ 
   
      let X=10+70*i; 
      flower[i] = new Flower (X, 80, 10); 
@@ -53,19 +54,13 @@ function draw() {
   mario.update() 
   updateScore(mario.score) 
   
-  
+
 } 
   
 function updateBackground(){ 
   
-  background(215) 
-  
-  // stroke(255,0,0) 
-  // strokeWeight(5) 
-  // console.log(width,height) 
-  // noStroke() 
-  
-  
+  background(215)  
+   
 } 
   
 function updateTrees(){ 
@@ -85,7 +80,7 @@ text("score:",12,28);
 fill(130,20,27); 
 text(score,95,28); 
   
-  if (mario.score==15){ 
+  if (mario.score==20){ 
   fill(0); 
     text("YOU WON!"); 
     textSize(40); 
@@ -295,9 +290,7 @@ function Mario(){
     this.score = 0 
     this.checkGround = function(){ 
   
-      let groundLevel = 500 // added this line 
-  
-      // console.log( 'check gound', this.y, groundLevel ) 
+      let groundLevel = 500 
   
       if (this.y > groundLevel){ 
         this.vy = 0 
@@ -409,9 +402,9 @@ class Flower {
   
   constructor(X, Y, r1,speed) { 
   
-      //class parameters of the flower to have random radius and movement 
-      this.X = random(width);//X; 
-      this.Y = random(height/2);//Y; 
+      
+      this.X = random(width); 
+      this.Y = random(height/2); 
       this.r1 =random(40,15); 
       this.speed=1; 
   
@@ -419,7 +412,6 @@ class Flower {
   
    contains( px, py, r) { 
   
-    // this how the mouse figure out it is the flower 
     let d =dist(px,py,this.X,this.Y); 
   
       if (d < r){ 
@@ -436,12 +428,11 @@ class Flower {
   
     move() { 
   
-      //move the flower in x direction in the speed i declared up 
       this.X=this.X+this.speed; 
   
 } 
   
-show() {  //show flower with random color and move it back and forth in canvas 
+show() {  
   
 let X = width / 2; 
    let Y = height/2 ; 
@@ -460,7 +451,6 @@ let X = width / 2;
   
 } 
 } 
-  
   
   
   function mousePressed(){ 
