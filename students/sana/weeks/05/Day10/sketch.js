@@ -7,19 +7,13 @@ let mario
 let gravity = 0.1 
 let flower=[]; 
 let score 
-//let sound; 
-  
-//function preload() { 
-//soundFormats('mp3', 'ogg'); 
-//sound=loadSound('mario_theme.mp3'); 
-//} 
+
   
   
 function setup() { 
   
   createCanvas(1000,700); 
-  
-  //sound.play(); 
+   
   rectMode(CENTER) 
   noStroke() 
   console.log(width,height) 
@@ -53,6 +47,7 @@ function draw() {
   updateFlowers() 
   mario.update() 
   updateScore(mario.score) 
+  console.log('score:',mario.score)
   
 
 } 
@@ -80,10 +75,11 @@ text("score:",12,28);
 fill(130,20,27); 
 text(score,95,28); 
   
-  if (mario.score==20){ 
+  if (mario.score>20){ 
   fill(0); 
+   textSize(40); 
     text("YOU WON!"); 
-    textSize(40); 
+   
   
   } 
   cat(150,250,13) 
@@ -95,7 +91,7 @@ text(score,95,28);
   
 function updateClouds(){ 
   
-  c = color(20,70, 100,10); //cloud 
+  c = color(20,70, 100,10); 
   
   for (var i = 0; i < clouds.length; i++) { 
   
