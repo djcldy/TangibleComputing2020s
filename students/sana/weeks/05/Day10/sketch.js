@@ -463,7 +463,7 @@ function mousePressed() {
 
 
     mario.ay += -70 * (gravity / mario.mass)
-    mario.ax += (mouseX - width / 2) / 1000
+    mario.ax += (mouseX - width / 2)500 / 1000
 
     console.log('jump force', mario.ay)
 
