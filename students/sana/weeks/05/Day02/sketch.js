@@ -1,61 +1,32 @@
 let clouds = []; 
 let c;  
 let ground = 200   
-<<<<<<< HEAD
-let mario
-let gravity = 0.1   
-let flowers = []    
-let trees = []
 
-=======
 let mario  
 let gravity = 0.1 
 let flowers = [];    
 let trees = [];
->>>>>>> parent of 26f1996... update
+
 
 function setup() {
 
 
   createCanvas(1000,700);   
-<<<<<<< HEAD
-  rectMode(CENTER);  
-  noStroke() ;  
-=======
   rectMode(CENTER)   
   noStroke()   
-
-
-  // for ( i = 0; i < 12; i++) { 
+  mario = new Mario() 
   
-  //  trees[i] = new Tree();
-
-  mario = new Mario()  
->>>>>>> parent of 26f1996... update
-  
- mario = new Mario() 
   for ( i = 0; i < 12; i++) {
-
-<<<<<<< HEAD
     trees.push(new Tree())
-=======
-
-    trees.push(new Tree)
->>>>>>> parent of 26f1996... update
   } 
   
-   // trees[i] = new Tree();
-
   for ( i = 0; i < 10; i++) { 
-
     clouds.push(new Cloud())
  }
 
-  for ( i =0;i<10;i++){     
-      
+  for ( i =0;i<10;i++){       
      let X = 10+70*i;     
      flowers.push(new Flower (X, 80, 10)) 
-
    }     
  
 }   
@@ -69,30 +40,21 @@ function draw() {
   cat(150,250,13);   
   cat(450,250,13);   
   cat(750,250,13);   
-
-
   c = color(20,70, 100,10); //cloud
- for (var i = 0; i < clouds.length; i++) { 
 
-  clouds[i].display(); 
-  clouds[i].move();
+  for (var i = 0; i < clouds.length; i++) { 
+
+    clouds[i].display(c); 
+    clouds[i].move();
 
   }
 
-
-  // for (var i = 0; i < trees.length; i++) { 
-  //       trees[i].display(); 
-  //          }    
-             
-    } 
 
   for (var i = 0; i < trees.length; i++) { 
 
     trees[i].display(); 
  
   } 
-
-     
 
   mario.update()   
    
@@ -111,28 +73,7 @@ function draw() {
   
   }  
   
-    
-  
- //function drawBackground(){ 
-
-//  	function Tree(x,y){
-//    this.x= random(width/3); 
-//    this.y= random(height);            
-//   this.display=function(){ 
-//  background(255); 
-// push(); 
-//   scale(1.5); 
-//   fill('brown');
-//   rect(200,200,30,130);
-//   fill('green');
-//   ellipse(205,175,70,70);
-//   ellipse(205,200,50,50);
-//    ellipse(205,150,40,40);
-//    ellipse(180,170,50,70);
-// pop();
-  
-  
-//  } 
+}
 
  function Tree(x,y){
   
@@ -153,24 +94,20 @@ function draw() {
   }
   
   
-<<<<<<< HEAD
- 
-=======
  } 
 
->>>>>>> parent of 26f1996... update
+
    
 function Cloud(){ 
 
-  this.x= random(width); 
-  this.y= random(height/3); 
-  this.radius= random(15, 50); 
-  this.display=function(){ 
+  this.x= random(width)
+  this.y= random(height/3)
+  this.radius= random(15, 50)
 
+  this.display=function(col){ 
 
-  
-    noStroke(); 
-    fill(0); 
+    noStroke()
+    fill(col)
     ellipse(this.x, this.y, this.radius*2); 
   
   } 
@@ -184,27 +121,30 @@ function Cloud(){
   
 } 
 function cat(x,y,r1) {   
-push();   
-scale(0.3);   
-//face   
-fill(255)   
-stroke(27)   
-strokeWeight(2)   
-ellipse(x,y,r1*18,r1*13)   
-//eyes   
-fill(255)   
-ellipse(x+r1*5,y,r1*4,r1)   
-fill(255)   
-ellipse(x-r1*5,y,r1*4,r1)   
-//eye pupil   
-fill(34,175,150)   
-ellipse(x-r1*5,y,r1,r1)   
-fill(34,175,150)   
-ellipse(x+r1*5,y,r1,r1)   
-fill(255)   
-ellipse(x-r1*5,y,r1/2,r1)   
-fill(255)   
-ellipse(x+r1*5,y,r1/2,r1)   
+
+  push();   
+  scale(0.3);   
+  //face   
+  fill(255)   
+  stroke(27)   
+  strokeWeight(2)   
+  ellipse(x,y,r1*18,r1*13)   
+
+  //eyes   
+  fill(255)   
+  ellipse(x+r1*5,y,r1*4,r1)   
+  fill(255)   
+  ellipse(x-r1*5,y,r1*4,r1)   
+  
+  //eye pupil   
+  fill(34,175,150)   
+  ellipse(x-r1*5,y,r1,r1)   
+  fill(34,175,150)   
+  ellipse(x+r1*5,y,r1,r1)   
+  fill(255)   
+  ellipse(x-r1*5,y,r1/2,r1)   
+  fill(255)   
+  ellipse(x+r1*5,y,r1/2,r1)   
 //nose   
 fill(0)   
 stroke(0)   
@@ -428,22 +368,9 @@ function mousePressed(){
   
       }   
     }   
-<<<<<<< HEAD
-  }
-  }
-=======
+
   
 
   }   
   
   
-// } 
-// }
-// function getFlower(Mario,Flower) {
-// 	flower.splice();
-// 	score+=1; 
-// }   
-  
-
-
->>>>>>> parent of 26f1996... update
