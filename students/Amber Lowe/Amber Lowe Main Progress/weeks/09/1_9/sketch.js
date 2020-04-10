@@ -1,8 +1,8 @@
 let i = 0 
 let capW = 800 // width capture 
 let capH = 800 // height capture
-let cellW = 100 // width cell 
-let cellH = 100  // height cell 50
+let cellW = 50 // width cell 
+let cellH = 50  // height cell 50
 let cells = []
 
 let vid 
@@ -38,13 +38,13 @@ function draw(){
 	
 	background(255)
 
-    ambientLight(300)
-    directionalLight(255, 255, 255, 0.25, 0.25, 0)
-    pointLight(255,0, 255, width,height, 250)
-
+    //ambientLight(300)
+    //directionalLight(255, 255, 255, 0.25, 0.25, 0)
+    //pointLight(255,0, 255, width,height, 250)
     let offset = sin(frameCount/100)*200 
     let scl = (sin(frameCount/100)+2)*0.5
-    stroke(255)
+
+     stroke(255)
 	push()
 	scale(0.5)
 	for (i = 0; i < cells.length; i++){
@@ -63,12 +63,17 @@ function draw(){
 }
 
 
+
+
+
+
+
 function swapPosition(cell1, cell2){
 	
 	let tempX = cell1.tx 
 	let tempY = cell1.ty 
 
-	cell1.tx = cell2.tx 
+    cell1.tx = cell2.tx 
 	cell1.ty = cell2.ty 
 	cell1.r = TWO_PI*10 
 	
@@ -118,12 +123,11 @@ function Cell(x,y,tx,ty,w,h,col,id){
 		
 		//for (j = 0; j < 50; j+10){
 		box(this.w,this.h,this.w)
+		pop()
 				
 		}
 
 		
-		pop()
+		
 	}
-	
-	
-//}
+
