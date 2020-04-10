@@ -42,5 +42,5 @@ function heart(x,y,radius,radius){
 
   ellipse(x,radius/2,y,radius)
    ellipse(x,radius/2,y,radius)
-   triangle(x radius/2,y,x+radius/2,y, x,y+radius/2);
+   triangle(x + radius/2,y,x+radius/2,y, x,y+radius/2);
 }

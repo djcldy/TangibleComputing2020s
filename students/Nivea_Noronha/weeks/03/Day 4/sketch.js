@@ -1,4 +1,4 @@
-function setup(){
+xfunction setup(){
 
   createCanvas(500,500)
   stroke(255)
