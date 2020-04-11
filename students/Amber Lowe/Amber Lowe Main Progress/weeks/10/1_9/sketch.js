@@ -1,10 +1,12 @@
 let i = 0
 let capW = 640 // width capture 
 let capH = 480 // height capture
-let cellW = 20 // width cell 
-let cellH = 20 // height cell 50
-let cellD = 20
+let cellW = 30 // width cell 
+let cellH = 10 // height cell 50
+let cellD = 10
 let cells = []
+let light = [255,200,100,50,0]
+
 
 let vid
 
@@ -27,7 +29,7 @@ function setup() {
                 ty = y
                 tz = z
 
-                let newCell = new Cell(x, y, z, tx, ty, tz, cellW, cellH, cellD, col, id)
+                let newCell = new Cell(x, y, 0, tx, ty, tz, cellW, cellH, cellD, col, id)
 
                 cells.push(newCell)
                 id++
@@ -44,9 +46,11 @@ function draw() {
 
     background(0)
 
-    ambientLight(300)
-    directionalLight(255, 255, 255, 0.25, 0.25, 0)
-    pointLight(255, 0, 255, width, height, 250)
+    ambientLight(500)
+    //directionalLight(255, 0, 255, 0.5, 0.5, 0)
+    //directionalLight(255, 0, 0, 0.5, 0.5, 0)
+    directionalLight(random(light), 0, random(light), 0.5, 0.5, 0)
+    pointLight(random(light), 0, random(light), width, height, 250)
 
     let offset = sin(frameCount / 100) * 200
     let scl = (sin(frameCount / 100) + 2) * 0.5
@@ -54,9 +58,9 @@ function draw() {
     push()
         // move all of the geometry using transformations here
     scale(0.5)
-    rotateX(frameCount * 0.005)
-    rotateY(frameCount * 0.002)
-    rotateZ(frameCount * 0.003)
+    //rotateX(frameCount * 0.005)
+    rotateX(frameCount * 0.02)
+    rotateY(frameCount * 0.05)
 
     translate(-width / 2, -height / 2)
 
@@ -69,7 +73,7 @@ function draw() {
     }
     pop()
 
-    if (random() > 0.5) {
+    if (random() > 0.05) {
         
         swapPosition(cells[second()], cells[int(random(cells.length))])
     }
@@ -79,19 +83,19 @@ function draw() {
 
 function swapPosition(cell1, cell2) {
 
-    let tempX = cell1.tx
-    let tempY = cell1.ty
-    let tempZ = cell1.tz
+    let tempX = cell1.tx //* minute()
+    let tempY = cell1.ty //* minute()
+    let tempZ = cell1.tz //* minute()
 
-    cell1.tx = cell2.tx
+    cell1.tx = cell2.tx 
     cell1.ty = cell2.ty
     cell1.tz = cell2.tz
-    cell1.r = TWO_PI * 10
+    cell1.r = TWO_PI * minute()
 
     cell2.tx = tempX
     cell2.ty = tempY
     cell2.tz = tempZ
-    cell2.r = TWO_PI * 20
+    cell2.r = TWO_PI * minute()
 
 
 
@@ -120,7 +124,7 @@ function Cell(x, y, z, tx, ty, tz, w, h, col, id) {
         this.r = (this.tr - this.r) * 0.01 + this.r
         this.x = (this.tx - this.x) * 0.01 + this.x
         this.y = (this.ty - this.y) * 0.01 + this.y
-        //this.z = (this.tz - this.z) * 0.01 + this.z
+        this.z = (this.tz - this.z) * 0.01 + this.z
 
 
     }
@@ -132,11 +136,13 @@ function Cell(x, y, z, tx, ty, tz, w, h, col, id) {
 
         // move specific object here 
         // look at playing with Z transformation!
-        this.z = tan(this.r * 0.1) * 200
+        this.z = sin(this.r * 0.1) * 100
         push()
-        //translate(this.x, this.y, this.z)
-        translate(this.x, this.y, random(-400,400))
-        rotateZ(this.r)
+        translate(this.x, this.y, this.z*5)
+        //translate(this.x, this.y, random(-400,400))
+        //rotateZ(this.r)
+        //rotateZ(this.r*90)
+        rotateZ(radians(45))
             // col = this.col.push(10)
         fill(this.col)
             //for (j = 0; j < 50; j+10){

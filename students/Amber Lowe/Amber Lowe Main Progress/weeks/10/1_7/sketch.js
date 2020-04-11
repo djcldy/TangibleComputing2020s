@@ -1,74 +1,150 @@
-/*
+let i = 0
+let capW = 640 // width capture 
+let capH = 480 // height capture
+let cellW = 20 // width cell 
+let cellH = 100 // height cell 50
+let cellD = 100
+let cells = []
 
-    Example Code: Interactive Gradient Array
+let vid
 
-*/
+function setup() {
 
 
-function setup(){
+    createCanvas(640, 480, WEBGL)
+    vid = createCapture(640, 480)
+    vid.hide()
+    id = 0
+    for (let x = 0; x < width; x += cellW) {
 
-  createCanvas(1200,600);
-  stroke(255)
+        for (let y = 0; y < height; y += cellH) {
 
-}
+            for (z = -1; z < 0; z += cellD) {
 
-/*function draw(){
 
-	let x = width/2 + random(-3,3)
-	let y = height- second()/60*height
-	let alpha = second()/60*255
+                col = [0]
+                tx = x
+                ty = y
+                tz = z
 
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
+                let newCell = new Cell(x, y, z, tx, ty, tz, cellW, cellH, cellD, col, id)
 
-	ellipse(x,y,second(),second())
+                cells.push(newCell)
+                id++
 
-	if(second()>58){
-		background(255)
-	}
+            }
+        }
+    }
 
- 
-   
-
-}*/
-
-function draw(){
-
-	drawIceCream(second(),200,1)
-	drawIceCream(minute(),400,2)
-	drawIceCream(hour(),600,3)
-
-	if (second()>58){
-		background(255)
-	}
-}
-function drawIceCream(time,posX,radius){
-
-	let x = posX + sin(time)*20
-	let y = height- time/60*height + random(-3,3)
-	let alpha = time/60*255
-
-	fill(alpha,0,255-alpha,alpha)
-	noStroke()
-
-	//ellipse(x,y,time*radius,time*radius)
-	heart(x,y,time*radius,time*radius)
 
 
 }
 
-function heart(x,y,radius,radius){
+function draw() {
 
-	push()
-	translate(x,y)
-	rotate(random())
+    background(0)
 
+    ambientLight(300)
+    directionalLight(255, 255, 255, 0.25, 0.25, 0)
+    pointLight(255, 0, 255, width, height, 250)
 
-    ellipse(x-radius/4,y,radius/2)
-	ellipse(x+radius/4,y,radius/2)
-	arc(x-radius/2,y,x+radius/2,y,x, y+radius/2);
-	pop()
+    let offset = sin(frameCount / 100) * 200
+    let scl = (sin(frameCount / 100) + 2) * 0.5
+    stroke(255)
+    push()
+        // move all of the geometry using transformations here
+    scale(0.5)
+    rotateX(frameCount * 0.005)
+    rotateY(frameCount * 0.002)
+    rotateZ(frameCount * 0.003)
+
+    translate(-width / 2, -height / 2)
+
+    for (i = 0; i < cells.length; i++) {
+
+        let cell = cells[i]
+        cell.update()
+        cell.display()
+
+    }
+    pop()
+
+    if (random() > 0.5) {
+        
+        swapPosition(cells[second()], cells[int(random(cells.length))])
+    }
+
 }
 
 
+function swapPosition(cell1, cell2, minute) {
+    
+    let tempX = cell1.tx *minute
+    let tempY = cell1.ty *minute
+    let tempZ = cell1.tz *minute
+
+    cell1.tx = cell2.tx
+    cell1.ty = cell2.ty
+    cell1.tz = cell2.tz
+    cell1.r = TWO_PI * 10
+
+    cell2.tx = tempX
+    cell2.ty = tempY
+    cell2.tz = tempZ
+    cell2.r = TWO_PI * 20
+
+
+
+
+}
+
+function Cell(x, y, z, tx, ty, tz, w, h, col, id) {
+
+    this.id = id
+    this.x = x
+    this.y = y
+    this.z = z
+    this.px = x
+    this.py = y
+    this.tx = tx
+    this.ty = ty
+    this.tz = 0
+    this.tr = 0
+    this.r = 0
+    this.w = w
+    this.h = h
+    this.col = col
+
+    this.update = function() {
+
+        this.col = vid.get(this.px, this.py)
+        this.r = (this.tr - this.r) * 0.01 + this.r
+        this.x = (this.tx - this.x) * 0.01 + this.x
+        this.y = (this.ty - this.y) * 0.01 + this.y
+        //this.z = (this.tz - this.z) * 0.01 + this.z
+
+
+    }
+
+
+    this.display = function() {
+
+        stroke(0)
+
+        // move specific object here 
+        // look at playing with Z transformation!
+        this.z = tan(this.r * 0.05) * 200
+        push()
+        translate(this.x, this.y, this.z)
+        //translate(this.x, this.y, random(-400,400))
+        rotateZ(this.r)
+             //col = this.col.push(10)
+        fill(this.col)
+            //for (j = 0; j < 50; j+10){
+        box(this.w, this.h, this.w)
+        pop()
+
+    }
+
+}
 
