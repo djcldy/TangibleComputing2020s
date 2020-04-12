@@ -1,0 +1,88 @@
+body{
+
+	width: 100vw;
+	font-family: 'Georgia';
+	/*color: #592C5F; */
+	background-color: black;
+	justify-content: center;
+	align-items: center;
+
+}
+#p5{
+	position: relative;
+}
+h1 {
+	font-size: 125%;
+
+}
+g {
+	font-size: 125%;
+}
+.hot {
+    height: 255px;
+    position: absolute;
+    width: 300px;
+    top: 100px;
+    right: 0;
+    background-color: red;
+    opacity: 100%
+}
+.cold {
+	height: 250px;	
+	width: 300px;
+	position: absolute;
+	bottom: 4px;
+	right: 0;
+	background-color: blue;
+	opacity: 100%
+	border: 3px solid black;
+}
+
+.screen {
+	height: 505px;
+	width: 1030px;
+	position: relative;
+	bottom: 0px;
+	border: 3px solid black; 
+}
+.buttonred {
+	height: 251px;
+	width: 300px;
+	background-color: red;
+	right: 0;
+	top: 115px;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+} 
+.buttonblu {
+	height: 245px;	
+	width: 300px;
+	background-color: blue;
+	right: 0;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+}
+.Gif {
+	height: 505px;
+	width: 1030px;
+}
+div {font-size: 137%}
+.hide {
+    display:none;
+}
