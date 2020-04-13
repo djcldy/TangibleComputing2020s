@@ -2,37 +2,38 @@ function setup(){
 
   createCanvas(800,800)
   TenThousandX()
-  // OneThousandX()
 
 }
-
 
 
 function TenThousandX(){
 
-  noFill()
- stroke(255,12,random(77,8,5))
 
-  for ( var x = 0; x < 10000; x++ ){
 
-    let a= sin(x/100)*width/2
-    let b= x/10000*height
-    let r = random(50,25,20)
+  let step = width/10000
 
+  stroke(175,215,random(33,24,12)) 
+
+  for (var x = 0; x < 10000; x++){
 
 
 
+                //console.log(x)
+          
 
-    ellipse(a,b,r,r)
 
-   
+    let a = step*x 
+    let b = sin(x*0.6)*(x/25)
+    ellipse(a,b+width/3,7,7)
+      ellipse(a,b+width/3,7,7)
+        ellipse(a,b+width/3,7,7)
 
-   
+
+
+    
 
   }
 
 }
-
-
 
 

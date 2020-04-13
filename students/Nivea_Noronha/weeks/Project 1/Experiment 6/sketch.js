@@ -1,40 +1,42 @@
 function setup(){
 
-  createCanvas(800,800)
-  TenThousandX()
+  createCanvas(500,500)
+  stroke(255)
 
 }
 
 
-function TenThousandX(){
+let xPrev = 0
+let yPrev = 0
+
+function draw(){
+
+  let radius = 8
+  let x = mouseX
+  let y = mouseY
 
 
+let velocityX = xPrev - x
+let velocityY = y - yPrev
 
-  let step = width/10000
-
-  stroke(175,215,random(33,24,12)) 
-
-  for (var x = 0; x < 10000; x++){
+fill(minute()/60*255,hour()/60*255,second()/60*255)
 
 
+  fill(255,87,0,velocityX)
+  ellipse(x,y,velocityX,velocityY) 
 
-                //console.log(x)
-          
-
-
-    let a = step*x 
-    let b = sin(x*0.6)*(x/25)
-    ellipse(a,b+width/3,7,7)
-      ellipse(a,b+width/3,7,7)
-        ellipse(a,b+width/3,7,7)
+   fill(55,7,0,velocityX)
+  ellipse(x,y,velocityX/2,velocityY/2) 
 
 
+   
+  ellipse(x-5,y-5,5,5) 
+  ellipse(x+5,y-5,5,5) 
 
-    
+   ellipse(x-10,y-10,10,10) 
+  ellipse(x+10,y-10,10,10) 
 
-  }
-
+yPrev = y
+xPrev = x
 }
-
-
 
