@@ -1,0 +1,163 @@
+body{
+
+	width: 100vw;
+    background-color: black;
+	font-family: 'Georgia';
+	justify-content: center;
+	align-items: center;
+
+}
+#p5{
+	position: relative;
+}
+h1 {
+	font-size: 125%;
+	color: white
+
+}
+g {
+	font-size: 125%;
+	color: white;
+}
+.speed1 {
+    height: 101px;
+    position: absolute;
+    width: 300px;
+    top: 100px;
+    right: 0;
+    background-color: #8C57B4;
+    opacity: 100%
+}
+.speed2 {
+	height: 101px;	
+	width: 300px;
+	position: absolute;
+	top: 200px;
+	right: 0;
+	background-color: #9974B5;
+	opacity: 100%
+}
+.speed3 {
+	height: 101px;	
+	width: 300px;
+	position: absolute;
+	top: 300px;
+	right: 0;
+	background-color: #A68FB6;
+	opacity: 100%
+}
+.speed4 {
+	height: 101px;	
+	width: 300px;
+	position: absolute;
+	top: 400px;
+	right: 0;
+	background-color: #ACA0B4;
+	opacity: 100%
+}
+.speed5 {
+	height: 101px;	
+	width: 300px;
+	position: absolute;
+	top: 500px;
+	right: 0;
+	background-color: #B0ACB2;
+	opacity: 100%
+}
+
+.screen {
+	height: 505px;
+	width: 1030px;
+	position: relative;
+	bottom: 0px; 
+	border: 3px solid black; 
+}
+
+.s1 {
+	height: 101px;	
+	width: 300px;
+	background-color: #8C57B4;
+	right: 0;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+}  
+.s2 {
+	height: 101px;	
+	width: 300px;
+	background-color: #9974B5;
+	right: 0;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+}
+.s3 {
+	height: 101px;	
+	width: 300px;
+	background-color: #A68FB6;
+	right: 0;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+} 
+.s4 {
+	height: 101px;	
+	width: 300px;
+	background-color: #ACA0B4;
+	right: 0;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+} 
+.s5 {
+	height: 101px;	
+	width: 300px;
+	background-color: #B0ACB2;
+	right: 0;
+	border: none;
+    color: black;	
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+} 
+.SampleGif {
+	height: 505px;
+	width: 1030px;
+}
+div {font-size: 137%}
+.hide {
+    display:none;
+}
