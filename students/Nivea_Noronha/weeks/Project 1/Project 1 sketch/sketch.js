@@ -7,6 +7,8 @@ function setup() {
 
   createCanvas( windowWidth, windowHeight, WEBGL);
 
+createCapture(VIDEO)
+capture = createCapture(VIDEO)
 
 }
 
